@@ -1,32 +1,31 @@
-# Landing Principal (Sede Diplomática)
+# Main Landing (Diplomatic Headquarters)
 
-## Concepto y Función Central
-La landing principal de **VELORA Living** no es un buscador ni un catálogo tradicional ni incluye listados de propiedades directamente. Es una landing **puramente informativa, visualmente impecable y profundamente editorial**. 
+## Core Concept and Function
+The main landing page of **VELORA Living** is not a traditional search engine or catalog, nor does it directly list properties. It is a **purely informational, visually impeccable, and deeply editorial** landing page. 
 
-Diseñada para presentar la visión de la marca: el concepto de que el continente europeo no es un solo bloque inmobiliario, sino una rica constelación de estilos de vida diferentes. Funciona como un lobby europeo o "Sede Diplomática" en el que el usuario asume la filosofía de la marca y desde donde elige a qué país ("Embajada Estética") desea viajar virtualmente.
+Designed to present the brand's vision: the concept that the European continent is not a single real estate block, but a rich constellation of different lifestyles. It functions as a European lobby or "Diplomatic Headquarters" where the user embraces the brand philosophy and from there chooses which country ("Aesthetic Embassy") they wish to virtually travel to.
 
-La landing no vende ladrillos, vende la decisión de encontrar el hogar correcto mediante una experiencia mejor.
+The landing page doesn't sell bricks; it sells the decision to find the right home through a superior experience.
 
-## Sensaciones Clave
-- **Elegancia Europea Contemporánea:** Sofisticación silenciosa, libre del lujo ruidoso, y ejecutada con extremada madurez.
-- **Curaduría:** Debe sentirse como una galería donde nada está expuesto al azar; todo cuenta con un criterio riguroso.
-- **Unidad con Diversidad:** Un despliegue de marca fuerte que sin embargo deja un enorme espacio para respetar el carácter arquitectónico local de cada territorio.
-- **Confianza Internacional:** Capacidad de resonar con un expatriado en Ámsterdam, una familia reubicable de Milán o un inversor de Dubái con absoluta eficacia.
-- **Diseño Impecable:** Tan cuidada que podría fungir por sí misma como una pieza desprendida de una prestigiosa revista de interiorismo y arquitectura digital.
+## Key Sensations
+- **Contemporary European Elegance:** Quiet sophistication, free from loud luxury, executed with extreme maturity.
+- **Curation:** Must feel like a gallery where nothing is left to chance; everything follows a rigorous criterion.
+- **Unity within Diversity:** A strong brand deployment that leaves immense space to respect the local architectural character of each territory.
+- **International Trust:** Ability to resonate effectively with an expat in Amsterdam, a relocating family from Milan, or an investor from Dubai.
+- **Impeccable Design:** So meticulously crafted that it could stand alone as a detached piece of a prestigious digital architecture and interior design magazine.
 
-## Estructura Esperada de la Landing
-1. **Hero Principal (Apertura):** Una primera visual de impacto potentísima. Visuales amplias de Europa sin ser genéricas, acompañadas de un copy refinadísimo (ayudamos a descubrir a través de contextos, no solo filtros).
-    - El acceso a la navegación de países debe proponerse aquí mediante un acercamiento editorial (piezas grandes, tipografía exquisita), sin botones utilitarios.
-2. **Filosofía de Marca:** Textos minimalistas apoyos en respiración visual acerca del valor de la luz, el urbanismo local y cómo VELORA entiende estas diferencias.
-3. **Sección "Explore by Country":** Adelanto (teaser) de los reinos estéticos. Cada país cuenta con su banner representativo de estilo de vida y llamada a la acción hacia la versión local adaptada.
-4. **Propuesta de Valor:** Desarrollo de los pilares de la inmobiliaria (selección experta, presencia local, sensibilidad cultural).
-5. **Innovación: Búsqueda Inteligente (Smart Search):** Promoción estelar del filtro NLP (Búsqueda por Lenguaje Natural). Ej. *“a refined family home with outdoor space”*. 
-6. **Editorial Lifestyle (Inspiración):** Guías visuales (City notes, neighbourhood perspectives) que aportan veracidad narrativa y vida real al sistema de VELORA.
-7. **Premium Footer:** Elegancia internacional y acceso final centralizado de marca, términos, e inversores.
+## Expected Landing Structure
+1. **Main Hero (Opening):** A highly impactful first visual. Broad visuals of Europe without being generic, accompanied by highly refined copy (helping to discover through contexts, not just filters). The access to country navigation should be proposed here through an editorial approach (large cards, exquisite typography), rather than utilitarian buttons.
+2. **Brand Philosophy:** Minimalist texts supported by visual breathing room discussing the value of light, local urbanism, and how VELORA understands these differences.
+3. **"Explore by Country" Section:** A teaser of the aesthetic realms. Each country has its representative lifestyle banner and a call to action towards the adapted local version.
+4. **Value Proposition:** Development of the real estate pillars (expert selection, local presence, cultural sensitivity).
+5. **Innovation: Smart Search:** Stellar promotion of the NLP (Natural Language Processing) filter. E.g., *“a refined family home with outdoor space”*. 
+6. **Editorial Lifestyle (Inspiration):** Visual guides (City notes, neighbourhood perspectives) that bring narrative truth and real life to the VELORA system.
+7. **Premium Footer:** International elegance and centralized final access for brand, legal terms, and investors.
 
-## Reglas Maestras del "Design System"
-La Landing Madre construye la base (Core) de la marca y la cede a las otras páginas. El diseño usa este lenguaje base:
-- **Grilla y Espaciocidad:** Generoso uso del vacío para aportar orden y estatus cromático en el layout general. 
-- **Tipografía Madre:** Fuentes muy contemporáneas o de alto cruce clasicista (Neo-Grotesca combinada armónicamente con Serif display editorial).
-- **Animaciones e Interacciones:** Microinteracciones de navegación extra sutiles y delicadas (ej. Parallax lentos, fades inmaculados). Ningún recurso flashy o "tech-bro tech-agresivo". 
-- **Identidad Variable (Herencia):** Al delegar el UI a las versiones de países locales, su arquitectura principal no cambiará funcionalmente, permitiendo que solo rote la paleta secundaria, textura y tipografía de detalle.
+## Master Rules of the "Design System"
+The Mother Landing builds the base (Core) of the brand and passes it to the other pages. The design uses this base language:
+- **Grid and Spaciousness:** Generous use of white space to provide order and chromatic status in the overall layout. 
+- **Mother Typography:** Highly contemporary fonts or a classicist crossover (Neo-Grotesque harmoniously combined with editorial display Serif).
+- **Animations and Interactions:** Extra subtle and delicate micro-interactions for navigation (e.g., slow Parallax, immaculate fades). No flashy or "tech-bro aggressive" resources. 
+- **Variable Identity (Inheritance):** By delegating the UI to local country versions, its main architecture will not change functionally, allowing only the secondary palette, texture, and detail typography to rotate.

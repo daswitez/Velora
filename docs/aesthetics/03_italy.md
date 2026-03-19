@@ -1,27 +1,27 @@
-# Italia (Italy)
+# Italy
 
-## Resumen Estratégico
+## Strategic Summary
 **"Warmth, material beauty, architecture with soul."**
 
-## Identidad y Sensaciones
-El salto o navegación hacia la versión de Italia es un baño vibrante y emocional dentro de una artesanía casi tangible. Transmite inconfundiblemente:
-- Un calor natural (sun-drenched)
-- Belleza artística en lo cotidiano (la dolce vita silenciada)
-- Alta tactilidad material (sentir que se puede tocar la arquitectura mediante la pantalla)
+## Identity and Sensations
+Navigating to the Italian version is a vibrant and emotional plunge into an almost tangible craftsmanship. It unmistakably conveys:
+- A natural warmth (sun-drenched)
+- Artistic beauty in the everyday (a silenced *dolce vita*)
+- High material tactility (feeling that the architecture can be touched through the screen)
 
-## Parámetros de la Estética Local
-- **Inspiración Visual Base:** El aura de Milán, Roma y la herencia de Florencia. La colisión de piedra con muchísima historia, yesos manuales, el despliegue del mármol, las persianas que doman la luz del sur y el contraste constante con el mobiliario hiper-contemporáneo del "Italian Design".
-- **Paleta de Colores Modulada:** 
-  - Blanco marfil puro
-  - Rojos de terracota clásica
-  - Oliva suave asordinado
-  - Arena y cremas cálidos
-  - Tonos marrón espresso (profundidad)
-  - Leves saltos a rojo arcilla
-- **Tipografía y Composición (Layout):** Layout orgánico alejado de dictaduras milimétricas o frías. Juega abiertamente con el ritmo fluido y descansa fundamentalmente en la estética rotunda de los materiales (madera con pátina, metales bruñidos, cortinas al viento).
+## Parameters of Local Aesthetics
+- **Base Visual Inspiration:** The aura of Milan, Rome, and the heritage of Florence. The collision of deeply historical stone, hand-applied plaster, the display of marble, traditional shutters that tame the southern light, and the constant contrast with hyper-contemporary Italian Design furniture.
+- **Modulated Color Palette:** 
+  - Pure ivory white
+  - Classic terracotta reds
+  - Muted soft olive
+  - Warm sand and creams
+  - Espresso brown tones (depth)
+  - Slight shifts to clay red
+- **Typography and Composition (Layout):** An organic layout far removed from millimeter-dictated or cold geometries. It openly plays with fluid rhythm and fundamentally rests on the absolute aesthetic of the materials (patinated wood, burnished metals, curtains in the wind).
 
-## Promesa y Catálogo Local (Hero Assets)
-- Apartamentos densos en carácter, "con alma" indiscutible.
-- Residencias urbanas revestidas de máxima elegancia.
-- El arquetipo reinterpretado de la "pequeña villa".
-- Inmuebles monumentales o *palazzos* intervenidos desde la óptica de diseño del S.XXI.
+## Promise and Local Catalog (Hero Assets)
+- Apartments dense in character, with an unquestionable "soul".
+- Urban residences cloaked in maximum elegance.
+- The reinterpreted archetype of the "small villa".
+- Monumental buildings or *palazzos* intervened from a 21st-century design perspective.

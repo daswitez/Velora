@@ -1,27 +1,27 @@
-# Francia (France)
+# France
 
-## Resumen Estratégico
+## Strategic Summary
 **"Refined interiors, heritage spaces, quiet elegance."**
 
-## Identidad y Sensaciones
-El portal habituado para el mercado francés eleva instantáneamente la sensibilidad hacia lo patrimonial y el buen gusto sin alardear. Persigue una atmósfera caracterizada por:
-- Refinamiento clásico y altísimo nivel intelectual  
-- Intimidad  
-- Denso peso arquitectónico ligado a la historia  
-- Lujo sereno o discreto  
+## Identity and Sensations
+The portal tailored for the French market instantly elevates sensitivity towards heritage and good taste without flaunting it. It pursues an atmosphere characterized by:
+- Classical refinement and extremely high intellectual level
+- Intimacy
+- Dense architectural weight linked to history
+- Serene or discreet luxury
 
-## Parámetros de la Estética Local
-- **Inspiración Visual Base:** El imaginario clásico de París y Lyon. Fachadas en clave Haussmann, galerías, altos dominios llenos de molduras con pátina del tiempo, herrería de balcón pulida, la mítica y bohemia "luz atardecida" francesa y el valor indiscutible del paso del tiempo.
-- **Paleta de Colores Modulada:** 
-  - Tonalidades crema
-  - Negro suavizado y mate
-  - Color crudo/topo (taupe)
-  - Grises piedra ahumados
-  - Acentos controlados de burdeos vino oscuro o azul tinta
-- **Tipografía y Composición (Layout):** Fuertemente enraizada en direcciones de revistas de moda y arte, con alto nivel de cruces y contrastes tipográficos (ej. cruce drástico de serifas elegantes con neolingüística). El uso de la fotografía de gran peso se combina con encuadres íntimos (zoom para apreciar texturas clásicas o materialidad).
+## Parameters of Local Aesthetics
+- **Base Visual Inspiration:** The classical imagery of Paris and Lyon. Facades in the Haussmann style, galleries, high ceilings filled with time-patinated moldings, polished balcony ironwork, the mythical and bohemian French "late afternoon light", and the indisputable value of the passage of time.
+- **Modulated Color Palette:** 
+  - Cream tones
+  - Soft, matte black
+  - Raw / Taupe color
+  - Smoky stone grays
+  - Controlled accents of dark wine Bordeaux or ink blue
+- **Typography and Composition (Layout):** Strongly rooted in fashion and art magazine direction, with a high level of typographical crossings and contrasts (e.g., drastic crossing of elegant serifs with neo-linguistics). The use of heavy photography is combined with intimate framing (zooming in to appreciate classical textures or materiality).
 
-## Promesa y Catálogo Local (Hero Assets)
-- Apartamentos de corte puramente clásico recién rehabilitados con delicadeza contemporánea.
-- Finos e íntimos *pied-à-terres*. 
-- Propiedades dominantes con emblemático balcón francés.
-- Círculos patrimoniales y residencias históricas puras.
+## Promise and Local Catalog (Hero Assets)
+- Purely classical apartments newly rehabilitated with contemporary delicacy.
+- Fine and intimate *pied-à-terres*. 
+- Dominant properties featuring the emblematic French balcony.
+- Heritage circles and pure historical residences.

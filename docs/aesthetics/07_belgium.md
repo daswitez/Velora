@@ -1,24 +1,24 @@
-# Bélgica (Belgium)
+# Belgium
 
-## Resumen Estratégico
+## Strategic Summary
 **"Character, discretion, and timeless urban charm."**
 
-## Identidad y Sensaciones
-El entorno local de Bélgica apuesta radicalmente por la magia del "susurrar" en contraposición de llamar la atención, dotando a la experiencia visual de un carácter muy maduro de cultura. Transmite:
-- Una elegancia casi imperceptible a las capas superficiales, enfocada en la profundidad visual
-- Un profundo sentido del patrimonio histórico pero adaptado sigilosamente a lo moderno
-- Discreción impecable y un carácter intelectual innegable  
+## Identity and Sensations
+The local environment of Belgium takes a radical approach toward the magic of "whispering" as opposed to demanding attention, endowing the visual experience with a very mature cultural character. It conveys:
+- An elegance almost imperceptible to the surface layers, focused on visual depth
+- A profound sense of historical heritage but stealthily adapted to the modern
+- Impeccable discretion and an undeniable intellectual character
 
-## Parámetros de la Estética Local
-- **Inspiración Visual Base:** La fisionomía y peso urbano de Bruselas o la moda oculta de Amberes. Reclama el ladrillo oscuro profundo combinado con la opulenta piedra desnuda, persianas y texturas clásicas en vecindades de interior sombrío pero sumamente confortables y exquisitos.
-- **Paleta de Colores Modulada:** 
-  - Paleta fuertemente otoñal y sombría que abraza el Gris Muy Cálido
-  - Tonalidad Beige 
-  - Ladrillo quemado/oscuro característico
-  - Combinación estelar con un elegante tono purista y un saturado Azul Noche
-- **Tipografía y Composición (Layout):** El sistema adquiere su formato más *timeless* (atemporal) equilibrado. El ritmo visual no tiene fisura. Las transiciones son finísimas y se aprovechan al máximo tipografías sofisticadas con guiños muy de la moda o arte literario. Un balance asombroso entre conservadurismo visual y pura vanguardia actual en diseño web.
+## Parameters of Local Aesthetics
+- **Base Visual Inspiration:** The physiognomy and urban weight of Brussels or the hidden fashion of Antwerp. It claims deep dark brick combined with opulent bare stone, shutters, and classic textures in neighborhoods of somber interior but extremely comfortable and exquisite.
+- **Modulated Color Palette:** 
+  - A highly autumnal and somber palette that embraces Very Warm Gray
+  - Beige tone
+  - Characteristic dark/burnt brick
+  - Stellar combination with an elegant purist tone and a saturated Midnight Blue
+- **Typography and Composition (Layout):** The system acquires its most balanced *timeless* format. The visual rhythm has no fissures. Transitions are extremely fine, making the most of sophisticated typography with subtle nods toward fashion or literary art. An astounding balance between visual conservatism and pure modern web design avant-garde.
 
-## Promesa y Catálogo Local (Hero Assets)
-- *Townhouses* citadinos de imponente presencia callada y diseño mudo.
-- Espacios donde prima una decoración contemplativa, sobrios en exteriores pero de rotundo poder arquitectónico en el alma interna.
-- Rehabilitaciones que no atentan al paso del los siglos sino que los encumbran aún más.
+## Promise and Local Catalog (Hero Assets)
+- Classic urban *townhouses* of imposing silent presence and mute design.
+- Spaces where contemplative decoration prevails; sober on the outside but of resounding architectural power in the internal soul.
+- Rehabilitations that do not assault the passage of centuries but rather elevate them even further.

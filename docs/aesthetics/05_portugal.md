@@ -1,25 +1,25 @@
 # Portugal
 
-## Resumen Estratégico
+## Strategic Summary
 **"Atlantic calm, soft light, understated sophistication."**
 
-## Identidad y Sensaciones
-El apartado dedicado a Portugal entrega una narrativa casi poética pero profundamente cimentada en el estilo de vida sofisticado actual. En la navegación evoca sin fallar:
-- Calma envolvente (paz y brisa atlántica)
-- Máxima serenidad y resiliencia en el uso de los materiales
-- Un rasgo nostálgico positivo y extremadamente delicado
+## Identity and Sensations
+The section dedicated to Portugal delivers an almost poetic narrative, yet deeply grounded in the sophisticated lifestyle of today. Navigation unfailingly evokes:
+- Enveloping calm (peace and Atlantic breeze)
+- Maximum serenity and resilience in the use of materials
+- A positive and extremely delicate nostalgic trait
 
-## Parámetros de la Estética Local
-- **Inspiración Visual Base:** Las luminosas calles e historias de Lisboa u Oporto. Destaca el arte recuperado de los azulejos, fachadas de piedra caliza bañado por el salitre y el Atlántico, un diseño suave, de ritmo lento e interrumpido y el predominio abrumador de una intensa "luz blanca".
-- **Paleta de Colores Modulada:** 
-  - Marfil puro
-  - Tonalidades azul grisáceas que evocan el clima atlántico invernal
-  - Color arena limpia
-  - Grises cálidos texturados o piedra 
-  - Verdes salvia extraordinariamente tenues
-- **Tipografía y Composición (Layout):** Enfoque totalmente centrado en la tranquilidad. El peso recae asombrosamente en la interacción fotográfica enfocada en las texturas y el poder de habitar los silencios en blanco u oquedades dentro del layout. 
+## Parameters of Local Aesthetics
+- **Base Visual Inspiration:** The luminous streets and stories of Lisbon or Porto. Highlights include the recovered art of *azulejos* (tiles), light stone facades bathed by the saltpeter and the Atlantic, a soft design with a slow, uninterrupted rhythm, and the overwhelming predominance of an intense "white light".
+- **Modulated Color Palette:** 
+  - Pure ivory
+  - Grayish-blue tones evoking the winter Atlantic climate
+  - Clean sand color
+  - Warm textured grays or stone 
+  - Extremely faint sage greens
+- **Typography and Composition (Layout):** An approach entirely focused on tranquility. The weight astoundingly falls on the photographic interaction focused on textures and the power of inhabiting silences in white or hollows within the layout. 
 
-## Promesa y Catálogo Local (Hero Assets)
-- Fincas y apartamentos cuya mayor característica estructural es la penetración brutal de la luz clara.
-- Desarrollos o retiros habitacionales costeros que premian la calma ininterrumpida.
-- Rehabilitaciones impecables y recuperación de detalles arquitectónicos que narran su historia.
+## Promise and Local Catalog (Hero Assets)
+- Estates and apartments whose greatest structural characteristic is the brutal penetration of clear light.
+- Coastal residential developments or retreats that reward uninterrupted calm.
+- Impeccable rehabilitations and the recovery of architectural details that narrate their history.

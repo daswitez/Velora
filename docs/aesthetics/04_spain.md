@@ -1,25 +1,25 @@
-# España (Spain)
+# Spain
 
-## Resumen Estratégico
+## Strategic Summary
 **"Luminous homes, open living, Mediterranean rhythm."**
 
-## Identidad y Sensaciones
-La rama española de VELORA Living exuda vitalidad fluida desde el inicio, integrándose con una vibrante vida exterior, invitando a lo que se conoce como “la buena vida” urbana y cosmopolita. Transmite de lleno:
-- Vitalidad resplandeciente (solar)
-- Calidez sumamente acogedora y contemporánea
-- El ritmo fluido de la inmensa relación interior/exterior
+## Identity and Sensations
+The Spanish branch of VELORA Living exudes fluid vitality from the start, deeply integrating with a vibrant outdoor life, inviting what is known as "the good life" in an urban and cosmopolitan way. It fully conveys:
+- Resplendent solar vitality
+- Extremely welcoming urban energy
+- Contemporary residential freshness
 
-## Parámetros de la Estética Local
-- **Inspiración Visual Base:** La energía de Madrid unida a la arquitectura atrincherada de patios soleados y asimetrías orgánicas. El uso extenso e histórico del encalado y la piedra; la nobleza de la madera y las amplias terrazas que miran la fusión visual del mediterráneo con el diseño actual de alta gama.
-- **Paleta de Colores Modulada:** 
-  - Variaciones de blanco cálido
-  - Tonalidades arena
-  - Azul petróleo profundo
-  - Un verde oliva asordinado y arraigado a la tierra
-  - Terracota mediterránea muy matizada
-- **Tipografía y Composición (Layout):** El sistema aquí se despoja un tanto de formalismos e impone bloques de contenido muy abiertos y aireados. La fotgrafía requiere obligatoriamente una explosión de luz transversal muy natural sobre espacios diáfanos al abrir ventanas y terrazas. 
+## Parameters of Local Aesthetics
+- **Base Visual Inspiration:** The energy of Madrid combined with the entrenched architecture of sunny courtyards and organic asymmetries. The extensive and historical use of whitewash (lime) and exposed stone; the nobility of woods and the wide terraces that gaze upon the visual fusion of the Mediterranean with high-end modern design.
+- **Modulated Color Palette:** 
+  - Variations of warm white
+  - Sand tones
+  - Deep petroleum blue
+  - A muted, earthy olive green
+  - Highly nuanced Mediterranean terracotta
+- **Typography and Composition (Layout):** The system here sheds some formalisms and imposes very open and airy content blocks. Photography must obligatorily exploit a brutal, natural transverse explosion of light over open spaces by swinging windows and terraces wide. 
 
-## Promesa y Catálogo Local (Hero Assets)
-- Pisos urbanos bañados por la luz del día.
-- Emblemáticos grandes áticos envueltos en terrazas vivas con vegetación.
-- Proyectos unifamiliares con diseño de la nueva costa o campiña, arraigadas fuertemente a la sociabilidad local.
+## Promise and Local Catalog (Hero Assets)
+- Urban flats bathed in daylight.
+- Emblematic large penthouses wrapped in living terraces with vegetation.
+- Single-family projects featuring new coastal or countryside design, strongly rooted in local sociability.

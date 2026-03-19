@@ -1,34 +1,34 @@
-# VELORA Living: Guía y Sistema de Estéticas (Overview)
+# VELORA Living: Aesthetics Guide and System (Overview)
 
-## El Manifiesto de Diseño
-La marca **VELORA Living** no es la simple traslación de una página web sobre real estate hacia idiomas locales a través de traducciones estériles. Ha sido estructurada sobre un "System Design Framework" europeo; escalable que comparte el lenguaje maestro de interacción, pero disiente en la presentación estética, emulando sensaciones locales de alto refinamiento. 
+## The Design Manifesto
+The **VELORA Living** brand is not just the simple translation of a real estate website into local languages through sterile translations. It has been structured upon an overarching European "System Design Framework"; a scalable environment that shares a master interaction language but dissents in aesthetic presentation, emulating local sensations of high refinement. 
 
-### Directorio Documental
-La directriz de diseño dicta que la Landing Principal exponga el propósito bajo un ambiente neutral estéril e informativamente majestuoso (Como un lobby central). Al ingresar a las identidades locales por País, la paleta secundaria rompe, la dirección fotográfica transmuta y el balance en la composición altera de inmediato la temperatura del sistema (Embajadas particulares).
+### Documentation Directory
+The design directive dictates that the Main Landing exposes the purpose under a neutral, pristine, and informatively majestic environment (Like a central lobby). Upon entering the local identities per Country, the secondary palette breaks, the photographic direction transmutes, and the balance in the composition immediately alters the temperature of the system (Individual Embassies).
 
-1. **[00: La Landing Principal (Sede Diplomática Central)](00_landing_principal.md)**  
-   *La puerta de entrada. Sin propiedades. Sólo visión asombrosa y elección del país bajo altísima estética de marca.*
+1. **[00: The Main Landing (Central Diplomatic Headquarters)](00_landing_principal.md)**  
+   *The gateway. No properties. Just breathtaking vision and country selection beneath an extremely high brand aesthetic.*
 
-2. **[01: La Embajada de los Países Bajos (Netherlands)](01_netherlands.md)**  
+2. **[01: The Embassy of the Netherlands](01_netherlands.md)**  
    *Order, light, modern urban living.*  
 
-3. **[02: La Embajada de Francia (France)](02_france.md)**  
+3. **[02: The Embassy of France](02_france.md)**  
    *Refined interiors, heritage spaces, quiet elegance.*  
 
-4. **[03: La Embajada de Italia (Italy)](03_italy.md)**  
+4. **[03: The Embassy of Italy](03_italy.md)**  
    *Warmth, material beauty, architecture with soul.*  
 
-5. **[04: La Embajada de España (Spain)](04_spain.md)**  
+5. **[04: The Embassy of Spain](04_spain.md)**  
    *Luminous homes, open living, Mediterranean rhythm.*  
 
-6. **[05: La Embajada de Portugal (Portugal)](05_portugal.md)**  
+6. **[05: The Embassy of Portugal](05_portugal.md)**  
    *Atlantic calm, soft light, understated sophistication.*  
 
-7. **[06: La Embajada de Alemania (Germany)](06_germany.md)**  
+7. **[06: The Embassy of Germany](06_germany.md)**  
    *Clarity, precision, long-term quality.*  
 
-8. **[07: La Embajada de Bélgica (Belgium)](07_belgium.md)**  
+8. **[07: The Embassy of Belgium](07_belgium.md)**  
    *Character, discretion, and timeless urban charm.*  
 
-### Propósito del Documento 
-Con esta colección de archivos (`docs/aesthetics`), todo el equipo de producto (UI/UX, Frontend, Negocio, y Estrategia de Marca) comprende el abismo entre desarrollar un sitio genérico y componer de forma unificada en un solo lugar todas estas sutilezas, matices, sensibilidades culturales de visualización natural que exigen un proyecto paneuropeo "Silent Premium" como VELORA.
+### Purpose of the Document
+With this collection of files (`docs/aesthetics`), the entire product team (UI/UX, Frontend, Business, and Brand Strategy) understands the chasm between developing a generic site and composing—in a unified manner, in a single place—all these subtleties, nuances, and cultural sensitivities of natural visualization demanded by a pan-European "Silent Premium" project like VELORA.
