@@ -35,3 +35,7 @@ VELORA's typographic system masters the ambiguity between pure functionality (se
 ### 7. Belgium
 *Style:* **Timeless, Dark, and Discreet Serif (e.g., Playfair Display or Domaine Display)**
 *Justification:* Evokes hidden luxury, an intellectual discretion ("dark academia" mood) aligned with its burnt brick interiors and elegant, somber aesthetics. An unmistakable stately bearing.
+
+### 8. Greece
+*Style:* **Flared Serif or Elegant Classicist (e.g., Optima or Cinzel)**
+*Justification:* Honors the cradle of classical Western architecture. A typeface that blends monumental, historical proportions with modern refinement, echoing the carved pillars of antiquity and the sharp contrasts of the Aegean light.

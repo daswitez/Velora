@@ -8,7 +8,7 @@ Within each aesthetic embassy, the palette applies this hierarchy to safeguard t
 
 ---
 
-## The 7 National Palettes
+## The 8 National Palettes
 
 ### 1. Netherlands (Order & Light)
 - **Base (Bg):** Ice White (`#FFFFFF`)
@@ -51,3 +51,9 @@ Within each aesthetic embassy, the palette applies this hierarchy to safeguard t
 - **Surface:** Grayish Clay (`#E6E4DD`)
 - **Primary Text:** Deepened Sepia (`#2E2A27`)
 - **Accent (CTAs):** Midnight Blue / Dark Burnt Brick (`#4A2E2B`). Evoking fine mystery, intact urban heritage, and masterful sobriety.
+
+### 8. Greece (Radiant & Ancient)
+- **Base (Bg):** Cycladic Whitewash (`#FAFAFA`)
+- **Surface:** Sun-baked Stone / Light Sand (`#F2EFE9`)
+- **Primary Text:** Deep Monumental Gray (`#2C2F33`)
+- **Accent (CTAs):** Aegean Sea Blue (`#1E3D59`). Evoking the profound contrast between blinding island light and the depth of the Mediterranean waters.

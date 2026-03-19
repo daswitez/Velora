@@ -30,5 +30,8 @@ The design directive dictates that the Main Landing exposes the purpose under a 
 8. **[07: The Embassy of Belgium](07_belgium.md)**  
    *Character, discretion, and timeless urban charm.*  
 
+9. **[08: The Embassy of Greece](08_greece.md)**  
+   *Radiant depth, ancient warmth, and pure coastal living.*  
+
 ### Purpose of the Document
 With this collection of files (`docs/aesthetics`), the entire product team (UI/UX, Frontend, Business, and Brand Strategy) understands the chasm between developing a generic site and composing—in a unified manner, in a single place—all these subtleties, nuances, and cultural sensitivities of natural visualization demanded by a pan-European "Silent Premium" project like VELORA.

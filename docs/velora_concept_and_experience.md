@@ -16,7 +16,7 @@ This is not a search engine or a catalog. It is a flawless presentation page for
 *   **Key Features:** Extreme visual care, curated photography, elegant typography, wide compositions, a relaxed reading rhythm, thoughtful storytelling, and highly delicate micro-interactions.
 
 ### Layer 2: Local Country Sites (The Aesthetic Embassies)
-From the main landing, users access each market (Netherlands, France, Italy, Spain, Portugal, Germany, Belgium).
+From the main landing, users access each market (Netherlands, France, Italy, Spain, Portugal, Germany, Belgium, Greece).
 *   **Purpose:** Exploration and conversion. This is where the actual search happens.
 *   **Sales Approach:** Properties and neighborhood curation adapted to the local market.
 *   **Key Features:** Aesthetics deeply rooted in the local cultural context, smart search (NLP), maps, advanced filters, specific collections, detailed property listings, favorites, and comparative tools.
@@ -96,6 +96,7 @@ The emotional perception when choosing a country:
 5.  **Portugal:** *Atlantic calm, soft light, understated sophistication.* (Calm, Atlantic breeze, silent craftsmanship, nuanced lighting).
 6.  **Germany:** *Clarity, precision, long-term quality.* (Beautiful functionality, robustness, urban millimeter precision).
 7.  **Belgium:** *Character, discretion, and timeless urban charm.* (Sober palettes, deep interiors, exposed brick, and refined mystery).
+8.  **Greece:** *Radiant depth, ancient warmth, and pure coastal living.* (Cycladic whitewash, deep Aegean blue, historical luminosity, and sun-baked stone).
 
 ---
 

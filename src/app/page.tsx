@@ -10,7 +10,7 @@ export default function Home() {
         </p>
         <div className="w-12 h-[1px] bg-brand-900 mx-auto mt-8 opacity-20"></div>
         <p className="font-sans text-brand-800/80 text-sm max-w-lg mx-auto leading-relaxed pt-8 font-light">
-          This is the Diplomatic Headquarters. From here, you will soon be able to explore the visual embassies of the Netherlands, France, Italy, Spain, Portugal, Germany, and Belgium.
+          This is the Diplomatic Headquarters. From here, you will soon be able to explore the visual embassies of the Netherlands, France, Italy, Spain, Portugal, Germany, Belgium, and Greece.
         </p>
       </div>
     </main>
