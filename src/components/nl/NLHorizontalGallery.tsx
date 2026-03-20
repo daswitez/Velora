@@ -8,31 +8,40 @@ import { Property } from "@/data/countries";
 export function NLHorizontalGallery({ properties }: { properties: Property[] }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
+  const featuredProperties = properties.slice(0, 2);
+  const remainingCount = Math.max(properties.length - featuredProperties.length, 0);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    
-    // We only want to animate if we have properties and on non-mobile screens 
-    // (horizontal scroll can be tricky on mobile, though Lenis makes it okay. Let's do it for all screens via GSAP)
-    let ctx = gsap.context(() => {
-      const sections = gsap.utils.toArray(".gallery-item");
-      
-      gsap.to(sections, {
-        xPercent: -100 * (sections.length - 1),
-        ease: "none",
+
+    if (!containerRef.current || !wrapperRef.current || featuredProperties.length <= 1) return;
+
+    const ctx = gsap.context(() => {
+      const sections = gsap.utils.toArray<HTMLElement>(".gallery-item");
+      const holdDistance = window.innerHeight * 0.32;
+
+      const timeline = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
           pin: true,
           scrub: 1,
           snap: 1 / (sections.length - 1),
-          // End after scrolling the width of the container
-          end: () => "+=" + wrapperRef.current?.offsetWidth
-        }
+          end: () => "+=" + ((wrapperRef.current?.offsetWidth ?? 0) + holdDistance),
+        },
       });
+
+      timeline.to(sections, {
+        xPercent: -100 * (sections.length - 1),
+        ease: "none",
+        duration: 1,
+      });
+
+      // Hold the second flagship in place before releasing the page to Regions.
+      timeline.to({}, { duration: 0.3 });
     }, containerRef);
 
     return () => ctx.revert();
-  }, [properties]);
+  }, [featuredProperties.length]);
 
   if (!properties || properties.length === 0) return null;
 
@@ -52,8 +61,8 @@ export function NLHorizontalGallery({ properties }: { properties: Property[] }) 
         </h2>
       </div>
       
-      <div ref={wrapperRef} className="h-full flex w-[300vw] md:w-[200vw]" style={{ width: `${properties.length * 100}vw` }}>
-        {properties.map((prop, index) => (
+      <div ref={wrapperRef} className="h-full flex" style={{ width: `${featuredProperties.length * 100}vw` }}>
+        {featuredProperties.map((prop, index) => (
           <div 
             key={prop.id} 
             className="gallery-item relative w-screen h-full flex items-center justify-center pt-24 pb-16 px-6 md:px-24 flex-shrink-0"
@@ -73,7 +82,7 @@ export function NLHorizontalGallery({ properties }: { properties: Property[] }) 
               {/* Minimalist Data */}
               <div className="w-full md:w-[35%] flex flex-col gap-6 px-4 md:px-12">
                 <span className="text-[var(--token-text)]/40 text-[10px] tracking-[0.4em] uppercase">
-                  {String(index + 1).padStart(2, '0')} / {String(properties.length).padStart(2, '0')}
+                  {String(index + 1).padStart(2, '0')} / {String(featuredProperties.length).padStart(2, '0')}
                 </span>
                 <h3 className="font-serif text-[var(--token-text)] text-4xl md:text-6xl tracking-wide leading-tight">
                   {prop.title}
@@ -87,6 +96,38 @@ export function NLHorizontalGallery({ properties }: { properties: Property[] }) 
                   View Property 
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                 </button>
+                {index === featuredProperties.length - 1 && remainingCount > 0 ? (
+                  <div className="mt-4 flex flex-col gap-3 border-t border-[var(--token-text)]/12 pt-7">
+                    <span className="text-[10px] uppercase tracking-[0.34em] text-[var(--token-text)]/35">
+                      Continue The Curation
+                    </span>
+                    <button
+                      type="button"
+                      aria-disabled="true"
+                      className="group inline-flex w-full items-center justify-between border border-[var(--token-text)]/15 bg-[var(--token-text)]/[0.03] px-5 py-4 text-left transition-all duration-500 hover:border-[var(--token-text)]/25 hover:bg-[var(--token-text)]/[0.05]"
+                    >
+                      <span className="flex flex-col gap-1.5">
+                        <span className="text-sm uppercase tracking-[0.26em] text-[var(--token-text)]">
+                          View {remainingCount} More Estate{remainingCount > 1 ? "s" : ""}
+                        </span>
+                        <span className="text-[11px] tracking-[0.08em] text-[var(--token-text)]/50">
+                          The wider Dutch selection opens to the side
+                        </span>
+                      </span>
+                      <span className="flex items-center gap-4 pl-6">
+                        <span className="text-[9px] uppercase tracking-[0.28em] text-[var(--token-text)]/35">
+                          Soon
+                        </span>
+                        <span className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--token-text)]/12 text-[var(--token-text)]/70 transition-transform duration-500 group-hover:translate-x-0.5">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
+                            <path d="M5 12h14" />
+                            <path d="m12 5 7 7-7 7" />
+                          </svg>
+                        </span>
+                      </span>
+                    </button>
+                  </div>
+                ) : null}
               </div>
 
             </div>
