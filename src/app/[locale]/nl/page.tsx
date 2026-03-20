@@ -4,6 +4,7 @@ import { GlobalFooter } from "@/components/layout/GlobalFooter";
 import { NLHeroSearch } from "@/components/nl/NLHeroSearch";
 import { NLRegionalGrid } from "@/components/nl/NLRegionalGrid";
 import { NLHorizontalGallery } from "@/components/nl/NLHorizontalGallery";
+import { NLMarketBrowser } from "@/components/nl/NLMarketBrowser";
 
 export const dynamic = 'force-dynamic';
 
@@ -37,6 +38,9 @@ export default async function NetherlandsPage() {
 
       {/* 4. Categorized Bento Grid */}
       <NLRegionalGrid />
+
+      {/* 5. Market Block */}
+      <NLMarketBrowser properties={profile.properties} />
 
       <GlobalFooter />
     </main>
