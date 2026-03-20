@@ -1,18 +1,21 @@
 import { MainHero } from "@/components/marketing/MainHero";
+import { TrustedBy } from "@/components/marketing/TrustedBy";
+import { Philosophy } from "@/components/marketing/Philosophy";
+import { GlobalCuration } from "@/components/marketing/GlobalCuration";
+import { EmbassySelector } from "@/components/marketing/EmbassySelector";
+import { ConciergeSearch } from "@/components/marketing/ConciergeSearch";
+import { GlobalFooter } from "@/components/layout/GlobalFooter";
 
 export default function Home() {
   return (
-    <main className="flex flex-col min-h-[200vh]">
+    <main className="flex flex-col overflow-x-hidden">
       <MainHero />
-      
-      {/* Placeholder block below the pure 100vh hero to demonstrate scrolling parallax.
-          Eventually this will be the 'Cultural Authority' Ribbon and 'Global Curation' Carousel
-      */}
-      <section className="h-screen w-full bg-[var(--token-bg)] flex justify-center items-center">
-        <p className="text-[var(--token-text)]/50 tracking-widest uppercase text-sm">
-          Content continues here...
-        </p>
-      </section>
+      <TrustedBy />
+      <Philosophy />
+      <GlobalCuration />
+      <EmbassySelector />
+      <ConciergeSearch />
+      <GlobalFooter />
     </main>
   );
 }
