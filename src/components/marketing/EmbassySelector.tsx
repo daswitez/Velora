@@ -4,10 +4,11 @@ import { useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 export function EmbassySelector() {
   const t = useTranslations("EmbassySelector");
+  const locale = useLocale();
 
   const embassies = [
     { id: "NL", name: t("nl_name"), aura: t("nl_label"), img: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?q=80&w=2500" },
@@ -64,7 +65,7 @@ export function EmbassySelector() {
                 className="relative flex-[0_0_85%] md:flex-[0_0_40%] lg:flex-[0_0_28%] aspect-[3/4]"
               >
                 <div className="w-full h-full relative overflow-hidden group/card bg-[#0A0A0A] select-none block">
-                  <Link href={`#${embassy.id.toLowerCase()}`} draggable={false} className="absolute inset-0 z-10" />
+                  <Link href={`/${locale}/${embassy.id.toLowerCase()}`} draggable={false} className="absolute inset-0 z-10" />
                   <img 
                     src={embassy.img} 
                     alt={embassy.name} 

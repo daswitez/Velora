@@ -8,8 +8,8 @@ export default getRequestConfig(async ({requestLocale}) => {
 
   console.log("NEXT-INTL CONFIG LOCALE IS:", locale);
   if (!locale || !locales.includes(locale as any)) {
-    console.error("404 TRIGGERED! Invalid or missing locale:", locale);
-    notFound();
+    console.error("404 TRIGGERED OR FALLBACK USED. Locale:", locale);
+    locale = 'en'; // Safe fallback to prevent complete destruction of next-intl on global 404s
   }
  
   return {
