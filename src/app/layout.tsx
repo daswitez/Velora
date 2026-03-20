@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import { LenisProvider } from "@/components/providers/LenisProvider";
+import { GlobalNavbar } from "@/components/layout/GlobalNavbar";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -27,7 +29,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.variable} ${playfair.variable} antialiased selection:bg-brand-900 selection:text-white`}>
-        {children}
+        <LenisProvider>
+          <GlobalNavbar />
+          {children}
+        </LenisProvider>
       </body>
     </html>
   );

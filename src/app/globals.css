@@ -1,63 +1,107 @@
 @import "tailwindcss";
 
 @theme {
-  /* Typography */
+  /* Typography Variables */
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-playfair), ui-serif, Georgia, serif;
 
-  /* Global Brand Colors - Silent Premium */
-  --color-brand-50: #F9F9F9;
-  --color-brand-100: #F0F0F0;
-  --color-brand-800: #2C2C2C;
+  /* Semantic Design Tokens (Best Practice) */
+  /* These map to Tailwind classes like bg-background, text-foreground */
+  --color-background: var(--token-bg);
+  --color-surface: var(--token-surface);
+  --color-foreground: var(--token-text);
+  --color-accent: var(--token-accent);
+  
+  /* Retaining the Brand blacks for neutral areas */
   --color-brand-900: #1A1A1A;
   --color-brand-950: #0D0D0D;
-
-  /* Country Core Palettes */
-  /* Netherlands (Order, geometric, icy white, fog gray) */
-  --color-nl-base: #FFFFFF;
-  --color-nl-surface: #F4F6F8;
-  --color-nl-accent: #1C355E; /* Deep blue */
-  
-  /* France (Refined, taupe, stone, ink blue) */
-  --color-fr-base: #FAF9F6;
-  --color-fr-surface: #F0EEE9;
-  --color-fr-accent: #2C3539; /* Ink */
-
-  /* Italy (Warmth, ivory, terracotta, espresso) */
-  --color-it-base: #FDFBF7;
-  --color-it-surface: #F5EFE6;
-  --color-it-accent: #8E4A23; /* Terracotta */
-
-  /* Spain (Luminous, warm white, sand, olive) */
-  --color-es-base: #FFFCF9;
-  --color-es-surface: #F6EDDF;
-  --color-es-accent: #4A5D23; /* Olive */
-
-  /* Portugal (Atlantic calm, ocean grey, ivory) */
-  --color-pt-base: #FBFDFB;
-  --color-pt-surface: #EEF2F5;
-  --color-pt-accent: #6C7A89; /* Grey blue */
-
-  /* Germany (Mineral grey, deep black) */
-  --color-de-base: #F5F5F5;
-  --color-de-surface: #E8EBEB;
-  --color-de-accent: #111111;
-
-  /* Belgium (Warm grey, brick, midnight) */
-  --color-be-base: #F5F4F0;
-  --color-be-surface: #E6E4DD;
-  --color-be-accent: #4A2E2B; /* Dark brick */
 }
 
 @layer base {
+  /* Default Neutral Theme (The Diplomatic Headquarters) */
+  :root {
+    --token-bg: #FFFFFF;
+    --token-surface: #F5F5F5;
+    --token-text: #0A0A0A;
+    --token-accent: #1A1A1A; /* Neutral accent */
+  }
+
+  /* 1. Netherlands */
+  [data-country="NL"] {
+    --token-bg: #FFFFFF;
+    --token-surface: #F4F6F8;
+    --token-text: #111822;
+    --token-accent: #1C355E;
+  }
+
+  /* 2. France */
+  [data-country="FR"] {
+    --token-bg: #FAF9F6;
+    --token-surface: #F0EEE9;
+    --token-text: #1A1A1A;
+    --token-accent: #2C3539;
+  }
+
+  /* 3. Italy */
+  [data-country="IT"] {
+    --token-bg: #FDFBF7;
+    --token-surface: #F5EFE6;
+    --token-text: #2B1E16;
+    --token-accent: #8E4A23;
+  }
+
+  /* 4. Spain */
+  [data-country="ES"] {
+    --token-bg: #FFFCF9;
+    --token-surface: #F6EDDF;
+    --token-text: #2D3227;
+    --token-accent: #4A5D23;
+  }
+
+  /* 5. Portugal */
+  [data-country="PT"] {
+    --token-bg: #FBFDFB;
+    --token-surface: #EEF2F5;
+    --token-text: #303841;
+    --token-accent: #1D4E89;
+  }
+
+  /* 6. Germany */
+  [data-country="DE"] {
+    --token-bg: #F5F5F5;
+    --token-surface: #E8EBEB;
+    --token-text: #000000;
+    --token-accent: #113322;
+  }
+
+  /* 7. Belgium */
+  [data-country="BE"] {
+    --token-bg: #F5F4F0;
+    --token-surface: #E6E4DD;
+    --token-text: #2E2A27;
+    --token-accent: #4A2E2B;
+  }
+
+  /* 8. Greece */
+  [data-country="GR"] {
+    --token-bg: #FAFAFA;
+    --token-surface: #F2EFE9;
+    --token-text: #2C2F33;
+    --token-accent: #1E3D59;
+  }
+
+  /* Global Body Application */
   body {
-    @apply bg-brand-50 text-brand-900 font-sans antialiased;
-    /* Smooth scrolling and refined selection */
-    scroll-behavior: smooth;
+    background-color: var(--token-bg);
+    color: var(--token-text);
+    /* The transition rule allows colors to fade smoothly when routing between countries */
+    transition: background-color 0.6s ease, color 0.6s ease;
+    @apply antialiased font-sans;
   }
 
   ::selection {
-    @apply bg-brand-900 text-white;
+    background-color: var(--token-accent);
+    color: var(--token-bg);
   }
 }
 
@@ -66,7 +110,6 @@
     text-wrap: balance;
   }
   
-  /* Layout utilities for the 'Silent Premium' airy aesthetic */
   .layout-grid {
     @apply grid grid-cols-4 md:grid-cols-12 gap-4 md:gap-6 lg:gap-8 max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24;
   }
