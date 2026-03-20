@@ -16,7 +16,7 @@
     "value2_desc": "Une maison ne peut se comprendre de manière isolée. Elle appartient à un quartier, une culture, un rythme de vie. Nous abordons chaque propriété selon le contexte qui lui donne son caractère et sa sensibilité.",
     "value3_title": "La Substance Avant le Paraître",
     "value3_desc": "Nous admirons la beauté, mais jamais sans consistance. Pour VELORA, le très haut de gamme s'exprime par la retenue, la noblesse des matériaux et la minutie architecturale plutôt que par le spectacle.",
-    "equal_regard_title": "L'Égalité entre Vente et Location",
+    "equal_regard_title": "Un Même Dévouement pour la Location et la Vente",
     "equal_regard_desc": "Nous rejetons l'idée selon laquelle les locations devraient être traitées avec moins de soin que les ventes. Un bien à louer marque un nouveau chapitre — une expatriation, une transition professionnelle — qui mérite attention et fiabilité. Qu'il s'agisse d'une retraite en Méditerranée ou d'un domaine familial en Allemagne, nous abordons le processus avec la même rigueur."
   },
   "GlobalCuration": {
@@ -34,7 +34,7 @@
   },
   "EmbassySelector": {
     "title": "Les Ambassades.",
-    "desc": "Faites glisser ou utilisez les flèches pour explorer nos huit destinations esthétiques.",
+    "desc": "Faites glisser ou utilisez les flèches pour explorer nos huit régions européennes.",
     "nl_label": "Ordre & Lumière",
     "nl_name": "Pays-Bas",
     "fr_label": "Héritage & Élégance Discrète",
@@ -54,7 +54,7 @@
   },
   "ConciergeSearch": {
     "title": "Dites-nous exactement comment vous souhaitez vivre.",
-    "desc": "Oubliez les filtres. Décrivez votre mode de vie européen idéal, vos goûts architecturaux ou l'atmosphère recherchée. Nous trouverons la correspondance parfaite.",
+    "desc": "Oubliez les filtres. Décrivez votre mode de vie idéal, vos goûts architecturaux ou l'atmosphère recherchée. Nous trouverons l'accord parfait.",
     "placeholder": "ex. Un loft Bauhaus paisible à Berlin avec lumière matinale, ou une villa au Portugal face à l'océan...",
     "button": "Consulter le Concierge"
   },

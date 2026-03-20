@@ -16,7 +16,7 @@
     "value2_desc": "Uma casa não pode ser compreendida de forma isolada. Pertence a um bairro, a uma cultura e a um ritmo de vida. Tratamos cada propriedade no contexto que lhe dá significado e sensibilidade ao seu caráter.",
     "value3_title": "Substância Sobre a Exibição",
     "value3_desc": "Admiramos a beleza, mas nunca sem substância. Para a VELORA, a qualidade premium expressa-se através da contenção, da profunda proporção dos materiais e de um cuidadoso detalhe arquitetónico em vez de puro espetáculo.",
-    "equal_regard_title": "Igualdade entre Arrendamento e Venda",
+    "equal_regard_title": "A Mesma Dedicação ao Arrendamento e à Venda",
     "equal_regard_desc": "Rejeitamos a ideia de que o arrendamento deva ser tratado com menos cuidado do que as vendas. Um imóvel para arrendar marca um novo capítulo — uma mudança internacional ou uma transição profissional — que merece conforto e estabilidade. Seja na procura de um arrendamento sazonal no Mediterrâneo ou de uma propriedade familiar na Alemanha, abordamos o processo com idêntica dedicação."
   },
   "GlobalCuration": {
@@ -34,7 +34,7 @@
   },
   "EmbassySelector": {
     "title": "As Embaixadas.",
-    "desc": "Arraste ou use as setas para explorar os nossos oito destinos estéticos.",
+    "desc": "Deslize ou use as setas para explorar as nossas oito regiões europeias.",
     "nl_label": "Ordem e Luz",
     "nl_name": "Países Baixos",
     "fr_label": "Património e Elegância Discreta",
@@ -54,7 +54,7 @@
   },
   "ConciergeSearch": {
     "title": "Diga-nos exatamente como quer viver.",
-    "desc": "Ignore os filtros. Descreva o seu estilo de vida europeu ideal, preferências arquitetónicas ou atmosfera desejada. Nós encontraremos a correspondência exata.",
+    "desc": "Esqueça os filtros tradicionais. Descreva o seu estilo de vida europeu ideal, preferências arquitetónicas ou atmosfera desejada. Nós encontraremos a opção perfeita.",
     "placeholder": "ex. Um loft Bauhaus acolhedor em Berlim com luz matinal, ou uma vila em Portugal de frente para o mar...",
     "button": "Consultar o Concierge"
   },

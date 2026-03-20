@@ -16,7 +16,7 @@
     "value2_desc": "Un hogar no puede entenderse de forma aislada. Pertenece a un barrio, a una cultura y a un ritmo de vida. Tratamos cada propiedad dentro del contexto que le da significado y sensibilidad a su carácter.",
     "value3_title": "Sustancia sobre Exhibición",
     "value3_desc": "Admiramos la belleza, pero nunca sin sustancia. Para VELORA, la máxima calidad se expresa a través de la moderación, la proporción profunda de los materiales y un cuidadoso detalle arquitectónico en lugar del puro espectáculo.",
-    "equal_regard_title": "Igualdad entre Alquiler y Venta",
+    "equal_regard_title": "La Misma Dedicación al Alquiler y a la Venta",
     "equal_regard_desc": "Rechazamos la idea de que los alquileres deban tratarse con menos cuidado que las ventas. Una propiedad en alquiler marca un nuevo capítulo, una mudanza internacional o una transición profesional que merece comodidad y estabilidad. Ya sea buscando un alquiler de temporada en el Mediterráneo o una finca familiar en Alemania, abordamos el proceso con idéntica atención y discreción."
   },
   "GlobalCuration": {
@@ -34,7 +34,7 @@
   },
   "EmbassySelector": {
     "title": "Las Embajadas.",
-    "desc": "Arrastra o usa las flechas para explorar los ocho destinos estéticos localizados.",
+    "desc": "Desliza o usa las flechas para explorar nuestras ocho regiones europeas.",
     "nl_label": "Orden y Luz",
     "nl_name": "Países Bajos",
     "fr_label": "Patrimonio y Elegancia Discreta",
@@ -54,7 +54,7 @@
   },
   "ConciergeSearch": {
     "title": "Díganos exactamente cómo desea vivir.",
-    "desc": "Omita los filtros. Describa su estilo de vida europeo ideal, sus preferencias arquitectónicas o la atmósfera deseada. Nosotros elegiremos la opción exacta.",
+    "desc": "Omita los filtros. Describa su estilo de vida ideal, sus preferencias arquitectónicas o la atmósfera que busca. Nosotros encontraremos la opción perfecta.",
     "placeholder": "ej. Un tranquilo loft Bauhaus en Berlín con luz matutina, o una villa en Portugal frente al océano...",
     "button": "Consultar al Conserje"
   },

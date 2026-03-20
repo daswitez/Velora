@@ -16,7 +16,7 @@
     "value2_desc": "Ein Zuhause kann nicht isoliert verstanden werden. Es gehört zu einem Viertel, einer Kultur und einem Lebensrhythmus. Wir behandeln jede Immobilie in dem Kontext, der ihr Bedeutung und Charakter verleiht.",
     "value3_title": "Substanz vor Schein",
     "value3_desc": "Wir bewundern Schönheit, aber niemals ohne Substanz. Für VELORA drückt sich Premiumqualität eher durch Zurückhaltung, tiefgreifende Materialproportioniertheit und architektonische Details aus als durch bloßes Spektakel.",
-    "equal_regard_title": "Gleiche Wertschätzung für Miete und Verkauf",
+    "equal_regard_title": "Die Gleiche Hingabe für Vermietung und Verkauf",
     "equal_regard_desc": "Wir lehnen den Gedanken ab, dass Vermietungen mit weniger Sorgfalt behandelt werden sollten als Verkäufe. Eine Mietimmobilie markiert ein neues Kapitel — einen internationalen Umzug oder einen beruflichen Übergang — das Komfort und Stabilität verdient. Ob Sie nach einer Saisonmiete im Mittelmeerraum oder einem Familienanwesen in Deutschland suchen, wir gehen den Prozess mit der absolut gleichen Genauigkeit an."
   },
   "GlobalCuration": {
@@ -34,7 +34,7 @@
   },
   "EmbassySelector": {
     "title": "Die Botschaften.",
-    "desc": "Ziehen Sie oder nutzen Sie die Pfeile, um unsere acht ästhetischen Ziele zu erkunden.",
+    "desc": "Wischen Sie oder nutzen Sie die Pfeile, um unsere acht europäischen Regionen zu erkunden.",
     "nl_label": "Ordnung & Licht",
     "nl_name": "Niederlande",
     "fr_label": "Erbe & Stille Eleganz",
@@ -54,7 +54,7 @@
   },
   "ConciergeSearch": {
     "title": "Sagen Sie uns genau, wie Sie leben möchten.",
-    "desc": "Überspringen Sie die Filter. Beschreiben Sie Ihren idealen europäischen Lebensstil, Ihre architektonischen Vorlieben oder die gewünschte Atmosphäre. Wir finden die perfekte Übereinstimmung.",
+    "desc": "Vergessen Sie die Filter. Beschreiben Sie Ihren idealen europäischen Lebensstil, architektonische Vorlieben oder die gewünschte Atmosphäre. Wir finden die perfekte Wahl.",
     "placeholder": "z.B. Ein strenges Bauhaus-Loft in Berlin mit Morgenlicht, oder eine Villa am portugiesischen Atlantik...",
     "button": "Den Concierge Konsultieren"
   },

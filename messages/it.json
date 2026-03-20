@@ -16,7 +16,7 @@
     "value2_desc": "Una casa non può essere compresa in isolamento. Appartiene a un quartiere, a una cultura e a un ritmo di vita. Trattiamo ogni proprietà nel contesto che le conferisce significato e sensibilità al suo carattere.",
     "value3_title": "La Sostanza Sull'Apparenza",
     "value3_desc": "Ammiriamo la bellezza, ma mai senza sostanza. Per VELORA, la qualità premium si esprime attraverso la moderazione, la profonda proporzione dei materiali e un attento dettaglio architettonico piuttosto che lo spettacolo puro.",
-    "equal_regard_title": "Eguale Riguardo per Locazioni e Vendite",
+    "equal_regard_title": "La Stessa Dedizione per Affitti e Vendite",
     "equal_regard_desc": "Rifiutiamo l'idea che le locazioni debbano essere trattate con meno cura delle vendite. Una proprietà in affitto segna un nuovo capitolo, un trasferimento internazionale o una transizione professionale che merita comfort e stabilità. Che stiate cercando un affitto stagionale nel Mediterraneo o una tenuta di famiglia in Germania, affrontiamo il processo con la stessa attenzione."
   },
   "GlobalCuration": {
@@ -34,7 +34,7 @@
   },
   "EmbassySelector": {
     "title": "Le Ambasciate.",
-    "desc": "Trascina o usa le frecce per esplorare le nostre otto destinazioni estetiche localizzate.",
+    "desc": "Scorri o usa le frecce per esplorare le nostre otto regioni europee.",
     "nl_label": "Ordine e Luce",
     "nl_name": "Paesi Bassi",
     "fr_label": "Patrimonio ed Eleganza Silenziosa",
@@ -54,7 +54,7 @@
   },
   "ConciergeSearch": {
     "title": "Diteci esattamente come desiderate vivere.",
-    "desc": "Saltate i filtri. Descrivete il vostro stile di vita europeo ideale, le vostre preferenze architettoniche o la vostra atmosfera. Curiamo la perfetta corrispondenza.",
+    "desc": "Dimenticate i filtri. Descrivete il vostro stile di vita europeo ideale, le vostre preferenze architettoniche o l'atmosfera desiderata. Noi troveremo la soluzione perfetta.",
     "placeholder": "es. Un sereno loft Bauhaus a Berlino con luce mattutina, o una villa in Portogallo affacciata sull'oceano...",
     "button": "Consulta il Concierge"
   },

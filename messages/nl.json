@@ -16,7 +16,7 @@
     "value2_desc": "Een huis kan niet in een isolement worden begrepen. Het behoort tot een wijk, een cultuur en een levensritme. Wij behandelen elke accommodatie binnen de context die haar betekenis en karakter geeft.",
     "value3_title": "Inhoud Boven Vorm",
     "value3_desc": "We bewonderen schoonheid, maar nooit zonder substantie. Voor VELORA wordt topkwaliteit uitgedrukt door terughoudendheid, hoogwaardige materialen en architectonische nuances in plaats van door puur spektakel.",
-    "equal_regard_title": "Gelijke Waardering voor Verhuur en Verkoop",
+    "equal_regard_title": "Gelijke Toewijding aan Verhuur en Verkoop",
     "equal_regard_desc": "Wij verwerpen het idee dat verhuur met minder zorg moet worden behandeld dan verkoop. Een huurwoning markeert een nieuw hoofdstuk — een internationale verhuizing of een professionele transitie — dat comfort en stabiliteit verdient. Of u nu op zoek bent naar een seizoensverblijf in de Middellandse Zee of een familielandgoed in Duitsland, wij benaderen het proces met dezelfde toewijding."
   },
   "GlobalCuration": {
@@ -34,7 +34,7 @@
   },
   "EmbassySelector": {
     "title": "De Ambassades.",
-    "desc": "Sleep of gebruik de pijlen om onze acht esthetische bestemmingen te verkennen.",
+    "desc": "Veeg of gebruik de pijlen om onze acht Europese regio's te verkennen.",
     "nl_label": "Orde & Licht",
     "nl_name": "Nederland",
     "fr_label": "Erfgoed & Stille Elegantie",
@@ -54,7 +54,7 @@
   },
   "ConciergeSearch": {
     "title": "Vertel ons precies hoe u wilt leven.",
-    "desc": "Vergeet de traditionele filters. Beschrijf uw ideale Europese levensstijl, architectonische voorkeuren of gewenste sfeer. Wij vinden de perfecte match.",
+    "desc": "Vergeet de traditionele filters. Beschrijf uw ideale levensstijl, architectonische voorkeuren of gewenste sfeer. Wij vinden de perfecte match.",
     "placeholder": "bijv. Een rustige Bauhaus-loft in Berlijn met ochtendlicht, of een villa in Portugal aan de oceaan...",
     "button": "Raadpleeg de Conciërge"
   },

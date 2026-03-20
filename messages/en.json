@@ -16,7 +16,7 @@
     "value2_desc": "A home cannot be understood in isolation. It belongs to a neighbourhood, a culture, and a rhythm of life. We treat every property within the context that gives it meaning and sensitivity to its character.",
     "value3_title": "Substance Over Display",
     "value3_desc": "We admire beauty, but never without substance. For VELORA, premium quality is expressed through restraint, deep material proportion, and thoughtful architectural detail rather than pure spectacle.",
-    "equal_regard_title": "Equal Regard for Lettings and Sales",
+    "equal_regard_title": "Equal Dedication to Lettings and Sales",
     "equal_regard_desc": "We reject the notion that lettings should be treated with less care than sales. A property to let marks a new chapter, an international move, or a professional transition that deserves comfort and stability. Whether searching for a seasonal rental in the Mediterranean or a lifelong family estate in Germany, we approach the process with identical attentiveness and discretion."
   },
   "GlobalCuration": {
@@ -34,7 +34,7 @@
   },
   "EmbassySelector": {
     "title": "The Embassies.",
-    "desc": "Drag or use the arrows to explore the eight localized aesthetic destinations.",
+    "desc": "Swipe or use the arrows to explore our curated European regions.",
     "nl_label": "Order & Light",
     "nl_name": "Netherlands",
     "fr_label": "Heritage & Quiet Elegance",
@@ -54,7 +54,7 @@
   },
   "ConciergeSearch": {
     "title": "Tell us exactly how you want to live.",
-    "desc": "Skip the filters. Describe your ideal European lifestyle, architectural preferences, or atmosphere. We will curate the perfect exact match.",
+    "desc": "Skip the filters. Describe your ideal European lifestyle, architectural preferences, or atmosphere. We will uncover the perfect match.",
     "placeholder": "e.g. A serene Bauhaus loft in Berlin with morning light, or a coastal villa in Portugal near the ocean...",
     "button": "Consult the Concierge"
   },
