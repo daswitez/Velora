@@ -35,11 +35,11 @@ export function EmbassySelector() {
   }, [emblaApi]);
 
   return (
-    <section className="w-full py-24 md:py-48 bg-[var(--token-bg)] overflow-hidden">
+    <section className="w-full py-16 md:py-48 bg-[var(--token-bg)] overflow-hidden">
       
       <div className="layout-grid mb-16 md:mb-24">
         <div className="col-span-full md:col-span-12 xl:col-span-7">
-          <h2 className="font-serif text-5xl md:text-7xl tracking-tight leading-[1] text-[var(--token-text)] text-balance">
+          <h2 className="font-serif text-4xl sm:text-5xl md:text-7xl tracking-tight leading-[1] text-[var(--token-text)] text-balance">
             {t("title")}
           </h2>
         </div>
@@ -57,27 +57,30 @@ export function EmbassySelector() {
           className="pl-6 md:pl-12 xl:pl-24 cursor-grab active:cursor-grabbing w-full overflow-hidden" 
           ref={emblaRef}
         >
-          <div className="flex gap-4 md:gap-8 mr-6 md:mr-24 pr-[20vw]">
+          <div className="flex gap-4 md:gap-8 pr-6 md:pr-24 lg:pr-[20vw]">
             {embassies.map((embassy) => (
-              <Link 
+              <div 
                 key={embassy.id}
-                href={`#${embassy.id.toLowerCase()}`}
-                className="relative flex-[0_0_85%] md:flex-[0_0_40%] lg:flex-[0_0_28%] aspect-[3/4] overflow-hidden group/card bg-[#0A0A0A] block"
+                className="relative flex-[0_0_85%] md:flex-[0_0_40%] lg:flex-[0_0_28%] aspect-[3/4]"
               >
-                <img 
-                  src={embassy.img} 
-                  alt={embassy.name} 
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/card:scale-105 opacity-80 group-hover/card:opacity-50"
-                />
-                <div className="absolute inset-x-0 bottom-0 p-8 flex flex-col gap-2">
-                  <span className="text-white/60 text-xs tracking-[0.3em] uppercase transform transition-transform duration-700 translate-y-2 group-hover/card:translate-y-0 opacity-0 group-hover/card:opacity-100">
-                    {embassy.aura}
-                  </span>
-                  <span className="text-white font-serif text-3xl md:text-4xl tracking-wide transform transition-transform duration-700 translate-y-4 group-hover/card:translate-y-0">
-                    {embassy.name}
-                  </span>
+                <div className="w-full h-full relative overflow-hidden group/card bg-[#0A0A0A] select-none block">
+                  <Link href={`#${embassy.id.toLowerCase()}`} draggable={false} className="absolute inset-0 z-10" />
+                  <img 
+                    src={embassy.img} 
+                    alt={embassy.name} 
+                    draggable={false}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/card:scale-105 opacity-80 group-hover/card:opacity-50 pointer-events-none"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 p-8 flex flex-col gap-2 pointer-events-none">
+                    <span className="text-white/60 text-xs tracking-[0.3em] uppercase transform transition-transform duration-700 translate-y-2 group-hover/card:translate-y-0 opacity-0 group-hover/card:opacity-100">
+                      {embassy.aura}
+                    </span>
+                    <span className="text-white font-serif text-3xl md:text-4xl tracking-wide transform transition-transform duration-700 translate-y-4 group-hover/card:translate-y-0">
+                      {embassy.name}
+                    </span>
+                  </div>
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
         </div>
@@ -85,7 +88,7 @@ export function EmbassySelector() {
         {/* Absolute Floating Navigation Elements for Intuitiveness */}
         <button 
           onClick={scrollPrev}
-          className="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 p-4 md:p-6 bg-white/90 backdrop-blur-md border border-neutral-200 rounded-full hover:bg-black hover:text-white transition-all duration-500 opacity-0 group-hover:opacity-100 z-10 shadow-2xl text-black -translate-x-4 group-hover:translate-x-0"
+          className="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 p-4 md:p-6 bg-white/90 backdrop-blur-md border border-neutral-200 rounded-full hover:bg-black hover:text-white transition-all duration-500 opacity-0 group-hover:opacity-100 z-10 shadow-2xl text-black -translate-x-4 group-hover:translate-x-0 hidden md:flex items-center justify-center"
           aria-label="Previous"
         >
           <ArrowLeft className="w-5 h-5 md:w-6 md:h-6 stroke-[1]" />
@@ -93,7 +96,7 @@ export function EmbassySelector() {
         
         <button 
           onClick={scrollNext}
-          className="absolute right-2 md:right-8 xl:right-16 top-1/2 -translate-y-1/2 p-4 md:p-6 bg-white/90 backdrop-blur-md border border-neutral-200 rounded-full hover:bg-black hover:text-white transition-all duration-500 opacity-0 group-hover:opacity-100 z-10 shadow-2xl text-black translate-x-4 group-hover:translate-x-0"
+          className="absolute right-2 md:right-8 xl:right-16 top-1/2 -translate-y-1/2 p-4 md:p-6 bg-white/90 backdrop-blur-md border border-neutral-200 rounded-full hover:bg-black hover:text-white transition-all duration-500 opacity-0 group-hover:opacity-100 z-10 shadow-2xl text-black translate-x-4 group-hover:translate-x-0 hidden md:flex items-center justify-center"
           aria-label="Next"
         >
           <ArrowRight className="w-5 h-5 md:w-6 md:h-6 stroke-[1]" />

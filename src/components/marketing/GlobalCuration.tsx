@@ -29,32 +29,32 @@ export function GlobalCuration() {
   useEffect(() => {
     if (!container.current || !headerRef.current || !textRef.current) return;
 
-    gsap.fromTo(
-      [headerRef.current, textRef.current],
-      { y: 50, opacity: 0 },
-      { 
-        y: 0, 
-        opacity: 1, 
-        duration: 1.2, 
-        stagger: 0.2, 
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: container.current,
-          start: "top 80%",
+    let ctx = gsap.context(() => {
+      gsap.fromTo(
+        [headerRef.current, textRef.current],
+        { y: 50, opacity: 0 },
+        { 
+          y: 0, 
+          opacity: 1, 
+          duration: 1.2, 
+          stagger: 0.2, 
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: container.current,
+            start: "top 80%",
+          }
         }
-      }
-    );
+      );
+    }, container);
 
-    return () => {
-      ScrollTrigger.getAll().forEach(t => t.kill());
-    };
+    return () => ctx.revert();
   }, []);
 
   return (
-    <section ref={container} className="w-full py-32 md:py-64 bg-[var(--token-bg)]">
+    <section ref={container} className="w-full py-24 md:py-64 bg-[var(--token-bg)]">
       {/* Section Header */}
-      <div className="layout-grid mb-32 md:mb-56">
-        <h2 ref={headerRef} className="col-span-full md:col-span-7 font-serif text-5xl md:text-7xl tracking-tight leading-[1] text-[var(--token-text)] opacity-0">
+      <div className="layout-grid mb-16 md:mb-56">
+        <h2 ref={headerRef} className="col-span-full md:col-span-7 font-serif text-4xl sm:text-5xl md:text-7xl tracking-tight leading-[1] text-[var(--token-text)] opacity-0">
           {t("tag")}
         </h2>
         <div className="col-span-full md:col-start-9 md:col-span-4 flex items-end mt-12 md:mt-0">
@@ -70,7 +70,7 @@ export function GlobalCuration() {
           {properties.map((prop, idx) => (
             <div 
               key={idx} 
-              className={`flex flex-col gap-6 ${idx % 2 === 1 ? 'md:mt-48 w-[85%] ml-auto' : 'w-[90%]'}`}
+              className={`flex flex-col gap-6 ${idx % 2 === 1 ? 'md:mt-48 w-full md:w-[85%] md:ml-auto' : 'w-full md:w-[90%]'}`}
             >
               <div className="relative aspect-[4/5] w-full overflow-hidden bg-[var(--token-surface)] group cursor-pointer">
                 <img 

@@ -23,42 +23,42 @@ export function MainHero() {
     // Reset references array
     wordsRef.current = gsap.utils.toArray('.split-word');
 
-    const tl = gsap.timeline();
+    let ctx = gsap.context(() => {
+      const tl = gsap.timeline();
 
-    // The hero image reveal sequence
-    tl.to(imageRef.current, {
-      scale: 1,
-      filter: "brightness(0.9)",
-      duration: 2.2,
-      ease: "power3.inOut"
-    });
+      // The hero image reveal sequence
+      tl.to(imageRef.current, {
+        scale: 1,
+        filter: "brightness(0.9)",
+        duration: 2.2,
+        ease: "power3.inOut"
+      });
 
-    // Stagger the typography immediately after the image settles
-    tl.fromTo(wordsRef.current,
-      { y: 150, opacity: 0, rotateZ: 5 },
-      { y: 0, opacity: 1, rotateZ: 0, duration: 1.4, stagger: 0.15, ease: "power4.out" },
-      "-=1.0"
-    );
+      // Stagger the typography immediately after the image settles
+      tl.fromTo(wordsRef.current,
+        { y: 150, opacity: 0, rotateZ: 5 },
+        { y: 0, opacity: 1, rotateZ: 0, duration: 1.4, stagger: 0.15, ease: "power4.out" },
+        "-=1.0"
+      );
 
-    // Subtle scroll parallax
-    gsap.to(imageRef.current, {
-      yPercent: 20,
-      ease: "none",
-      scrollTrigger: {
-        trigger: container.current,
-        start: "top top",
-        end: "bottom top",
-        scrub: true
-      }
-    });
+      // Subtle scroll parallax
+      gsap.to(imageRef.current, {
+        yPercent: 20,
+        ease: "none",
+        scrollTrigger: {
+          trigger: container.current,
+          start: "top top",
+          end: "bottom top",
+          scrub: true
+        }
+      });
+    }, container);
 
-    return () => {
-      ScrollTrigger.getAll().forEach(t => t.kill());
-    };
+    return () => ctx.revert();
   }, []);
 
   return (
-    <section ref={container} className="relative w-full h-screen overflow-hidden bg-brand-950 flex items-center justify-center">
+    <section ref={container} className="relative w-full h-[100dvh] min-h-[600px] overflow-hidden bg-brand-950 flex items-center justify-center">
       
       {/* The Cinematic Background Setup */}
       <div className="absolute inset-0 z-0">
@@ -73,10 +73,10 @@ export function MainHero() {
       </div>
 
       {/* Primary Landing Typography */}
-      <div className="relative z-10 text-center flex flex-col items-center gap-8 px-6">
+      <div className="relative z-10 text-center flex flex-col items-center gap-6 px-6 mt-20 md:mt-0">
         <h1 
           ref={textRef}
-          className="text-white font-serif text-5xl md:text-7xl lg:text-[7rem] tracking-tight leading-[0.9]"
+          className="text-white font-serif text-4xl sm:text-5xl md:text-7xl lg:text-[7rem] tracking-tight leading-[1] md:leading-[0.9]"
         >
           {/* Faking a text split for GSAP staggering without a paid plugin */}
           <span className="inline-block overflow-hidden pb-4 md:pb-6"><span className="split-word block">{t("title1")}</span></span>{" "}

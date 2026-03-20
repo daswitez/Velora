@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 export function ConciergeSearch() {
   const t = useTranslations("ConciergeSearch");
   return (
-    <section className="w-full py-40 md:py-64 bg-brand-950 flex justify-center items-center relative overflow-hidden">
+    <section className="w-full py-32 md:py-64 bg-brand-950 flex justify-center items-center relative overflow-hidden">
       
       {/* Subtle background glow to add to the 'Concierge' glowing effect */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-white/5 blur-[120px] rounded-full pointer-events-none" />
@@ -16,7 +16,7 @@ export function ConciergeSearch() {
             <span className="flex items-center gap-3 text-white/50 text-xs tracking-[0.3em] uppercase">
               <Sparkles className="w-4 h-4 stroke-[1.5]" /> The AI Concierge
             </span>
-            <h2 className="font-serif text-4xl md:text-6xl text-white tracking-tight leading-[1.1] text-balance">
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-6xl text-white tracking-tight leading-[1.1] md:leading-[1.1] text-balance">
               {t("title")}
             </h2>
             <p className="text-white/60 font-sans text-sm md:text-base font-light max-w-[50ch] leading-[1.8]">
