@@ -1,6 +1,8 @@
 import { ArrowRight, Sparkles } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export function ConciergeSearch() {
+  const t = useTranslations("ConciergeSearch");
   return (
     <section className="w-full py-40 md:py-64 bg-brand-950 flex justify-center items-center relative overflow-hidden">
       
@@ -15,10 +17,10 @@ export function ConciergeSearch() {
               <Sparkles className="w-4 h-4 stroke-[1.5]" /> The AI Concierge
             </span>
             <h2 className="font-serif text-4xl md:text-6xl text-white tracking-tight leading-[1.1] text-balance">
-              Tell us exactly how you want to live.
+              {t("title")}
             </h2>
             <p className="text-white/60 font-sans text-sm md:text-base font-light max-w-[50ch] leading-[1.8]">
-              Skip the filters. Describe your ideal European lifestyle, architectural preferences, or atmosphere. We will curate the perfect exact match.
+              {t("desc")}
             </p>
           </div>
 
@@ -27,7 +29,7 @@ export function ConciergeSearch() {
             <div className="relative flex items-center bg-[#0A0A0A] border border-white/10 rounded-full p-2 pl-6 md:pl-8 transition-all duration-500 focus-within:border-white/30 focus-within:bg-[#111111]">
               <input 
                 type="text" 
-                placeholder="e.g. A bright, airy space in Spain where I can paint..."
+                placeholder={t("placeholder")}
                 // Not linking state just yet, strictly UI mock per `task.md` step 5
                 className="w-full bg-transparent text-white/90 placeholder:text-white/30 text-sm md:text-base outline-none font-sans font-light"
               />

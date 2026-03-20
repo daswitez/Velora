@@ -6,20 +6,24 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+import { useTranslations } from "next-intl";
+
 export function GlobalCuration() {
   const container = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLHeadingElement>(null);
   const textRef = useRef<HTMLParagraphElement>(null);
+  const t = useTranslations("GlobalCuration");
+  const tCountries = useTranslations("EmbassySelector");
 
   const properties = [
-    { country: "France", title: "19th Century Haussmann", img: "https://images.unsplash.com/photo-1621293954908-907159247fc8?q=80&w=2500" },
-    { country: "Greece", title: "Cycladic Coastal Villa", img: "https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2500" },
-    { country: "Italy", title: "Tuscan Stone Estate", img: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2500" },
-    { country: "Spain", title: "Sun-Baked Finca", img: "https://images.unsplash.com/photo-1510798831971-661eb04b3739?q=80&w=2500" },
-    { country: "Netherlands", title: "Modernist Canal Loft", img: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?q=80&w=2500" },
-    { country: "Portugal", title: "Atlantic Ocean Retreat", img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2500" },
-    { country: "Germany", title: "Industrial Bauhaus Studio", img: "https://images.unsplash.com/photo-1600607687920-4e2a09be15ea?q=80&w=2500" },
-    { country: "Belgium", title: "Flemish Heritage House", img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2500" },
+    { country: tCountries("fr_name"), title: t("prop1_title"), img: "https://images.unsplash.com/photo-1621293954908-907159247fc8?q=80&w=2500" },
+    { country: tCountries("gr_name"), title: t("prop2_title"), img: "https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2500" },
+    { country: tCountries("it_name"), title: t("prop3_title"), img: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2500" },
+    { country: tCountries("es_name"), title: t("prop4_title"), img: "https://images.unsplash.com/photo-1510798831971-661eb04b3739?q=80&w=2500" },
+    { country: tCountries("nl_name"), title: t("prop5_title"), img: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?q=80&w=2500" },
+    { country: tCountries("pt_name"), title: t("prop6_title"), img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2500" },
+    { country: tCountries("de_name"), title: t("prop7_title"), img: "https://images.unsplash.com/photo-1600607687920-4e2a09be15ea?q=80&w=2500" },
+    { country: tCountries("be_name"), title: t("prop8_title"), img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2500" },
   ];
 
   useEffect(() => {
@@ -51,11 +55,11 @@ export function GlobalCuration() {
       {/* Section Header */}
       <div className="layout-grid mb-32 md:mb-56">
         <h2 ref={headerRef} className="col-span-full md:col-span-7 font-serif text-5xl md:text-7xl tracking-tight leading-[1] text-[var(--token-text)] opacity-0">
-          The <br /> Collection
+          {t("tag")}
         </h2>
         <div className="col-span-full md:col-start-9 md:col-span-4 flex items-end mt-12 md:mt-0">
           <p ref={textRef} className="text-[var(--token-text)]/80 text-sm tracking-[0.2em] uppercase leading-relaxed font-sans max-w-[40ch] opacity-0">
-            A meticulously selected portfolio of historic estates, modern lofts, and coastal rentals available across our eight active markets.
+            {t("desc")}
           </p>
         </div>
       </div>

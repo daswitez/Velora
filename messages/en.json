@@ -1,0 +1,80 @@
+{
+  "Hero": {
+    "title1": "The",
+    "title2": "architecture",
+    "title3": "of a well-lived life.",
+    "subtitle": "The Diplomatic Headquarters",
+    "scroll": "Discover"
+  },
+  "Philosophy": {
+    "intro": "We are a European real estate agency dedicated to exceptional residential properties. We believe that finding a home should be guided by judgement, trust, and a genuine understanding of how you wish to live.",
+    "context": "The market offers abundance, but very little discernment. Too often, homes of real beauty—elegant apartments, refined family estates, and architecturally significant residences—are reduced to bare information. VELORA was created in response to that absence.",
+    "calibre": "We do not seek volume or noise. We seek calibre. VELORA aspires to represent a distinctly European idea of living well, one rooted in beauty, context, and proportion. Whether representing a city apartment or a coastal home, our purpose is to bring care and clarity to renting and buying.",
+    "value1_title": "Discretion & Judgement",
+    "value1_desc": "Property matters must be handled with quiet confidence. A good agency does more than provide access; it offers perspective, measured advice, and a strong sense of what gives a property lasting appeal.",
+    "value2_title": "Respect for Place",
+    "value2_desc": "A home cannot be understood in isolation. It belongs to a neighbourhood, a culture, and a rhythm of life. We treat every property within the context that gives it meaning and sensitivity to its character.",
+    "value3_title": "Substance Over Display",
+    "value3_desc": "We admire beauty, but never without substance. For VELORA, premium quality is expressed through restraint, deep material proportion, and thoughtful architectural detail rather than pure spectacle.",
+    "equal_regard_title": "Equal Regard for Lettings and Sales",
+    "equal_regard_desc": "We reject the notion that lettings should be treated with less care than sales. A property to let marks a new chapter, an international move, or a professional transition that deserves comfort and stability. Whether searching for a seasonal rental in the Mediterranean or a lifelong family estate in Germany, we approach the process with identical attentiveness and discretion."
+  },
+  "GlobalCuration": {
+    "tag": "The Collection",
+    "desc": "A meticulously selected portfolio of historic estates, modern lofts, and coastal rentals available across our eight active markets.",
+    "cta": "View the Curation",
+    "prop1_title": "19th Century Haussmann",
+    "prop2_title": "Cycladic Coastal Villa",
+    "prop3_title": "Tuscan Stone Estate",
+    "prop4_title": "Sun-Baked Finca",
+    "prop5_title": "Modernist Canal Loft",
+    "prop6_title": "Atlantic Ocean Retreat",
+    "prop7_title": "Industrial Bauhaus Studio",
+    "prop8_title": "Flemish Heritage House"
+  },
+  "EmbassySelector": {
+    "title": "The Embassies.",
+    "desc": "Drag or use the arrows to explore the eight localized aesthetic destinations.",
+    "nl_label": "Order & Light",
+    "nl_name": "Netherlands",
+    "fr_label": "Heritage & Quiet Elegance",
+    "fr_name": "France",
+    "it_label": "Warmth & Material Soul",
+    "it_name": "Italy",
+    "es_label": "Luminous Open Living",
+    "es_name": "Spain",
+    "pt_label": "Atlantic Calm",
+    "pt_name": "Portugal",
+    "de_label": "Clarity & Precision",
+    "de_name": "Germany",
+    "be_label": "Timeless Character",
+    "be_name": "Belgium",
+    "gr_label": "Radiant & Ancient",
+    "gr_name": "Greece"
+  },
+  "ConciergeSearch": {
+    "title": "Tell us exactly how you want to live.",
+    "desc": "Skip the filters. Describe your ideal European lifestyle, architectural preferences, or atmosphere. We will curate the perfect exact match.",
+    "placeholder": "e.g. A serene Bauhaus loft in Berlin with morning light, or a coastal villa in Portugal near the ocean...",
+    "button": "Consult the Concierge"
+  },
+  "Footer": {
+    "desc": "The Diplomatic Headquarters for European luxury real estate and curated architectural living.",
+    "embassies": "Embassies",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "agency": "Agency",
+    "consultation": "Private Consultation",
+    "rights": "© 2026 Velora Living",
+    "quote": "\"The architecture of a well-lived life.\""
+  },
+  "Navbar": {
+    "concept": "Concept",
+    "embassies": "Embassies",
+    "journal": "Journal",
+    "search": "Search",
+    "language": "Language",
+    "menu": "Menu"
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "Hero": {
+    "title1": "Die",
+    "title2": "Architektur",
+    "title3": "eines gut gelebten Lebens.",
+    "subtitle": "Der Diplomatische Hauptsitz",
+    "scroll": "Entdecken"
+  },
+  "Philosophy": {
+    "intro": "Wir sind eine europäische Immobilienagentur für außergewöhnliche Wohnobjekte. Wir glauben, dass die Suche nach einem Zuhause von Urteilsvermögen, Vertrauen und einem echten Verständnis dafür geleitet werden sollte, wie Sie leben möchten.",
+    "context": "Der Markt bietet Überfluss, aber extrem wenig Fokus. Zu oft werden Häuser von wahrer Schönheit — elegante Apartments, feine Familienanwesen und bedeutende Architektur — auf bloße Informationen reduziert. VELORA wurde als Antwort auf dieses Fehlen gegründet.",
+    "calibre": "Wir suchen nicht nach Volumen oder Lärm. Wir suchen nach Kaliber. VELORA möchte eine zutiefst europäische Idee des guten Lebens repräsentieren, verwurzelt in Schönheit, Kontext und Proportion. Egal ob ein Stadthaus oder eine Küstenvilla, unser Ziel ist es, Sorgfalt und Klarheit in die Miete und den Kauf zu bringen.",
+    "value1_title": "Diskretion & Urteilsvermögen",
+    "value1_desc": "Immobilienangelegenheiten müssen mit absoluter Diskretion behandelt werden. Eine erstklassige Agentur bietet mehr als nur Zugang; sie bietet Perspektive, fundierte Beratung und ein Gespür dafür, was einer Immobilie dauerhaften Reiz verleiht.",
+    "value2_title": "Respekt für den Ort",
+    "value2_desc": "Ein Zuhause kann nicht isoliert verstanden werden. Es gehört zu einem Viertel, einer Kultur und einem Lebensrhythmus. Wir behandeln jede Immobilie in dem Kontext, der ihr Bedeutung und Charakter verleiht.",
+    "value3_title": "Substanz vor Schein",
+    "value3_desc": "Wir bewundern Schönheit, aber niemals ohne Substanz. Für VELORA drückt sich Premiumqualität eher durch Zurückhaltung, tiefgreifende Materialproportioniertheit und architektonische Details aus als durch bloßes Spektakel.",
+    "equal_regard_title": "Gleiche Wertschätzung für Miete und Verkauf",
+    "equal_regard_desc": "Wir lehnen den Gedanken ab, dass Vermietungen mit weniger Sorgfalt behandelt werden sollten als Verkäufe. Eine Mietimmobilie markiert ein neues Kapitel — einen internationalen Umzug oder einen beruflichen Übergang — das Komfort und Stabilität verdient. Ob Sie nach einer Saisonmiete im Mittelmeerraum oder einem Familienanwesen in Deutschland suchen, wir gehen den Prozess mit der absolut gleichen Genauigkeit an."
+  },
+  "GlobalCuration": {
+    "tag": "Die Kollektion",
+    "desc": "Ein äußerst sorgfältig kuratiertes Portfolio aus historischen Anwesen, modernen Lofts und Küstenresidenzen in unseren acht Kernmärkten.",
+    "cta": "Die Kollektion Ansehen",
+    "prop1_title": "Haussmann-Stil aus dem 19. Jahrhundert",
+    "prop2_title": "Kykladische Küstenvilla",
+    "prop3_title": "Toskanisches Steinanwesen",
+    "prop4_title": "Sonnendurchflutete Finca",
+    "prop5_title": "Modernistisches Grachtenloft",
+    "prop6_title": "Rückzugsort am Atlantik",
+    "prop7_title": "Industrielles Bauhaus-Studio",
+    "prop8_title": "Flämisches Erbe-Haus"
+  },
+  "EmbassySelector": {
+    "title": "Die Botschaften.",
+    "desc": "Ziehen Sie oder nutzen Sie die Pfeile, um unsere acht ästhetischen Ziele zu erkunden.",
+    "nl_label": "Ordnung & Licht",
+    "nl_name": "Niederlande",
+    "fr_label": "Erbe & Stille Eleganz",
+    "fr_name": "Frankreich",
+    "it_label": "Wärme & Materialität",
+    "it_name": "Italien",
+    "es_label": "Leuchtendes, Offenes Wohnen",
+    "es_name": "Spanien",
+    "pt_label": "Atlantische Ruhe",
+    "pt_name": "Portugal",
+    "de_label": "Klarheit & Präzision",
+    "de_name": "Deutschland",
+    "be_label": "Zeitloser Charakter",
+    "be_name": "Belgien",
+    "gr_label": "Antiker Glanz",
+    "gr_name": "Griechenland"
+  },
+  "ConciergeSearch": {
+    "title": "Sagen Sie uns genau, wie Sie leben möchten.",
+    "desc": "Überspringen Sie die Filter. Beschreiben Sie Ihren idealen europäischen Lebensstil, Ihre architektonischen Vorlieben oder die gewünschte Atmosphäre. Wir finden die perfekte Übereinstimmung.",
+    "placeholder": "z.B. Ein strenges Bauhaus-Loft in Berlin mit Morgenlicht, oder eine Villa am portugiesischen Atlantik...",
+    "button": "Den Concierge Konsultieren"
+  },
+  "Footer": {
+    "desc": "Der Diplomatische Hauptsitz für europäische Luxusimmobilien und kuratiertes architektonisches Wohnen.",
+    "embassies": "Botschaften",
+    "legal": "Rechtliches",
+    "privacy": "Datenschutzerklärung",
+    "terms": "Nutzungsbedingungen",
+    "agency": "Die Agentur",
+    "consultation": "Private Beratung",
+    "rights": "© 2026 Velora Living",
+    "quote": "\"Die Architektur eines gut gelebten Lebens.\""
+  },
+  "Navbar": {
+    "concept": "Das Konzept",
+    "embassies": "Botschaften",
+    "journal": "Journal",
+    "search": "Suche",
+    "language": "Sprache",
+    "menu": "Menü"
+  }
+}

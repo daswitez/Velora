@@ -4,19 +4,22 @@ import { useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-
-const embassies = [
-  { id: "NL", name: "Netherlands", aura: "Order & Light", img: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?q=80&w=2500" },
-  { id: "FR", name: "France", aura: "Heritage & Quiet Elegance", img: "https://images.unsplash.com/photo-1621293954908-907159247fc8?q=80&w=2500" },
-  { id: "IT", name: "Italy", aura: "Warmth & Material Soul", img: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2500" },
-  { id: "ES", name: "Spain", aura: "Luminous Open Living", img: "https://images.unsplash.com/photo-1510798831971-661eb04b3739?q=80&w=2500" },
-  { id: "PT", name: "Portugal", aura: "Atlantic Calm", img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2500" },
-  { id: "DE", name: "Germany", aura: "Clarity & Precision", img: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=2500" },
-  { id: "BE", name: "Belgium", aura: "Timeless Character", img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2500" },
-  { id: "GR", name: "Greece", aura: "Radiant & Ancient", img: "https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2500" },
-];
+import { useTranslations } from "next-intl";
 
 export function EmbassySelector() {
+  const t = useTranslations("EmbassySelector");
+
+  const embassies = [
+    { id: "NL", name: t("nl_name"), aura: t("nl_label"), img: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?q=80&w=2500" },
+    { id: "FR", name: t("fr_name"), aura: t("fr_label"), img: "https://images.unsplash.com/photo-1621293954908-907159247fc8?q=80&w=2500" },
+    { id: "IT", name: t("it_name"), aura: t("it_label"), img: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2500" },
+    { id: "ES", name: t("es_name"), aura: t("es_label"), img: "https://images.unsplash.com/photo-1510798831971-661eb04b3739?q=80&w=2500" },
+    { id: "PT", name: t("pt_name"), aura: t("pt_label"), img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2500" },
+    { id: "DE", name: t("de_name"), aura: t("de_label"), img: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=2500" },
+    { id: "BE", name: t("be_name"), aura: t("be_label"), img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2500" },
+    { id: "GR", name: t("gr_name"), aura: t("gr_label"), img: "https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2500" },
+  ];
+
   const [emblaRef, emblaApi] = useEmblaCarousel({ 
     align: "start",
     dragFree: true,
@@ -35,14 +38,14 @@ export function EmbassySelector() {
     <section className="w-full py-24 md:py-48 bg-[var(--token-bg)] overflow-hidden">
       
       <div className="layout-grid mb-16 md:mb-24">
-        <div className="col-span-full md:col-span-7">
+        <div className="col-span-full md:col-span-12 xl:col-span-7">
           <h2 className="font-serif text-5xl md:text-7xl tracking-tight leading-[1] text-[var(--token-text)] text-balance">
-            The Embassies.
+            {t("title")}
           </h2>
         </div>
         <div className="col-span-full md:col-span-5 flex flex-col justify-end items-start md:items-end mt-8 md:mt-0 gap-8">
           <p className="text-[var(--token-text)]/70 text-sm tracking-[0.2em] uppercase leading-relaxed font-sans max-w-[40ch] md:text-right">
-            Drag or use the arrows to explore the eight localized aesthetic destinations.
+            {t("desc")}
           </p>
         </div>
       </div>

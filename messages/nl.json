@@ -1,0 +1,80 @@
+{
+  "Hero": {
+    "title1": "De",
+    "title2": "architectuur",
+    "title3": "van een goed leven.",
+    "subtitle": "Het Diplomatieke Hoofdkwartier",
+    "scroll": "Ontdekken"
+  },
+  "Philosophy": {
+    "intro": "Wij zijn een Europees makelaarskantoor toegewijd aan uitzonderlijk vastgoed. Wij geloven dat de zoektocht naar een huis geleid moet worden door inzicht, vertrouwen en een oprecht begrip van hoe u wilt leven.",
+    "context": "De markt biedt een overvloed, maar heel weinig onderscheidingsvermogen. Te vaak worden huizen van ware schoonheid — elegante appartementen, landgoederen en architectonisch waardevolle residenties — gereduceerd tot louter informatie. VELORA is opgericht als antwoord op dat gebrek.",
+    "calibre": "Wij zoeken geen volume of ruis. Wij zoeken kaliber. VELORA streeft ernaar een uitgesproken Europees concept van goed leven te vertegenwoordigen, geworteld in schoonheid, context en proportie. Of het nu gaat om een stadsappartement of een landhuis aan zee, ons doel is om zorg en helderheid te brengen bij huur en koop.",
+    "value1_title": "Discretie & Oordeel",
+    "value1_desc": "Vastgoedkwesties moeten met stille overtuiging en absolute discretie worden behandeld. Een goed bureau biedt meer dan slechts toegang; het biedt perspectief, weloverwogen advies en een scherp gevoel voor wat een woning blijvende aantrekkingskracht geeft.",
+    "value2_title": "Respect voor de Plek",
+    "value2_desc": "Een huis kan niet in een isolement worden begrepen. Het behoort tot een wijk, een cultuur en een levensritme. Wij behandelen elke accommodatie binnen de context die haar betekenis en karakter geeft.",
+    "value3_title": "Inhoud Boven Vorm",
+    "value3_desc": "We bewonderen schoonheid, maar nooit zonder substantie. Voor VELORA wordt topkwaliteit uitgedrukt door terughoudendheid, hoogwaardige materialen en architectonische nuances in plaats van door puur spektakel.",
+    "equal_regard_title": "Gelijke Waardering voor Verhuur en Verkoop",
+    "equal_regard_desc": "Wij verwerpen het idee dat verhuur met minder zorg moet worden behandeld dan verkoop. Een huurwoning markeert een nieuw hoofdstuk — een internationale verhuizing of een professionele transitie — dat comfort en stabiliteit verdient. Of u nu op zoek bent naar een seizoensverblijf in de Middellandse Zee of een familielandgoed in Duitsland, wij benaderen het proces met dezelfde toewijding."
+  },
+  "GlobalCuration": {
+    "tag": "De Collectie",
+    "desc": "Een uiterst zorgvuldig geselecteerde portfolio van historische landgoederen, moderne lofts en villa's aan zee, verdeeld over onze acht kernmarkten.",
+    "cta": "Bekijk de Collectie",
+    "prop1_title": "19e-Eeuws Haussmann",
+    "prop2_title": "Cycladische Kustvilla",
+    "prop3_title": "Toscaans Stenen Landgoed",
+    "prop4_title": "Zonovergoten Finca",
+    "prop5_title": "Modernistische Grachtenloft",
+    "prop6_title": "Atlantisch Oceaan Verblijf",
+    "prop7_title": "Industriële Bauhaus Studio",
+    "prop8_title": "Vlaams Erfgoedhuis"
+  },
+  "EmbassySelector": {
+    "title": "De Ambassades.",
+    "desc": "Sleep of gebruik de pijlen om onze acht esthetische bestemmingen te verkennen.",
+    "nl_label": "Orde & Licht",
+    "nl_name": "Nederland",
+    "fr_label": "Erfgoed & Stille Elegantie",
+    "fr_name": "Frankrijk",
+    "it_label": "Warmte & Materialiteit",
+    "it_name": "Italië",
+    "es_label": "Licht & Open Leven",
+    "es_name": "Spanje",
+    "pt_label": "Atlantische Rust",
+    "pt_name": "Portugal",
+    "de_label": "Helderheid & Precisie",
+    "de_name": "Duitsland",
+    "be_label": "Tijdloos Karakter",
+    "be_name": "België",
+    "gr_label": "Antieke Schittering",
+    "gr_name": "Griekenland"
+  },
+  "ConciergeSearch": {
+    "title": "Vertel ons precies hoe u wilt leven.",
+    "desc": "Vergeet de traditionele filters. Beschrijf uw ideale Europese levensstijl, architectonische voorkeuren of gewenste sfeer. Wij vinden de perfecte match.",
+    "placeholder": "bijv. Een rustige Bauhaus-loft in Berlijn met ochtendlicht, of een villa in Portugal aan de oceaan...",
+    "button": "Raadpleeg de Conciërge"
+  },
+  "Footer": {
+    "desc": "De diplomatieke zetel voor Europees luxevastgoed en hoogwaardige architectuur.",
+    "embassies": "Ambassades",
+    "legal": "Juridisch",
+    "privacy": "Privacybeleid",
+    "terms": "Servicevoorwaarden",
+    "agency": "Het Bureau",
+    "consultation": "Privé Consultatie",
+    "rights": "© 2026 Velora Living",
+    "quote": "\"De architectuur van een goed leven.\""
+  },
+  "Navbar": {
+    "concept": "Het Concept",
+    "embassies": "Ambassades",
+    "journal": "Journaal",
+    "search": "Zoeken",
+    "language": "Taal",
+    "menu": "Menu"
+  }
+}
