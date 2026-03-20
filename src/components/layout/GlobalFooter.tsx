@@ -4,6 +4,8 @@ export function GlobalFooter() {
   return (
     <footer className="w-full bg-[var(--token-bg)] border-t border-[var(--token-text)]/10 pt-24 pb-8">
       <div className="layout-grid mb-24">
+        
+        {/* Brand Column */}
         <div className="col-span-full md:col-span-4 flex flex-col gap-6">
           <span className="font-serif text-3xl md:text-4xl uppercase tracking-tighter text-[var(--token-text)]">
             Velora
@@ -13,19 +15,31 @@ export function GlobalFooter() {
           </p>
         </div>
 
-        <div className="col-span-full md:col-start-7 md:col-span-2 flex flex-col gap-4 mt-12 md:mt-0">
-          <span className="text-[var(--token-text)] text-xs tracking-[0.2em] uppercase font-semibold mb-2">Embassies</span>
-          <Link href="/embassies/france" className="text-[var(--token-text)]/60 text-sm hover:text-[var(--token-text)] transition-colors">France</Link>
-          <Link href="/embassies/italy" className="text-[var(--token-text)]/60 text-sm hover:text-[var(--token-text)] transition-colors">Italy</Link>
-          <Link href="/embassies/spain" className="text-[var(--token-text)]/60 text-sm hover:text-[var(--token-text)] transition-colors">Spain</Link>
-          <Link href="/embassies/greece" className="text-[var(--token-text)]/60 text-sm hover:text-[var(--token-text)] transition-colors">Greece</Link>
+        {/* Links Column */}
+        <div className="col-span-full md:col-start-7 md:col-span-6 grid grid-cols-2 gap-12 mt-16 md:mt-0 font-sans text-sm tracking-wide">
+          
+          <div className="col-span-1 flex flex-col gap-5">
+            <span className="font-sans text-xs tracking-[0.2em] uppercase opacity-40 mb-2">Embassies</span>
+            <Link href="#nl" className="text-[var(--token-text)]/60 hover:text-[var(--token-text)] transition-colors">Netherlands</Link>
+            <Link href="#fr" className="text-[var(--token-text)]/60 hover:text-[var(--token-text)] transition-colors">France</Link>
+            <Link href="#it" className="text-[var(--token-text)]/60 hover:text-[var(--token-text)] transition-colors">Italy</Link>
+            <Link href="#es" className="text-[var(--token-text)]/60 hover:text-[var(--token-text)] transition-colors">Spain</Link>
+            <Link href="#pt" className="text-[var(--token-text)]/60 hover:text-[var(--token-text)] transition-colors">Portugal</Link>
+            <Link href="#de" className="text-[var(--token-text)]/60 hover:text-[var(--token-text)] transition-colors">Germany</Link>
+            <Link href="#be" className="text-[var(--token-text)]/60 hover:text-[var(--token-text)] transition-colors">Belgium</Link>
+            <Link href="#gr" className="text-[var(--token-text)]/60 hover:text-[var(--token-text)] transition-colors">Greece</Link>
+          </div>
+
+          <div className="col-span-1 flex flex-col gap-5">
+            <span className="font-sans text-xs tracking-[0.2em] uppercase opacity-40 mb-2">Legal</span>
+            <Link href="/privacy" className="text-[var(--token-text)]/60 hover:text-[var(--token-text)] transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="text-[var(--token-text)]/60 hover:text-[var(--token-text)] transition-colors">Terms of Service</Link>
+            <span className="font-sans text-xs tracking-[0.2em] uppercase opacity-40 mt-6 mb-2">Agency</span>
+            <Link href="#contact" className="text-[var(--token-text)]/60 hover:text-[var(--token-text)] transition-colors">Private Consultation</Link>
+          </div>
+
         </div>
 
-        <div className="col-span-full md:col-span-2 flex flex-col gap-4 mt-12 md:mt-0">
-          <span className="text-[var(--token-text)] text-xs tracking-[0.2em] uppercase font-semibold mb-2">Legal</span>
-          <Link href="/privacy" className="text-[var(--token-text)]/60 text-sm hover:text-[var(--token-text)] transition-colors">Privacy Policy</Link>
-          <Link href="/terms" className="text-[var(--token-text)]/60 text-sm hover:text-[var(--token-text)] transition-colors">Terms of Service</Link>
-        </div>
       </div>
 
       <div className="layout-grid pt-8 border-t border-[var(--token-text)]/10">

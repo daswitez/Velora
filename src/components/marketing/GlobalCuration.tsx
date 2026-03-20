@@ -1,6 +1,16 @@
 "use client";
 
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 export function GlobalCuration() {
+  const container = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLHeadingElement>(null);
+  const textRef = useRef<HTMLParagraphElement>(null);
+
   const properties = [
     { country: "France", title: "19th Century Haussmann", img: "https://images.unsplash.com/photo-1621293954908-907159247fc8?q=80&w=2500" },
     { country: "Greece", title: "Cycladic Coastal Villa", img: "https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2500" },
@@ -12,23 +22,47 @@ export function GlobalCuration() {
     { country: "Belgium", title: "Flemish Heritage House", img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2500" },
   ];
 
+  useEffect(() => {
+    if (!container.current || !headerRef.current || !textRef.current) return;
+
+    gsap.fromTo(
+      [headerRef.current, textRef.current],
+      { y: 50, opacity: 0 },
+      { 
+        y: 0, 
+        opacity: 1, 
+        duration: 1.2, 
+        stagger: 0.2, 
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: container.current,
+          start: "top 80%",
+        }
+      }
+    );
+
+    return () => {
+      ScrollTrigger.getAll().forEach(t => t.kill());
+    };
+  }, []);
+
   return (
-    <section className="w-full py-32 md:py-48 bg-[var(--token-bg)]">
+    <section ref={container} className="w-full py-32 md:py-64 bg-[var(--token-bg)]">
       {/* Section Header */}
-      <div className="layout-grid mb-24 md:mb-40">
-        <h2 className="col-span-full md:col-span-7 font-serif text-5xl md:text-7xl tracking-tight leading-[1] text-[var(--token-text)]">
+      <div className="layout-grid mb-32 md:mb-56">
+        <h2 ref={headerRef} className="col-span-full md:col-span-7 font-serif text-5xl md:text-7xl tracking-tight leading-[1] text-[var(--token-text)] opacity-0">
           The <br /> Collection
         </h2>
-        <div className="col-span-full md:col-start-9 md:col-span-4 flex items-end mt-8 md:mt-0">
-          <p className="text-[var(--token-text)]/80 text-sm tracking-[0.2em] uppercase leading-relaxed font-sans max-w-[40ch]">
+        <div className="col-span-full md:col-start-9 md:col-span-4 flex items-end mt-12 md:mt-0">
+          <p ref={textRef} className="text-[var(--token-text)]/80 text-sm tracking-[0.2em] uppercase leading-relaxed font-sans max-w-[40ch] opacity-0">
             A meticulously selected portfolio of historic estates, modern lofts, and coastal rentals available across our eight active markets.
           </p>
         </div>
       </div>
 
-      {/* Flagship Property Grid (Faux Masonry using CSS Grid staggered margins) */}
+      {/* Flagship Property Grid */}
       <div className="layout-grid">
-        <div className="col-span-full grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-x-16 md:gap-y-32">
+        <div className="col-span-full grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-x-24 md:gap-y-48">
           {properties.map((prop, idx) => (
             <div 
               key={idx} 

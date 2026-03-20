@@ -77,13 +77,13 @@ export function MainHero() {
       <div className="relative z-10 text-center flex flex-col items-center gap-8 px-6">
         <h1 
           ref={textRef}
-          className="text-white font-serif text-5xl md:text-7xl lg:text-[8rem] tracking-tight leading-[0.85]"
+          className="text-white font-serif text-5xl md:text-7xl lg:text-[7rem] tracking-tight leading-[0.9]"
         >
           {/* Faking a text split for GSAP staggering without a paid plugin */}
-          <span className="inline-block overflow-hidden pb-4"><span className="split-word block">Curated</span></span>{" "}
-          <span className="inline-block overflow-hidden pb-4"><span className="split-word block italic opacity-90">European</span></span>
+          <span className="inline-block overflow-hidden pb-4 md:pb-6"><span className="split-word block">The</span></span>{" "}
+          <span className="inline-block overflow-hidden pb-4 md:pb-6"><span className="split-word block italic opacity-90">architecture</span></span>
           <br />
-          <span className="inline-block overflow-hidden pb-4"><span className="split-word block">Living.</span></span>
+          <span className="inline-block overflow-hidden pb-4 md:pb-6"><span className="split-word block">of a well-lived life.</span></span>
         </h1>
         
         <p 
