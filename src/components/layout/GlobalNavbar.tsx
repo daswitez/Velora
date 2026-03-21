@@ -7,14 +7,14 @@ import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 
 const SUPPORTED_LOCALES = [
-  { code: "en", label: "EN", name: "English", flag: "GB" },
-  { code: "nl", label: "NL", name: "Nederlands", flag: "NL" },
-  { code: "fr", label: "FR", name: "Francais", flag: "FR" },
-  { code: "it", label: "IT", name: "Italiano", flag: "IT" },
-  { code: "es", label: "ES", name: "Espanol", flag: "ES" },
-  { code: "pt", label: "PT", name: "Portugues", flag: "PT" },
-  { code: "de", label: "DE", name: "Deutsch", flag: "DE" },
-  { code: "el", label: "EL", name: "Greek", flag: "GR" },
+  { code: "en", label: "EN", name: "English", flag: "🇬🇧" },
+  { code: "nl", label: "NL", name: "Nederlands", flag: "🇳🇱" },
+  { code: "fr", label: "FR", name: "Francais", flag: "🇫🇷" },
+  { code: "it", label: "IT", name: "Italiano", flag: "🇮🇹" },
+  { code: "es", label: "ES", name: "Espanol", flag: "🇪🇸" },
+  { code: "pt", label: "PT", name: "Portugues", flag: "🇵🇹" },
+  { code: "de", label: "DE", name: "Deutsch", flag: "🇩🇪" },
+  { code: "el", label: "EL", name: "Greek", flag: "🇬🇷" },
 ];
 
 export function GlobalNavbar() {
@@ -125,7 +125,7 @@ export function GlobalNavbar() {
               <span className="sr-only">{t("language")}</span>
             </button>
             <div className="absolute top-full right-0 pt-4 w-56 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300">
-              <div className="bg-[var(--token-bg)] border border-[var(--token-text)]/10 text-[var(--token-text)] shadow-xl flex flex-col py-2">
+              <div className="max-h-[min(70vh,28rem)] overflow-y-auto bg-[var(--token-bg)] border border-[var(--token-text)]/10 text-[var(--token-text)] shadow-xl flex flex-col py-2">
                 {SUPPORTED_LOCALES.map((loc) => (
                   <Link 
                     key={loc.code} 
@@ -135,7 +135,7 @@ export function GlobalNavbar() {
                     }`}
                   >
                     <span className="flex items-center gap-3">
-                      <span className="text-sm">{loc.flag}</span>
+                      <span className="text-base leading-none">{loc.flag}</span>
                       <span className="tracking-[0.18em] uppercase">{loc.name}</span>
                     </span>
                     <span className="text-[10px] tracking-[0.28em] text-[var(--token-text)]/40">{loc.label}</span>
@@ -208,8 +208,8 @@ export function GlobalNavbar() {
             </button>
           </div>
 
-          <div className="flex flex-1 flex-col justify-between px-6 py-8">
-            <div className="space-y-8">
+          <div className="flex flex-1 flex-col overflow-hidden">
+            <div className="flex-1 space-y-8 overflow-y-auto px-6 py-8">
               <div className="flex flex-col gap-5">
                 {navLinks.map((link) => (
                   <Link
@@ -242,7 +242,7 @@ export function GlobalNavbar() {
                   </span>
                 </button>
                 {mobileLanguageOpen ? (
-                  <div className="grid grid-cols-1 gap-2">
+                  <div className="grid max-h-[42vh] grid-cols-1 gap-2 overflow-y-auto pr-1">
                     {SUPPORTED_LOCALES.map((loc) => (
                       <Link
                         key={loc.code}
@@ -258,7 +258,7 @@ export function GlobalNavbar() {
                         }`}
                       >
                         <span className="flex items-center gap-3">
-                          <span className="text-base">{loc.flag}</span>
+                          <span className="text-lg leading-none">{loc.flag}</span>
                           <span>{loc.name}</span>
                         </span>
                         <span className="text-[10px] tracking-[0.28em] text-[var(--token-text)]/40">{loc.label}</span>
@@ -269,7 +269,7 @@ export function GlobalNavbar() {
               </div>
             </div>
 
-            <div className="border-t border-[var(--token-text)]/10 pt-5">
+            <div className="shrink-0 border-t border-[var(--token-text)]/10 px-6 pb-8 pt-5">
               <p className="max-w-[22ch] text-sm leading-[1.8] text-[var(--token-text)]/58">
                 A quieter way to move through Europe&apos;s residential embassies.
               </p>
