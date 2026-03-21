@@ -2,13 +2,17 @@
 
 import { useState } from "react";
 import { ArrowRight, Sparkles } from "lucide-react";
+import { useTranslations } from "next-intl";
 
-interface NLHeroSearchProps {
+interface CountryHeroProps {
   heroTitle: string;
   heroImage: string;
+  countryName: string;
 }
 
-export function NLHeroSearch({ heroTitle, heroImage }: NLHeroSearchProps) {
+export function CountryHero({ heroTitle, heroImage, countryName }: CountryHeroProps) {
+  const t = useTranslations("EmbassySelector");
+  const t_shared = useTranslations("country_shared");
   const [query, setQuery] = useState("");
   const [isSearching, setIsSearching] = useState(false);
 
@@ -24,7 +28,7 @@ export function NLHeroSearch({ heroTitle, heroImage }: NLHeroSearchProps) {
   };
 
   return (
-    <section className="relative w-full min-h-screen flex items-start justify-end p-6 pt-32 md:p-12 md:pt-36 lg:p-24 lg:pt-40 overflow-hidden">
+    <section className="relative w-full min-h-screen flex items-start justify-end p-6 pt-48 md:p-12 md:pt-64 lg:p-24 lg:pt-64 overflow-hidden">
       {/* Immersive Architectural Media (Full Screen) */}
       <div className="absolute inset-0 z-0 bg-[#0A0A0A]">
         <img 
@@ -35,6 +39,8 @@ export function NLHeroSearch({ heroTitle, heroImage }: NLHeroSearchProps) {
         />
         {/* Deep gradient to make white text pop. Removed bottom white fade for a clean, sharp architectural cut */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/10 via-black/40 to-black/90 md:w-full" />
+        {/* Upper gradient shadow to guarantee Navbar legibility over bright architectural elements */}
+        <div className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-black/50 to-transparent" />
       </div>
 
       {/* Typography & Concierge Overlay */}
@@ -42,7 +48,7 @@ export function NLHeroSearch({ heroTitle, heroImage }: NLHeroSearchProps) {
         
         <div className="flex flex-col gap-4">
           <span className="text-white/60 tracking-[0.3em] uppercase text-xs font-sans">
-            The Embassy of The Netherlands
+            {t_shared("embassy_of")} {t(`${countryName}_name`)}
           </span>
           <h1 className="font-serif text-white text-6xl md:text-8xl lg:text-[7.5rem] tracking-tight leading-[0.9] text-balance">
             {heroTitle}
@@ -56,18 +62,18 @@ export function NLHeroSearch({ heroTitle, heroImage }: NLHeroSearchProps) {
           <div className="flex items-center gap-3">
             <Sparkles className="w-6 h-6 text-white/90" />
             <h2 className="text-white font-serif text-3xl md:text-4xl">
-              The Concierge
+              {t_shared("concierge_title")}
             </h2>
           </div>
           <p className="text-white/80 text-base md:text-lg leading-relaxed max-w-[45ch]">
-            Bypass the filters. Describe your ideal Dutch lifestyle, preferred architectural era, or necessary proximity to the canals in exquisite detail.
+            {t_shared("concierge_desc")}
           </p>
 
           <form onSubmit={handleSearch} className="relative w-full mt-4 group">
             <textarea 
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="e.g. A sunlit contemporary loft in Rotterdam with high ceilings and river views..."
+              placeholder={t_shared("concierge_placeholder")}
               rows={4}
               className="w-full bg-transparent border-b border-white/30 focus:border-white outline-none resize-none py-4 text-white placeholder:text-white/30 font-serif text-xl md:text-2xl transition-colors duration-500 leading-relaxed"
             />

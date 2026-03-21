@@ -19,6 +19,15 @@ export interface Property {
   summary?: string;
 }
 
+export interface RegionBento {
+  id: string;
+  name: string;
+  desc: string;
+  img: string;
+  colSpan: string;
+  rowSpan: string;
+}
+
 export interface CountryProfile {
   id: string;                // e.g. "nl"
   themeToken: string;        // e.g. "NL" for CSS variables
@@ -27,6 +36,7 @@ export interface CountryProfile {
   editorialTitle: string;
   editorialBody: string[];
   properties: Property[];
+  regionsBento?: RegionBento[];
 }
 
 export const countryData: Record<string, CountryProfile> = {
@@ -211,8 +221,41 @@ export const countryData: Record<string, CountryProfile> = {
         bedrooms: 5,
         bathrooms: 3,
         availability: "Viewing by appointment",
-        features: ["Atrium Lightwell", "Family Plan", "Garden Studio"],
         summary: "A carefully modernised family house centred on vertical light, practical flow, and a serene studio opening to the garden."
+      }
+    ],
+    regionsBento: [
+      {
+        id: "amsterdam",
+        name: "Amsterdam Canals",
+        desc: "17th Century Estates & Townhouses",
+        img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2500",
+        colSpan: "md:col-span-8",
+        rowSpan: "md:row-span-2",
+      },
+      {
+        id: "rotterdam",
+        name: "Rotterdam Center",
+        desc: "Avant-Garde Modernism",
+        img: "https://images.unsplash.com/photo-1600607687920-4e2a09be15ea?q=80&w=2500",
+        colSpan: "md:col-span-4",
+        rowSpan: "md:row-span-1",
+      },
+      {
+        id: "hague",
+        name: "The Hague",
+        desc: "Diplomatic Elegance",
+        img: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2500",
+        colSpan: "md:col-span-4",
+        rowSpan: "md:row-span-1",
+      },
+      {
+        id: "countryside",
+        name: "The Countryside",
+        desc: "Secluded Forests & Meadows",
+        img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2500",
+        colSpan: "md:col-span-12",
+        rowSpan: "md:row-span-1",
       }
     ]
   },

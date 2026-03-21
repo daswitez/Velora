@@ -1,52 +1,22 @@
 "use client";
 
-const regions = [
-  {
-    id: "amsterdam",
-    name: "Amsterdam Canals",
-    desc: "17th Century Estates & Townhouses",
-    img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2500",
-    colSpan: "md:col-span-8",
-    rowSpan: "md:row-span-2",
-  },
-  {
-    id: "rotterdam",
-    name: "Rotterdam Center",
-    desc: "Avant-Garde Modernism",
-    img: "https://images.unsplash.com/photo-1600607687920-4e2a09be15ea?q=80&w=2500",
-    colSpan: "md:col-span-4",
-    rowSpan: "md:row-span-1",
-  },
-  {
-    id: "hague",
-    name: "The Hague",
-    desc: "Diplomatic Elegance",
-    img: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2500",
-    colSpan: "md:col-span-4",
-    rowSpan: "md:row-span-1",
-  },
-  {
-    id: "countryside",
-    name: "The Countryside",
-    desc: "Secluded Forests & Meadows",
-    img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2500",
-    colSpan: "md:col-span-12",
-    rowSpan: "md:row-span-1",
-  }
-];
+import { RegionBento } from "@/data/countries";
+import { useTranslations } from "next-intl";
 
-export function NLRegionalGrid() {
+export function CountryRegions({ regions }: { regions: RegionBento[] }) {
+  const t_shared = useTranslations("country_shared");
+  if (!regions || regions.length === 0) return null;
   return (
     <section className="w-full py-32 md:py-48 px-6 bg-[var(--token-bg)]">
       <div className="max-w-[1400px] mx-auto">
         
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 mb-16 md:mb-24 px-4">
-          <h2 className="font-serif text-5xl md:text-7xl lg:text-[6rem] tracking-tight text-[var(--token-text)] leading-[1]">
-            Curated by<br />Geography.
+          <h2 className="font-serif text-5xl md:text-7xl lg:text-[6rem] tracking-tight text-[var(--token-text)] leading-[1] max-w-[10ch]">
+            {t_shared("regions_title")}
           </h2>
           <p className="max-w-[40ch] text-[var(--token-text)]/70 text-sm md:text-base leading-relaxed text-balance">
-            The Netherlands offers deeply distinct architectural typologies depending on the city. Select a region to explore our specialized portfolio.
+            {t_shared("regions_desc")}
           </p>
         </div>
 

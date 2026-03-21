@@ -13,7 +13,6 @@ export function MainHero() {
   const container = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
   const textRef = useRef<HTMLHeadingElement>(null);
-  const sublineRef = useRef<HTMLParagraphElement>(null);
   const scrollIndRef = useRef<HTMLDivElement>(null);
   const wordsRef = useRef<HTMLElement[]>([]);
 
@@ -23,7 +22,7 @@ export function MainHero() {
     // Reset references array
     wordsRef.current = gsap.utils.toArray('.split-word');
 
-    let ctx = gsap.context(() => {
+    const ctx = gsap.context(() => {
       const tl = gsap.timeline();
 
       // The hero image reveal sequence

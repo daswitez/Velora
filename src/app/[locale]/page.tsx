@@ -1,3 +1,4 @@
+import { GlobalNavbar } from "@/components/layout/GlobalNavbar";
 import { MainHero } from "@/components/marketing/MainHero";
 import { TrustedBy } from "@/components/marketing/TrustedBy";
 import { Philosophy } from "@/components/marketing/Philosophy";
@@ -9,6 +10,7 @@ import { GlobalFooter } from "@/components/layout/GlobalFooter";
 export default function Home() {
   return (
     <main className="flex flex-col overflow-x-hidden">
+      <GlobalNavbar />
       <MainHero />
       <TrustedBy />
       <Philosophy />

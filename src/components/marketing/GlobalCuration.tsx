@@ -29,7 +29,7 @@ export function GlobalCuration() {
   useEffect(() => {
     if (!container.current || !headerRef.current || !textRef.current) return;
 
-    let ctx = gsap.context(() => {
+    const ctx = gsap.context(() => {
       gsap.fromTo(
         [headerRef.current, textRef.current],
         { y: 50, opacity: 0 },

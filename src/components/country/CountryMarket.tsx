@@ -15,16 +15,7 @@ type BudgetFilter =
   | "rent-above-10k";
 type BedroomFilter = "any" | "2" | "3" | "4";
 
-const operationCopy: Record<OperationMode, { title: string; note: string }> = {
-  sale: {
-    title: "For Sale",
-    note: "Long-horizon acquisitions chosen for light, proportion, and architectural longevity.",
-  },
-  rent: {
-    title: "For Rent",
-    note: "Flexible city living without giving up calm interiors, exact planning, or material quality.",
-  },
-};
+
 
 function matchesBudget(property: Property, operation: OperationMode, budget: BudgetFilter) {
   if (budget === "all" || property.priceValue == null) return true;
@@ -60,7 +51,11 @@ function getAspectClass(index: number) {
   return pattern[index % pattern.length];
 }
 
-export function NLMarketBrowser({ properties }: { properties: Property[] }) {
+import { useTranslations } from "next-intl";
+
+export function CountryMarket({ properties, countryId }: { properties: Property[], countryId: string }) {
+  const t = useTranslations(countryId);
+  const t_shared = useTranslations("country_shared");
   const marketProperties = properties.filter((property) => !property.isFlagship);
   const [operation, setOperation] = useState<OperationMode>("sale");
   const [region, setRegion] = useState("All");
@@ -124,23 +119,18 @@ export function NLMarketBrowser({ properties }: { properties: Property[] }) {
           <div className="md:col-span-7">
             <span className="inline-flex items-center gap-3 text-[10px] uppercase tracking-[0.34em] text-[var(--token-text)]/38">
               <SlidersHorizontal className="h-3.5 w-3.5" strokeWidth={1.2} />
-              Dutch Market Index
+              {t("market_tag")}
             </span>
             <h2 className="mt-5 max-w-[11ch] font-serif text-4xl leading-[0.94] tracking-tight text-[var(--token-text)] md:text-6xl">
-              The wider Dutch collection, arranged for actual browsing.
+              {t("market_title")}
             </h2>
           </div>
 
-          <div className="md:col-span-5 flex flex-col justify-between gap-6">
-            <p className="max-w-[38ch] text-sm leading-[1.9] tracking-[0.04em] text-[var(--token-text)]/66">
-              This block is separate from the flagship choreography. It behaves like a calmer
-              residential index: browse, refine, compare, and keep the air intact.
-            </p>
-
+          <div className="md:col-span-5 flex flex-col justify-start gap-6 pt-16 md:pt-0">
             <div className="grid grid-cols-2 gap-px border border-[var(--token-text)]/10 bg-[var(--token-text)]/10">
               <div className="bg-[var(--token-bg)] px-4 py-5">
                 <span className="text-[10px] uppercase tracking-[0.3em] text-[var(--token-text)]/35">
-                  Sale Index
+                  {t_shared("sale_index")}
                 </span>
                 <div className="mt-4 font-serif text-4xl leading-none text-[var(--token-text)]">
                   {saleCount}
@@ -148,7 +138,7 @@ export function NLMarketBrowser({ properties }: { properties: Property[] }) {
               </div>
               <div className="bg-[var(--token-bg)] px-4 py-5">
                 <span className="text-[10px] uppercase tracking-[0.3em] text-[var(--token-text)]/35">
-                  Rental Index
+                  {t_shared("rental_index")}
                 </span>
                 <div className="mt-4 font-serif text-4xl leading-none text-[var(--token-text)]">
                   {rentCount}
@@ -162,7 +152,7 @@ export function NLMarketBrowser({ properties }: { properties: Property[] }) {
           <div className="grid grid-cols-1 gap-5 md:grid-cols-12 md:gap-6">
             <div className="border border-[var(--token-text)]/10 bg-[var(--token-surface)]/55 p-5 md:col-span-4 md:p-6">
               <span className="text-[10px] uppercase tracking-[0.34em] text-[var(--token-text)]/35">
-                Market Mode
+                {t_shared("market_mode")}
               </span>
               <div className="mt-5 grid grid-cols-2 gap-px border border-[var(--token-text)]/10 bg-[var(--token-text)]/10">
                 {(["sale", "rent"] as OperationMode[]).map((mode) => {
@@ -182,22 +172,22 @@ export function NLMarketBrowser({ properties }: { properties: Property[] }) {
                           : "bg-[var(--token-bg)] text-[var(--token-text)] hover:bg-[var(--token-text)]/[0.03]"
                       }`}
                     >
-                      <div className="text-[10px] uppercase tracking-[0.3em] opacity-50">Mode</div>
+                      <div className="text-[10px] uppercase tracking-[0.3em] opacity-50">{t_shared("mode")}</div>
                       <div className="mt-6 text-sm uppercase tracking-[0.24em]">
-                        {operationCopy[mode].title}
+                        {mode === "sale" ? t_shared("for_sale") : t_shared("for_rent")}
                       </div>
                     </button>
                   );
                 })}
               </div>
               <p className="mt-4 text-xs leading-[1.8] text-[var(--token-text)]/56">
-                {operationCopy[operation].note}
+                {operation === "sale" ? t_shared("sale_desc") : t_shared("rent_desc")}
               </p>
             </div>
 
             <div className="border border-[var(--token-text)]/10 p-5 md:col-span-4 md:p-6">
               <span className="text-[10px] uppercase tracking-[0.34em] text-[var(--token-text)]/35">
-                Region
+                {t_shared("region")}
               </span>
               <div className="mt-5 flex flex-wrap gap-2">
                 {["All", ...regions].map((item) => {
@@ -223,7 +213,7 @@ export function NLMarketBrowser({ properties }: { properties: Property[] }) {
 
             <div className="border border-[var(--token-text)]/10 p-5 md:col-span-4 md:p-6">
               <span className="text-[10px] uppercase tracking-[0.34em] text-[var(--token-text)]/35">
-                Property Type
+                {t_shared("property_type")}
               </span>
               <div className="mt-5 flex flex-wrap gap-2">
                 {["All", ...propertyTypes].map((item) => {
@@ -251,7 +241,7 @@ export function NLMarketBrowser({ properties }: { properties: Property[] }) {
           <div className="grid grid-cols-1 gap-5 md:grid-cols-12 md:gap-6">
             <div className="border border-[var(--token-text)]/10 p-5 md:col-span-4 md:p-6">
               <span className="text-[10px] uppercase tracking-[0.34em] text-[var(--token-text)]/35">
-                Price Range
+                {t_shared("price_range")}
               </span>
               <div className="mt-5 flex flex-wrap gap-2">
                 {budgetOptions.map((item) => {
@@ -277,7 +267,7 @@ export function NLMarketBrowser({ properties }: { properties: Property[] }) {
 
             <div className="border border-[var(--token-text)]/10 p-5 md:col-span-3 md:p-6">
               <span className="text-[10px] uppercase tracking-[0.34em] text-[var(--token-text)]/35">
-                Bedrooms
+                {t_shared("bedrooms")}
               </span>
               <div className="mt-5 flex flex-wrap gap-2">
                 {[
@@ -309,14 +299,14 @@ export function NLMarketBrowser({ properties }: { properties: Property[] }) {
             <div className="border border-[var(--token-text)]/10 p-5 md:col-span-5 md:p-6">
               <div className="flex items-center justify-between gap-4">
                 <span className="text-[10px] uppercase tracking-[0.34em] text-[var(--token-text)]/35">
-                  Spatial Mood
+                  {t_shared("spatial_mood")}
                 </span>
                 <button
                   type="button"
                   onClick={resetFilters}
                   className="text-[10px] uppercase tracking-[0.28em] text-[var(--token-text)]/46 transition-colors hover:text-[var(--token-text)]"
                 >
-                  Reset
+                  {t_shared("reset")}
                 </button>
               </div>
               <div className="mt-5 flex flex-wrap gap-2">
@@ -347,14 +337,14 @@ export function NLMarketBrowser({ properties }: { properties: Property[] }) {
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div className="space-y-2">
               <span className="text-[10px] uppercase tracking-[0.34em] text-[var(--token-text)]/35">
-                Current Selection
+                {t_shared("current_selection")}
               </span>
               <p className="text-sm leading-[1.8] text-[var(--token-text)]/64">
-                {filteredProperties.length} residences matched to the present mode and refinement.
+                {t_shared("matches_found", { count: filteredProperties.length })}
               </p>
             </div>
             <p className="max-w-[38ch] text-sm leading-[1.8] text-[var(--token-text)]/52">
-              Pinterest in rhythm, Dutch in discipline: denser browsing without losing the air.
+              {t_shared("market_p_2")}
             </p>
           </div>
         </div>
@@ -366,8 +356,7 @@ export function NLMarketBrowser({ properties }: { properties: Property[] }) {
                 No Match
               </span>
               <p className="mt-4 max-w-[42ch] text-sm leading-[1.9] text-[var(--token-text)]/64">
-                That combination is too narrow for the current Dutch index. Ease one filter and
-                the collection will reopen immediately.
+                {t("market_no_match")}
               </p>
             </div>
           ) : (
@@ -387,7 +376,7 @@ export function NLMarketBrowser({ properties }: { properties: Property[] }) {
 
                     <div className="pointer-events-none absolute inset-x-0 top-0 flex items-center justify-between px-4 py-4">
                       <span className="border border-white/15 bg-black/35 px-3 py-2 text-[10px] uppercase tracking-[0.28em] text-white/90 backdrop-blur-sm">
-                        {property.operation === "sale" ? "For Sale" : "For Rent"}
+                        {property.operation === "sale" ? t_shared("for_sale") : t_shared("for_rent")}
                       </span>
                       <span className="text-[10px] uppercase tracking-[0.28em] text-white/72">
                         {property.propertyType}
@@ -413,7 +402,7 @@ export function NLMarketBrowser({ properties }: { properties: Property[] }) {
                     <div className="grid grid-cols-2 gap-px border border-[var(--token-text)]/10 bg-[var(--token-text)]/10">
                       <div className="bg-[var(--token-bg)] px-4 py-4">
                         <span className="text-[10px] uppercase tracking-[0.28em] text-[var(--token-text)]/35">
-                          Price
+                          {t_shared("price")}
                         </span>
                         <div className="mt-3 text-sm uppercase tracking-[0.16em] text-[var(--token-text)]/78">
                           {property.price}
@@ -421,7 +410,7 @@ export function NLMarketBrowser({ properties }: { properties: Property[] }) {
                       </div>
                       <div className="bg-[var(--token-bg)] px-4 py-4">
                         <span className="text-[10px] uppercase tracking-[0.28em] text-[var(--token-text)]/35">
-                          Status
+                          {t_shared("status")}
                         </span>
                         <div className="mt-3 text-xs uppercase tracking-[0.18em] text-[var(--token-text)]/62">
                           {property.availability}
@@ -433,19 +422,19 @@ export function NLMarketBrowser({ properties }: { properties: Property[] }) {
                       <div className="space-y-2">
                         <BedDouble className="h-4 w-4" strokeWidth={1.2} />
                         <div className="text-xs uppercase tracking-[0.24em]">
-                          {property.bedrooms} Bed
+                          {property.bedrooms} {t_shared("bed")}
                         </div>
                       </div>
                       <div className="space-y-2">
                         <Bath className="h-4 w-4" strokeWidth={1.2} />
                         <div className="text-xs uppercase tracking-[0.24em]">
-                          {property.bathrooms} Bath
+                          {property.bathrooms} {t_shared("bath")}
                         </div>
                       </div>
                       <div className="space-y-2">
                         <Expand className="h-4 w-4" strokeWidth={1.2} />
                         <div className="text-xs uppercase tracking-[0.24em]">
-                          {property.sizeSqm} sqm
+                          {property.sizeSqm} {t_shared("sqm")}
                         </div>
                       </div>
                     </div>
@@ -464,7 +453,7 @@ export function NLMarketBrowser({ properties }: { properties: Property[] }) {
                     <div className="flex items-center justify-between border-t border-[var(--token-text)]/10 pt-5">
                       <span className="text-xs text-[var(--token-text)]/55">{property.location}</span>
                       <button className="inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.28em] text-[var(--token-text)]/72 transition-colors hover:text-[var(--token-text)]">
-                        Open Dossier
+                        {t_shared("open_dossier")}
                         <ArrowUpRight className="h-4 w-4" strokeWidth={1.2} />
                       </button>
                     </div>

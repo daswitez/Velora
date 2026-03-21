@@ -40,8 +40,8 @@ export function ConciergeSearch() {
           </div>
 
           <div className="flex gap-6 opacity-60 text-[10px] tracking-widest uppercase text-white mt-4">
-            <span className="border-b border-white/20 pb-1 cursor-pointer hover:text-white hover:border-white transition-colors duration-300">"Quiet Tuscan Villa"</span>
-            <span className="border-b border-white/20 pb-1 cursor-pointer hover:text-white hover:border-white transition-colors duration-300">"Historic Paris Loft"</span>
+            <span className="border-b border-white/20 pb-1 cursor-pointer hover:text-white hover:border-white transition-colors duration-300">&quot;Quiet Tuscan Villa&quot;</span>
+            <span className="border-b border-white/20 pb-1 cursor-pointer hover:text-white hover:border-white transition-colors duration-300">&quot;Historic Paris Loft&quot;</span>
           </div>
 
         </div>

@@ -65,7 +65,7 @@ export function EmbassySelector() {
                 className="relative flex-[0_0_85%] md:flex-[0_0_40%] lg:flex-[0_0_28%] aspect-[3/4]"
               >
                 <div className="w-full h-full relative overflow-hidden group/card bg-[#0A0A0A] select-none block">
-                  <Link href={`/${locale}/${embassy.id.toLowerCase()}`} draggable={false} className="absolute inset-0 z-10" />
+                  <Link href={`/${embassy.id.toLowerCase()}/embassies/${embassy.id.toLowerCase()}`} draggable={false} className="absolute inset-0 z-10" />
                   <img 
                     src={embassy.img} 
                     alt={embassy.name} 
