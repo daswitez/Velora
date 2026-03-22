@@ -1,21 +1,21 @@
 import { countryData } from "@/data/countries";
 import { notFound } from "next/navigation";
-import { CountryHero } from "@/components/country/CountryHero";
-import { CountryFlagship } from "@/components/country/CountryFlagship";
-import { CountryRegions } from "@/components/country/CountryRegions";
-import { CountryMarket } from "@/components/country/CountryMarket";
+import { NLHero } from "./components/NLHero";
+import { NLFlagship } from "./components/NLFlagship";
+import { NLRegions } from "./components/NLRegions";
+import { NLMarket } from "./components/NLMarket";
 import { getTranslations } from "next-intl/server";
 import { translateProfile } from "@/data/translations";
 
 export const dynamic = 'force-dynamic';
 
-export default async function CountryPage({
+export default async function NLCountryPage({
   params
 }: {
-  params: Promise<{ locale: string; country: string }>
+  params: Promise<{ locale: string }>
 }) {
-  const { locale, country } = await params;
-  let profile = countryData[country];
+  const { locale } = await params;
+  let profile = countryData["nl"];
 
   if (!profile) {
     notFound();
@@ -24,13 +24,13 @@ export default async function CountryPage({
   // Intercept the database mock and map the values to local locale dynamically
   profile = translateProfile(profile, locale);
 
-  const t = await getTranslations(country);
+  const t = await getTranslations("nl");
 
   return (
     <main className="flex flex-col overflow-x-hidden min-h-screen">
       {/* 1. Immersive Hero + Integrated AI Search */}
       <section id="concept">
-        <CountryHero heroTitle={t("hero_title")} heroImage={profile.heroImage} countryName={profile.id} />
+        <NLHero heroTitle={t("hero_title")} heroImage={profile.heroImage} countryName={profile.id} />
 
         {/* 2. Editorial Philosophy - Overlapping the Hero for a Premium Transition */}
         <div className="relative z-20 w-full pt-16 pb-24 md:pt-24 md:pb-32 bg-[var(--token-bg)] px-6 shadow-[0_-20px_40px_rgba(0,0,0,0.1)] -mt-12 md:-mt-24 rounded-t-[2rem] md:rounded-t-[4rem]">
@@ -48,17 +48,17 @@ export default async function CountryPage({
 
       {/* 3. Editorial Flagship Grid */}
       <section id="flagships">
-        <CountryFlagship properties={profile.properties} countryId={profile.id} />
+        <NLFlagship properties={profile.properties} countryId={profile.id} />
       </section>
 
       {/* 4. Categorized Bento Grid */}
       <section id="regions">
-        <CountryRegions regions={profile.regionsBento || []} />
+        <NLRegions regions={profile.regionsBento || []} />
       </section>
 
       {/* 5. Market Block */}
       <section id="market">
-        <CountryMarket properties={profile.properties} countryId={profile.id} />
+        <NLMarket properties={profile.properties} countryId={profile.id} />
       </section>
     </main>
   );

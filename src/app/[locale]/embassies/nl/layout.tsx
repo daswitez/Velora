@@ -5,15 +5,12 @@ import { ReactNode } from "react";
 import { GlobalFooter } from "@/components/layout/GlobalFooter";
 import { EmbassyNavbar } from "@/components/layout/EmbassyNavbar";
 
-export default async function EmbassyLayout({
+export default function NLEmbassyLayout({
   children,
-  params,
 }: {
   children: ReactNode;
-  params: Promise<{ locale: string; country: string }>;
 }) {
-  const { country } = await params;
-  const profile = countryData[country];
+  const profile = countryData["nl"];
 
   if (!profile) {
     notFound();

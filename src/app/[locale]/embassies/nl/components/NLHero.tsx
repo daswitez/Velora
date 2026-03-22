@@ -4,13 +4,13 @@ import { useState } from "react";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { useTranslations } from "next-intl";
 
-interface CountryHeroProps {
+interface NLHeroProps {
   heroTitle: string;
   heroImage: string;
   countryName: string;
 }
 
-export function CountryHero({ heroTitle, heroImage, countryName }: CountryHeroProps) {
+export function NLHero({ heroTitle, heroImage, countryName }: NLHeroProps) {
   const t = useTranslations("EmbassySelector");
   const t_shared = useTranslations("country_shared");
   const [query, setQuery] = useState("");

@@ -3,7 +3,7 @@
 import { RegionBento } from "@/data/countries";
 import { useTranslations } from "next-intl";
 
-export function CountryRegions({ regions }: { regions: RegionBento[] }) {
+export function NLRegions({ regions }: { regions: RegionBento[] }) {
   const t_shared = useTranslations("country_shared");
   if (!regions || regions.length === 0) return null;
   return (

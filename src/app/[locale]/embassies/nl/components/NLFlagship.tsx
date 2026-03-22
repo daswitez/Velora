@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import { Property } from "@/data/countries";
 import { ArrowUpRight } from "lucide-react";
 
-export function CountryFlagship({ properties, countryId }: { properties: Property[], countryId: string }) {
+export function NLFlagship({ properties, countryId }: { properties: Property[], countryId: string }) {
   const t = useTranslations(countryId);
   const t_shared = useTranslations("country_shared");
   const featured = properties.filter((p) => p.isFlagship).slice(0, 2);

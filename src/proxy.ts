@@ -5,7 +5,12 @@ export default createMiddleware({
   locales: ['en', 'nl', 'fr', 'it', 'es', 'pt', 'de', 'el'],
  
   // Used when no locale matches
-  defaultLocale: 'en'
+  defaultLocale: 'en',
+  
+  // Disable cookie memory so the main root page ALWAYS resolves to the browser's language
+  // instead of becoming 'stuck' in a specific embassy's locale upon return.
+  localeCookie: false,
+  localeDetection: true
 });
  
 export const config = {

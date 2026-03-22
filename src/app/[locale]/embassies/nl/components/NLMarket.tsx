@@ -53,7 +53,7 @@ function getAspectClass(index: number) {
 
 import { useTranslations } from "next-intl";
 
-export function CountryMarket({ properties, countryId }: { properties: Property[], countryId: string }) {
+export function NLMarket({ properties, countryId }: { properties: Property[], countryId: string }) {
   const t = useTranslations(countryId);
   const t_shared = useTranslations("country_shared");
   const marketProperties = properties.filter((property) => !property.isFlagship);
