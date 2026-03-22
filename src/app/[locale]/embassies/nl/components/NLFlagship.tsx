@@ -3,12 +3,14 @@
 import { useTranslations } from "next-intl";
 import { Property } from "@/data/countries";
 import { ArrowUpRight } from "lucide-react";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import NLDossier from "./NLDossier";
 
 export function NLFlagship({ properties, countryId }: { properties: Property[], countryId: string }) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [viewingProperty, setViewingProperty] = useState<Property | null>(null);
   
   const t = useTranslations(countryId);
   const t_shared = useTranslations("country_shared");
@@ -115,7 +117,10 @@ export function NLFlagship({ properties, countryId }: { properties: Property[], 
                     {prop.summary}
                   </p>
 
-                  <button className="mt-auto group/btn inline-flex items-center justify-between border border-[var(--token-text)]/20 px-6 py-4 transition-colors hover:bg-[var(--token-text)] hover:text-[var(--token-bg)]">
+                  <button 
+                    onClick={() => setViewingProperty(prop)}
+                    className="mt-auto group/btn inline-flex items-center justify-between border border-[var(--token-text)]/20 px-6 py-4 transition-colors hover:bg-[var(--token-text)] hover:text-[var(--token-bg)]"
+                  >
                     <span className="text-xs tracking-[0.2em] uppercase">
                       {t("view_property")}
                     </span>
@@ -129,6 +134,7 @@ export function NLFlagship({ properties, countryId }: { properties: Property[], 
         </div>
 
       </div>
+      <NLDossier property={viewingProperty} onClose={() => setViewingProperty(null)} />
     </section>
   );
 }

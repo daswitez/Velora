@@ -116,7 +116,10 @@
     "nav_regions": "Regions",
     "nav_market": "Market Index",
     "prev": "Prev",
-    "next": "Next"
+    "next": "Next",
+    "amenities": "Amenities",
+    "about_property": "About this Property",
+    "inquire": "Inquire"
   },
   "nl": {
     "hero_title": "Order & Light",

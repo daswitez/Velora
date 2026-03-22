@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { ArrowUpRight, Bath, BedDouble, Expand, SlidersHorizontal, Sparkles, ArrowRight, ArrowLeft } from "lucide-react";
 import { Property } from "@/data/countries";
+import NLDossier from "./NLDossier";
 
 type OperationMode = "sale" | "rent";
 type BudgetFilter =
@@ -70,6 +71,9 @@ export function NLMarket({ properties, countryId }: { properties: Property[], co
   const ITEMS_PER_PAGE = 4;
   const [query, setQuery] = useState("");
   const [isSearching, setIsSearching] = useState(false);
+  
+  // Property Dossier State
+  const [viewingProperty, setViewingProperty] = useState<Property | null>(null);
 
   const filterKey = `${operation}-${region}-${propertyType}-${budget}-${bedrooms}-${feature}-${activeCuratorial}`;
   const [prevFilterKey, setPrevFilterKey] = useState(filterKey);
@@ -591,7 +595,10 @@ export function NLMarket({ properties, countryId }: { properties: Property[], co
 
                     <div className="flex items-center justify-between border-t border-[var(--token-text)]/10 pt-5">
                       <span className="text-xs text-[var(--token-text)]/55">{property.location}</span>
-                      <button className="inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.28em] text-[var(--token-text)]/72 transition-colors hover:text-[var(--token-text)]">
+                      <button 
+                        onClick={() => setViewingProperty(property)}
+                        className="inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.28em] text-[var(--token-text)]/72 transition-colors hover:text-[var(--token-text)]"
+                      >
                         {t_shared("open_dossier")}
                         <ArrowUpRight className="h-4 w-4" strokeWidth={1.2} />
                       </button>
@@ -641,6 +648,7 @@ export function NLMarket({ properties, countryId }: { properties: Property[], co
           </div>
         </div>
       </div>
+      <NLDossier property={viewingProperty} onClose={() => setViewingProperty(null)} />
     </section>
   );
 }
