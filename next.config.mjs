@@ -8,6 +8,14 @@ const withNextIntl = createNextIntlPlugin(
 const nextConfig = {
   // Allow hot module replacement testing from mobile devices on local network
   allowedDevOrigins: ['192.168.1.22', "localhost:3000"],
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+    ],
+  },
 };
 
 export default withNextIntl(nextConfig);

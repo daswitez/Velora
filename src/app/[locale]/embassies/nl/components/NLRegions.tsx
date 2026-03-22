@@ -1,10 +1,11 @@
 "use client";
+import { useEffect, useRef } from "react";
 
 import { RegionBento } from "@/data/countries";
 import { useTranslations } from "next-intl";
-import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import Image from "next/image";
 
 export function NLRegions({ regions }: { regions: RegionBento[] }) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -14,25 +15,27 @@ export function NLRegions({ regions }: { regions: RegionBento[] }) {
     gsap.registerPlugin(ScrollTrigger);
     if (!containerRef.current) return;
 
-    const cards = containerRef.current.querySelectorAll('.bento-card');
-    
-    gsap.fromTo(cards, 
-      { opacity: 0, clipPath: "inset(10% 10% 10% 10%)" },
-      {
-        opacity: 1, 
-        clipPath: "inset(0% 0% 0% 0%)",
-        duration: 1.5,
-        stagger: 0.15,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top 75%",
+    const ctx = gsap.context(() => {
+      const cards = containerRef.current!.querySelectorAll('.bento-card');
+      
+      gsap.fromTo(cards, 
+        { opacity: 0, clipPath: "inset(10% 10% 10% 10%)" },
+        {
+          opacity: 1, 
+          clipPath: "inset(0% 0% 0% 0%)",
+          duration: 1.5,
+          stagger: 0.15,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top 75%",
+          }
         }
-      }
-    );
+      );
+    }, containerRef);
 
     return () => {
-      ScrollTrigger.getAll().forEach(t => t.kill());
+      ctx.revert();
     };
   }, []);
 
@@ -59,11 +62,12 @@ export function NLRegions({ regions }: { regions: RegionBento[] }) {
               className={`bento-card relative overflow-hidden group cursor-pointer ${region.colSpan} ${region.rowSpan} bg-[var(--token-text)]/5`}
             >
               {/* Image with extreme zoom effect */}
-              <img 
+              <Image 
                 src={region.img} 
                 alt={region.name}
-                draggable={false}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-[2.5s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110 opacity-70 group-hover:opacity-100 z-10"
+                fill
+                sizes="(max-width: 768px) 100vw, 33vw"
+                className="object-cover transition-transform duration-[2.5s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110 opacity-70 group-hover:opacity-100 z-10"
               />
               
               {/* Gradient specific for text readability */}

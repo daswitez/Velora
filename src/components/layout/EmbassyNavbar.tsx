@@ -31,6 +31,8 @@ export function EmbassyNavbar({ profile }: { profile: CountryProfile }) {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
+  if (pathname?.includes("/curated/")) return null;
+
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-[100] transition-all duration-700 pointer-events-none ${

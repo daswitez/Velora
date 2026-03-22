@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
+import Image from "next/image";
 import { ArrowUpRight, Bath, BedDouble, Expand, SlidersHorizontal, Sparkles, ArrowRight, ArrowLeft } from "lucide-react";
 import { Property } from "@/data/countries";
 import NLDossier from "./NLDossier";
@@ -51,13 +52,16 @@ function getAspectClass(index: number) {
 
   return pattern[index % pattern.length];
 }
-
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
+import Link from "next/link";
+import { curatorialThemes } from "../curatorialThemes";
 
 export function NLMarket({ properties, countryId }: { properties: Property[], countryId: string }) {
   const t = useTranslations(countryId);
+  const locale = useLocale();
   const t_shared = useTranslations("country_shared");
   const marketProperties = properties.filter((property) => !property.isFlagship);
+  
   const [operation, setOperation] = useState<OperationMode>("sale");
   const [region, setRegion] = useState("All");
   const [propertyType, setPropertyType] = useState("All");
@@ -83,48 +87,19 @@ export function NLMarket({ properties, countryId }: { properties: Property[], co
     setPrevFilterKey(filterKey);
   }
 
-  const curatorialThemes = [
-    {
-      id: "waterfront",
-      title: "Meesters van het Water",
-      subtitle: "Waterfront Heritage",
-      image: "https://images.unsplash.com/photo-1549487442-fbbc2e2cccb8?q=80&w=1600&auto=format&fit=crop",
-      features: ["Canal View", "Dock Access", "River Outlook", "Canal Edge"]
-    },
-    {
-      id: "industrial",
-      title: "Industrieel Modernisme",
-      subtitle: "Brutalist Scale",
-      image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop",
-      features: ["Brick Warehouse", "Concrete Frame", "Double Height", "Glass Envelope"]
-    },
-    {
-      id: "sanctuary",
-      title: "Gezelligheid & Rust",
-      subtitle: "Private Sanctuaries",
-      image: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1600&auto=format&fit=crop",
-      features: ["Quiet Courtyard", "Inner Courtyard", "Private Garden", "Private Woods"]
-    },
-    {
-      id: "light",
-      title: "De Cultus van het Licht",
-      subtitle: "Sunlight Capture",
-      image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=1600&auto=format&fit=crop",
-      features: ["South Light", "Solar Envelope", "Wraparound Glass", "Roof Terrace"]
-    }
-  ];
-
-  const regions = Array.from(
+  const regions = useMemo(() => Array.from(
     new Set(marketProperties.map((property) => property.region).filter(Boolean))
-  ) as string[];
-  const propertyTypes = Array.from(
-    new Set(marketProperties.map((property) => property.propertyType).filter(Boolean))
-  ) as string[];
-  const featureOptions = Array.from(
-    new Set(marketProperties.flatMap((property) => property.features ?? []))
-  ).slice(0, 8);
+  ) as string[], [marketProperties]);
 
-  const filteredProperties = marketProperties.filter((property) => {
+  const propertyTypes = useMemo(() => Array.from(
+    new Set(marketProperties.map((property) => property.propertyType).filter(Boolean))
+  ) as string[], [marketProperties]);
+
+  const featureOptions = useMemo(() => Array.from(
+    new Set(marketProperties.flatMap((property) => property.features ?? []))
+  ).slice(0, 8), [marketProperties]);
+
+  const filteredProperties = useMemo(() => marketProperties.filter((property) => {
     const operationMatch = property.operation === operation;
     const regionMatch = region === "All" || property.region === region;
     const typeMatch = propertyType === "All" || property.propertyType === propertyType;
@@ -136,7 +111,7 @@ export function NLMarket({ properties, countryId }: { properties: Property[], co
       : true;
 
     return operationMatch && regionMatch && typeMatch && budgetMatch && bedroomMatch && featureMatch && curatorialMatch;
-  });
+  }), [marketProperties, operation, region, propertyType, budget, bedrooms, feature, activeCuratorial]);
 
   const saleCount = marketProperties.filter((property) => property.operation === "sale").length;
   const rentCount = marketProperties.filter((property) => property.operation === "rent").length;
@@ -221,35 +196,25 @@ export function NLMarket({ properties, countryId }: { properties: Property[], co
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {curatorialThemes.map(theme => {
-              const isActive = activeCuratorial === theme.id;
               return (
-                <button
+                <Link
                   key={theme.id}
-                  type="button"
-                  onClick={() => {
-                    setActiveCuratorial(isActive ? null : theme.id);
-                    setFeature("All"); // Reset sub-features to avoid conflicts
-                  }}
-                  className={`relative aspect-[3/4] overflow-hidden group transition-all duration-700 ${
-                    isActive
-                      ? 'border-[2px] border-[var(--token-text)] opacity-100'
-                      : 'border-[1px] border-[var(--token-text)]/10 hover:border-[var(--token-text)]/30 opacity-70 hover:opacity-100'
-                  }`}
+                  href={`/${locale}/embassies/nl/curated/${theme.id}`}
+                  className="relative aspect-[3/4] overflow-hidden group transition-all duration-700 border-[1px] border-[var(--token-text)]/10 hover:border-[var(--token-text)]/30 opacity-70 hover:opacity-100"
                 >
-                  <img 
+                  <Image 
                     src={theme.image} 
-                    alt={theme.title} 
-                    draggable={false}
-                    className={`absolute inset-0 w-full h-full object-cover transition-transform duration-[2.5s] ease-[cubic-bezier(0.16,1,0.3,1)] ${
-                      isActive ? 'scale-100' : 'scale-[1.08] group-hover:scale-[1.02]'
-                    } mix-blend-luminosity`}
+                    alt={theme.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 25vw"
+                    className="object-cover transition-transform duration-[2.5s] ease-[cubic-bezier(0.16,1,0.3,1)] scale-[1.08] group-hover:scale-[1.02] mix-blend-luminosity"
                   />
-                  <div className={`absolute inset-0 bg-[var(--token-text)] transition-opacity duration-1000 ${isActive ? 'opacity-0' : 'opacity-[0.15] group-hover:opacity-0'}`} />
+                  <div className="absolute inset-0 bg-[var(--token-text)] transition-opacity duration-1000 opacity-[0.15] group-hover:opacity-0" />
                   <div className="absolute inset-x-0 bottom-0 p-6 md:p-8 bg-gradient-to-t from-[#050505]/90 via-[#050505]/50 to-transparent flex flex-col items-start text-left z-10 h-1/2 justify-end">
                     <span className="text-[10px] uppercase tracking-[0.3em] text-white/50 mb-3 font-medium">{theme.subtitle}</span>
                     <h3 className="font-sans font-bold uppercase text-2xl tracking-tighter text-white leading-[1.05]">{theme.title}</h3>
                   </div>
-                </button>
+                </Link>
               );
             })}
           </div>
@@ -510,11 +475,12 @@ export function NLMarket({ properties, countryId }: { properties: Property[], co
                   className="group mb-6 break-inside-avoid border border-[var(--token-text)]/10 bg-[var(--token-bg)] transition-colors duration-500 hover:border-[var(--token-text)]/20"
                 >
                   <div className={`relative overflow-hidden bg-[var(--token-surface)] ${getAspectClass(index)}`}>
-                    <img
+                    <Image
                       src={property.imgUrl}
                       alt={property.title}
-                      draggable={false}
-                      className="h-full w-full object-cover transition-transform duration-[1.8s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03]"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover transition-transform duration-[1.8s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03]"
                     />
 
                     <div className="pointer-events-none absolute inset-x-0 top-0 flex items-center justify-between px-4 py-4">

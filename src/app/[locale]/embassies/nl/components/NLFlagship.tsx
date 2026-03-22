@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import NLDossier from "./NLDossier";
+import Image from "next/image";
 
 export function NLFlagship({ properties, countryId }: { properties: Property[], countryId: string }) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -20,26 +21,28 @@ export function NLFlagship({ properties, countryId }: { properties: Property[], 
     gsap.registerPlugin(ScrollTrigger);
     if (!containerRef.current) return;
 
-    const items = containerRef.current.querySelectorAll('.flagship-item');
-    
-    items.forEach((item) => {
-      gsap.fromTo(item, 
-        { opacity: 0, y: 100 },
-        {
-          opacity: 1, 
-          y: 0,
-          duration: 1.5,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: item,
-            start: "top 80%",
+    const ctx = gsap.context(() => {
+      const items = containerRef.current!.querySelectorAll('.flagship-item');
+      
+      items.forEach((item) => {
+        gsap.fromTo(item, 
+          { opacity: 0, y: 100 },
+          {
+            opacity: 1, 
+            y: 0,
+            duration: 1.5,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: item,
+              start: "top 80%",
+            }
           }
-        }
-      );
-    });
+        );
+      });
+    }, containerRef);
 
     return () => {
-      ScrollTrigger.getAll().forEach(t => t.kill());
+      ctx.revert();
     };
   }, []);
 
@@ -76,11 +79,12 @@ export function NLFlagship({ properties, countryId }: { properties: Property[], 
                 {/* Image Block */}
                 <div className={`w-full md:w-3/5 overflow-hidden bg-[var(--token-surface)] ${isEven ? 'md:order-2' : ''}`}>
                   <div className="aspect-[4/3] w-full relative">
-                    <img 
+                    <Image 
                       src={prop.imgUrl} 
                       alt={prop.title}
-                      className="absolute inset-0 w-full h-full object-cover grayscale-[0.05] transition-transform duration-[2s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03]"
-                      draggable={false}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 60vw"
+                      className="object-cover grayscale-[0.05] transition-transform duration-[2s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03]"
                     />
                   </div>
                 </div>

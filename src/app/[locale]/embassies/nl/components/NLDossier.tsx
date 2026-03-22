@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { X, Bath, BedDouble, Expand, CheckCircle2 } from "lucide-react";
 import { Property } from "@/data/countries";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 interface NLDossierProps {
   property: Property | null;
@@ -83,11 +84,13 @@ export default function NLDossier({ property, onClose }: NLDossierProps) {
 
         {/* Left Side: Photography (45%) - Sticky */}
         <div className="w-full md:w-[45%] h-[40vh] md:h-full relative border-b md:border-b-0 md:border-r border-[var(--token-text)]/15 flex-shrink-0">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             src={property.imgUrl}
             alt={property.title}
-            className="absolute inset-0 w-full h-full object-cover object-center"
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            priority={true}
+            className="object-cover object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[var(--token-bg)]/40 to-transparent" />
           
@@ -192,6 +195,7 @@ export default function NLDossier({ property, onClose }: NLDossierProps) {
                   width="100%" 
                   height="100%" 
                   frameBorder="0" 
+                  loading="lazy"
                   style={{ border: 0 }}
                   src={`https://maps.google.com/maps?q=${encodeURIComponent(property.location)}&t=&z=14&ie=UTF8&iwloc=&output=embed`} 
                   className="grayscale opacity-70 contrast-125 hover:opacity-100 transition-opacity duration-1000 absolute inset-0"
