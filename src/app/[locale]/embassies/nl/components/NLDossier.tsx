@@ -69,7 +69,7 @@ export default function NLDossier({ property, onClose }: NLDossierProps) {
 
       {/* Main Dossier Window */}
       <div 
-        className={`relative z-10 w-full h-full md:w-[95vw] md:h-[95vh] md:max-h-[1000px] max-w-[1600px] flex flex-col md:flex-row bg-[var(--token-bg)] shadow-[0_0_80px_rgba(0,0,0,0.15)] ring-1 ring-[var(--token-text)]/10 overflow-hidden transition-transform duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] ${
+        className={`relative z-10 w-full h-full md:w-[98vw] md:h-[98vh] md:max-h-[1200px] max-w-[1800px] flex flex-col md:flex-row bg-[var(--token-bg)] shadow-[0_0_120px_rgba(0,0,0,0.2)] md:ring-1 ring-[var(--token-text)]/10 overflow-hidden transition-transform duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] ${
           isVisible ? "translate-y-0 scale-100" : "translate-y-8 scale-[0.98]"
         }`}
       >
@@ -81,8 +81,8 @@ export default function NLDossier({ property, onClose }: NLDossierProps) {
           <X className="h-5 w-5" strokeWidth={1.5} />
         </button>
 
-        {/* Left Side: Photography (50%) - Sticky */}
-        <div className="w-full md:w-1/2 h-[40vh] md:h-full relative border-b md:border-b-0 md:border-r border-[var(--token-text)]/10 flex-shrink-0">
+        {/* Left Side: Photography (45%) - Sticky */}
+        <div className="w-full md:w-[45%] h-[40vh] md:h-full relative border-b md:border-b-0 md:border-r border-[var(--token-text)]/15 flex-shrink-0">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={property.imgUrl}
@@ -98,84 +98,90 @@ export default function NLDossier({ property, onClose }: NLDossierProps) {
           </div>
         </div>
 
-        {/* Right Side: Data Typography (50%) - Scrolling */}
-        <div className="w-full md:w-1/2 flex-1 md:h-full flex flex-col bg-[var(--token-bg)] overflow-y-auto custom-scrollbar relative">
-          <div className="p-8 md:p-12 lg:p-16 flex-1 flex flex-col">
+        {/* Right Side: Data Typography (55%) - Scrolling */}
+        <div 
+          className="w-full md:w-[55%] flex-1 md:h-full flex flex-col bg-[var(--token-bg)] overflow-y-auto custom-scrollbar relative"
+          data-lenis-prevent="true"
+        >
+          <div className="px-8 py-12 md:px-16 md:py-20 lg:px-24 lg:py-24 flex-1 flex flex-col">
             
             {/* Header Data */}
-            <div className="mb-12">
-              <span className="text-[10px] uppercase tracking-[0.3em] text-[var(--token-text)]/40 mb-4 block">
-                {property.location}
-              </span>
-              <h2 className="text-3xl lg:text-5xl font-sans tracking-tighter text-[var(--token-text)] mb-8 leading-[1.1]">
+            <div className="mb-20">
+              <div className="flex items-center gap-6 mb-8">
+                <span className="text-[10px] uppercase tracking-[0.4em] text-[var(--token-text)]/40 font-bold">
+                  {property.location}
+                </span>
+                <div className="flex-1 h-px bg-[var(--token-text)]/10" />
+              </div>
+              
+              <h2 className="text-4xl lg:text-[4rem] font-sans font-bold tracking-tighter text-[var(--token-text)] mb-12 leading-[0.95] uppercase text-balance">
                 {property.title}
               </h2>
 
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-[var(--token-text)]/10 border border-[var(--token-text)]/10">
-                <div className="bg-[var(--token-bg)] p-5">
-                  <span className="text-[9px] uppercase tracking-[0.2em] text-[var(--token-text)]/40 block mb-2">
+              <div className="grid grid-cols-2 gap-12 border-t border-[var(--token-text)]/15 pt-8 mt-12">
+                <div>
+                  <span className="text-[9px] uppercase tracking-[0.3em] text-[var(--token-text)]/40 block mb-4 font-bold">
                     {t_shared("price")}
                   </span>
-                  <div className="text-sm font-semibold tracking-wider text-[var(--token-text)]">
+                  <div className="text-2xl lg:text-4xl font-sans tracking-tighter text-[var(--token-text)]">
                     {property.price}
                   </div>
                 </div>
-                <div className="bg-[var(--token-bg)] p-5">
-                  <span className="text-[9px] uppercase tracking-[0.2em] text-[var(--token-text)]/40 block mb-2">
+                <div>
+                  <span className="text-[9px] uppercase tracking-[0.3em] text-[var(--token-text)]/40 block mb-4 font-bold">
                     {t_shared("status")}
                   </span>
-                  <div className="text-[11px] uppercase tracking-wider text-[var(--token-text)]/80 mt-1">
+                  <div className="text-sm uppercase tracking-[0.2em] text-[var(--token-text)]/80 mt-1">
                     {property.availability}
                   </div>
                 </div>
-                <div className="bg-[var(--token-bg)] p-5 col-span-2 flex items-center justify-around">
-                  <div className="flex flex-col items-center">
-                    <BedDouble className="h-4 w-4 mb-2 text-[var(--token-text)]/60" strokeWidth={1} />
-                    <span className="text-[10px] uppercase tracking-widest">{property.bedrooms}</span>
-                  </div>
-                  <div className="w-px h-6 bg-[var(--token-text)]/10" />
-                  <div className="flex flex-col items-center">
-                    <Bath className="h-4 w-4 mb-2 text-[var(--token-text)]/60" strokeWidth={1} />
-                    <span className="text-[10px] uppercase tracking-widest">{property.bathrooms}</span>
-                  </div>
-                  <div className="w-px h-6 bg-[var(--token-text)]/10" />
-                  <div className="flex flex-col items-center">
-                    <Expand className="h-4 w-4 mb-2 text-[var(--token-text)]/60" strokeWidth={1} />
-                    <span className="text-[10px] uppercase tracking-widest">{property.sizeSqm}m²</span>
-                  </div>
+              </div>
+
+              {/* Minimalist Tech Specs (Airy) */}
+              <div className="flex flex-wrap gap-12 lg:gap-20 border-y border-[var(--token-text)]/15 py-10 my-10">
+                <div className="flex items-baseline gap-3">
+                  <span className="text-4xl lg:text-6xl font-light tracking-tighter leading-none">{property.bedrooms}</span>
+                  <span className="text-[9px] uppercase tracking-[0.4em] text-[var(--token-text)]/40 font-bold">Bed</span>
+                </div>
+                <div className="flex items-baseline gap-3">
+                  <span className="text-4xl lg:text-6xl font-light tracking-tighter leading-none">{property.bathrooms}</span>
+                  <span className="text-[9px] uppercase tracking-[0.4em] text-[var(--token-text)]/40 font-bold">Bath</span>
+                </div>
+                <div className="flex items-baseline gap-3">
+                  <span className="text-4xl lg:text-6xl font-light tracking-tighter leading-none">{property.sizeSqm}</span>
+                  <span className="text-[9px] uppercase tracking-[0.4em] text-[var(--token-text)]/40 font-bold">m²</span>
                 </div>
               </div>
             </div>
 
             {/* Narrative */}
-            <div className="mb-12 relative">
-              <div className="w-8 h-px bg-[var(--token-text)]/20 mb-6" />
-              <h3 className="text-[10px] uppercase tracking-[0.3em] text-[var(--token-text)]/40 mb-4">
+            <div className="mb-20">
+              <h3 className="text-[10px] uppercase tracking-[0.4em] text-[var(--token-text)]/40 font-bold mb-8 pb-4 border-b border-[var(--token-text)]/10">
                 {t_shared("about_property")}
               </h3>
-              <p className="text-[var(--token-text)]/70 leading-[1.9] text-sm md:text-base font-medium max-w-[50ch]">
+              <p className="text-[var(--token-text)]/70 leading-[2.2] text-sm md:text-base font-medium columns-1 lg:columns-2 gap-16">
                 {property.summary}
               </p>
             </div>
 
             {/* Amenities Grid */}
-            <div className="mb-16">
-              <h3 className="text-[10px] uppercase tracking-[0.3em] text-[var(--token-text)]/40 mb-6 border-b border-[var(--token-text)]/10 pb-4">
+            <div className="mb-20">
+              <h3 className="text-[10px] uppercase tracking-[0.4em] text-[var(--token-text)]/40 font-bold mb-8 pb-4 border-b border-[var(--token-text)]/10">
                 {t_shared("amenities")}
               </h3>
-              <ul className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-8">
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-12">
                 {(property.features ?? []).map((feature, idx) => (
-                  <li key={idx} className="flex items-center gap-3 text-sm text-[var(--token-text)]/80 tracking-wide">
-                    <CheckCircle2 className="h-3 w-3 text-[var(--token-text)]/40" strokeWidth={1.5} />
+                  <li key={idx} className="flex items-center justify-between text-sm text-[var(--token-text)]/80 tracking-wide border-b border-[var(--token-text)]/5 pb-3">
                     {feature}
+                    <CheckCircle2 className="h-3 w-3 text-[var(--token-text)]/30" strokeWidth={1.5} />
                   </li>
                 ))}
               </ul>
             </div>
 
             {/* Map Section (API-Free Embed) */}
-            <div className="mb-16">
-              <h3 className="text-[10px] uppercase tracking-[0.3em] text-[var(--token-text)]/40 mb-6 border-b border-[var(--token-text)]/10 pb-4">
+            <div className="mb-12">
+              <h3 className="text-[10px] uppercase tracking-[0.4em] text-[var(--token-text)]/40 font-bold mb-8 pb-4 border-b border-[var(--token-text)]/10">
                 {t_shared("location")}
               </h3>
               <p className="text-xs uppercase tracking-widest text-[var(--token-text)]/60 mb-6 font-semibold">
