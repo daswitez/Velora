@@ -2,30 +2,61 @@
 
 import { RegionBento } from "@/data/countries";
 import { useTranslations } from "next-intl";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 export function NLRegions({ regions }: { regions: RegionBento[] }) {
+  const containerRef = useRef<HTMLDivElement>(null);
   const t_shared = useTranslations("country_shared");
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    if (!containerRef.current) return;
+
+    const cards = containerRef.current.querySelectorAll('.bento-card');
+    
+    gsap.fromTo(cards, 
+      { opacity: 0, clipPath: "inset(10% 10% 10% 10%)" },
+      {
+        opacity: 1, 
+        clipPath: "inset(0% 0% 0% 0%)",
+        duration: 1.5,
+        stagger: 0.15,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 75%",
+        }
+      }
+    );
+
+    return () => {
+      ScrollTrigger.getAll().forEach(t => t.kill());
+    };
+  }, []);
+
   if (!regions || regions.length === 0) return null;
   return (
     <section className="w-full py-32 md:py-48 px-6 bg-[var(--token-bg)]">
       <div className="max-w-[1400px] mx-auto">
         
         {/* Header */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 mb-16 md:mb-24 px-4">
-          <h2 className="font-serif text-5xl md:text-7xl lg:text-[6rem] tracking-tight text-[var(--token-text)] leading-[1] max-w-[10ch]">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 mb-16 md:mb-32 px-4 border-l border-[var(--token-text)]/10 pl-8">
+          <h2 className="font-sans uppercase text-3xl md:text-5xl lg:text-[5rem] tracking-tighter leading-[0.9] text-[var(--token-text)]">
             {t_shared("regions_title")}
           </h2>
-          <p className="max-w-[40ch] text-[var(--token-text)]/70 text-sm md:text-base leading-relaxed text-balance">
+          <p className="max-w-[40ch] text-[var(--token-text)]/70 text-[10px] md:text-xs uppercase tracking-[0.1em] font-medium leading-[2.2] text-balance border-l border-[var(--token-text)]/10 pl-6">
             {t_shared("regions_desc")}
           </p>
         </div>
 
         {/* Bento Box Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6 auto-rows-[300px] md:auto-rows-[450px]">
+        <div ref={containerRef} className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 auto-rows-[300px] md:auto-rows-[450px]">
           {regions.map((region) => (
             <div 
               key={region.id}
-              className={`relative overflow-hidden group cursor-pointer ${region.colSpan} ${region.rowSpan} bg-black`}
+              className={`bento-card relative overflow-hidden group cursor-pointer ${region.colSpan} ${region.rowSpan} bg-[var(--token-text)]/5`}
             >
               {/* Image with extreme zoom effect */}
               <img 
@@ -44,14 +75,14 @@ export function NLRegions({ regions }: { regions: RegionBento[] }) {
                   <span className="text-white/70 text-xs tracking-[0.3em] uppercase font-sans transform transition-transform duration-[1s] ease-[cubic-bezier(0.16,1,0.3,1)] translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100">
                     {region.desc}
                   </span>
-                  <h3 className="text-white font-serif text-3xl md:text-5xl tracking-wide transform transition-transform duration-[1s] ease-[cubic-bezier(0.16,1,0.3,1)] translate-y-6 group-hover:translate-y-0">
+                  <h3 className="text-white font-sans font-bold uppercase text-2xl md:text-4xl tracking-tighter transform transition-transform duration-[1s] ease-[cubic-bezier(0.16,1,0.3,1)] translate-y-6 group-hover:translate-y-0">
                     {region.name}
                   </h3>
                 </div>
                 
                 {/* View CTA */}
-                <div className="w-14 h-14 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center transform transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] scale-0 group-hover:scale-100 opacity-0 group-hover:opacity-100 border border-white/20 hover:bg-white hover:text-black text-white">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                <div className="w-12 h-12 rounded-none bg-white border border-white flex items-center justify-center transform transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] scale-0 group-hover:scale-100 opacity-0 group-hover:opacity-100 hover:bg-black hover:border-black text-black hover:text-white">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square" strokeLinejoin="miter"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                 </div>
               </div>
             </div>

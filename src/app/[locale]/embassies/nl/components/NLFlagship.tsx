@@ -3,11 +3,43 @@
 import { useTranslations } from "next-intl";
 import { Property } from "@/data/countries";
 import { ArrowUpRight } from "lucide-react";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 export function NLFlagship({ properties, countryId }: { properties: Property[], countryId: string }) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  
   const t = useTranslations(countryId);
   const t_shared = useTranslations("country_shared");
   const featured = properties.filter((p) => p.isFlagship).slice(0, 2);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    if (!containerRef.current) return;
+
+    const items = containerRef.current.querySelectorAll('.flagship-item');
+    
+    items.forEach((item) => {
+      gsap.fromTo(item, 
+        { opacity: 0, y: 100 },
+        {
+          opacity: 1, 
+          y: 0,
+          duration: 1.5,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: item,
+            start: "top 80%",
+          }
+        }
+      );
+    });
+
+    return () => {
+      ScrollTrigger.getAll().forEach(t => t.kill());
+    };
+  }, []);
 
   if (featured.length === 0) return null;
 
@@ -21,7 +53,7 @@ export function NLFlagship({ properties, countryId }: { properties: Property[], 
             <span className="inline-flex items-center gap-3 text-[10px] uppercase tracking-[0.34em] text-[var(--token-text)]/38 mb-6">
               {t("flagship_label")}
             </span>
-            <h2 className="font-serif text-4xl md:text-6xl tracking-tight text-[var(--token-text)] leading-[1.05] text-balance">
+            <h2 className="font-sans font-bold uppercase text-5xl md:text-[5.5rem] tracking-tighter text-[var(--token-text)] leading-[0.9] text-balance">
               {t("marketing_title")}
             </h2>
           </div>
@@ -33,11 +65,11 @@ export function NLFlagship({ properties, countryId }: { properties: Property[], 
         </div>
 
         {/* Editorial Grids */}
-        <div className="space-y-32">
+        <div ref={containerRef} className="space-y-32">
           {featured.map((prop, idx) => {
             const isEven = idx % 2 !== 0;
             return (
-              <div key={prop.id} className="relative group flex flex-col md:flex-row gap-8 lg:gap-16 items-stretch">
+              <div key={prop.id} className="flagship-item relative group flex flex-col md:flex-row gap-8 lg:gap-16 items-stretch">
                 
                 {/* Image Block */}
                 <div className={`w-full md:w-3/5 overflow-hidden bg-[var(--token-surface)] ${isEven ? 'md:order-2' : ''}`}>
@@ -60,7 +92,7 @@ export function NLFlagship({ properties, countryId }: { properties: Property[], 
                     <div className="flex-1 h-px bg-[var(--token-text)]/10" />
                   </div>
                   
-                  <h3 className="font-serif text-[var(--token-text)] text-3xl lg:text-5xl tracking-wide leading-tight mb-6">
+                  <h3 className="font-sans font-bold uppercase text-[var(--token-text)] text-4xl lg:text-[4rem] tracking-tighter leading-[0.9] mb-6">
                     {prop.title}
                   </h3>
                   

@@ -121,7 +121,7 @@ export function NLMarket({ properties, countryId }: { properties: Property[], co
               <SlidersHorizontal className="h-3.5 w-3.5" strokeWidth={1.2} />
               {t("market_tag")}
             </span>
-            <h2 className="mt-5 max-w-[11ch] font-serif text-4xl leading-[0.94] tracking-tight text-[var(--token-text)] md:text-6xl">
+            <h2 className="mt-5 max-w-[11ch] font-sans font-bold uppercase text-4xl leading-[0.94] tracking-tighter text-[var(--token-text)] md:text-[5rem]">
               {t("market_title")}
             </h2>
           </div>
@@ -132,7 +132,7 @@ export function NLMarket({ properties, countryId }: { properties: Property[], co
                 <span className="text-[10px] uppercase tracking-[0.3em] text-[var(--token-text)]/35">
                   {t_shared("sale_index")}
                 </span>
-                <div className="mt-4 font-serif text-4xl leading-none text-[var(--token-text)]">
+                <div className="mt-4 font-sans font-bold text-4xl tracking-tighter leading-none text-[var(--token-text)]">
                   {saleCount}
                 </div>
               </div>
@@ -140,7 +140,7 @@ export function NLMarket({ properties, countryId }: { properties: Property[], co
                 <span className="text-[10px] uppercase tracking-[0.3em] text-[var(--token-text)]/35">
                   {t_shared("rental_index")}
                 </span>
-                <div className="mt-4 font-serif text-4xl leading-none text-[var(--token-text)]">
+                <div className="mt-4 font-sans font-bold text-4xl tracking-tighter leading-none text-[var(--token-text)]">
                   {rentCount}
                 </div>
               </div>
@@ -391,10 +391,10 @@ export function NLMarket({ properties, countryId }: { properties: Property[], co
                         <span className="h-1 w-1 rounded-full bg-[var(--token-text)]/18" />
                         <span>{property.collection}</span>
                       </div>
-                      <h3 className="font-serif text-3xl leading-[1.02] tracking-tight text-[var(--token-text)]">
+                      <h3 className="font-sans font-bold uppercase text-xl leading-[1.02] tracking-tighter text-[var(--token-text)] truncate">
                         {property.title}
                       </h3>
-                      <p className="text-sm leading-[1.82] text-[var(--token-text)]/64">
+                      <p className="text-[10px] uppercase tracking-[0.05em] leading-[1.9] text-[var(--token-text)]/60 line-clamp-2">
                         {property.summary}
                       </p>
                     </div>

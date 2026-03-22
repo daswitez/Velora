@@ -50,7 +50,7 @@ export function NLHero({ heroTitle, heroImage, countryName }: NLHeroProps) {
           <span className="text-white/60 tracking-[0.3em] uppercase text-xs font-sans">
             {t_shared("embassy_of")} {t(`${countryName}_name`)}
           </span>
-          <h1 className="font-serif text-white text-6xl md:text-8xl lg:text-[7.5rem] tracking-tight leading-[0.9] text-balance">
+          <h1 className="font-sans text-white uppercase text-6xl md:text-[8rem] lg:text-[10rem] tracking-tighter leading-[0.8] text-balance font-bold">
             {heroTitle}
           </h1>
         </div>
@@ -58,14 +58,14 @@ export function NLHero({ heroTitle, heroImage, countryName }: NLHeroProps) {
         <div className="w-full h-px bg-white/20 my-2" />
 
         {/* AI Search Integration */}
-        <div className="flex flex-col gap-6 bg-white/5 backdrop-blur-2xl border border-white/10 p-8 md:p-10 rounded-2xl shadow-2xl mt-4">
+        <div className="flex flex-col gap-6 bg-white/5 backdrop-blur-2xl border border-white/10 p-8 md:p-10 rounded-none shadow-2xl mt-4 relative">
           <div className="flex items-center gap-3">
-            <Sparkles className="w-6 h-6 text-white/90" />
-            <h2 className="text-white font-serif text-3xl md:text-4xl">
+            <Sparkles className="w-5 h-5 text-white/90" />
+            <h2 className="text-white font-sans uppercase tracking-[0.1em] text-xl md:text-2xl font-bold">
               {t_shared("concierge_title")}
             </h2>
           </div>
-          <p className="text-white/80 text-base md:text-lg leading-relaxed max-w-[45ch]">
+          <p className="text-white/80 text-sm md:text-base leading-relaxed max-w-[45ch] font-medium tracking-wide">
             {t_shared("concierge_desc")}
           </p>
 
@@ -75,17 +75,17 @@ export function NLHero({ heroTitle, heroImage, countryName }: NLHeroProps) {
               onChange={(e) => setQuery(e.target.value)}
               placeholder={t_shared("concierge_placeholder")}
               rows={4}
-              className="w-full bg-transparent border-b border-white/30 focus:border-white outline-none resize-none py-4 text-white placeholder:text-white/30 font-serif text-xl md:text-2xl transition-colors duration-500 leading-relaxed"
+              className="w-full bg-transparent border-b border-white/30 focus:border-white outline-none resize-none py-4 pr-16 text-white placeholder:text-white/30 font-sans text-xl md:text-2xl transition-colors duration-500 leading-relaxed"
             />
             <button 
               type="submit"
               disabled={isSearching || !query}
-              className="absolute right-0 bottom-4 p-5 bg-white text-black rounded-full hover:scale-110 transition-transform duration-300 disabled:opacity-50 disabled:hover:scale-100 flex items-center justify-center shadow-2xl"
+              className="absolute right-0 bottom-4 p-5 bg-white text-black rounded-none hover:scale-105 transition-transform duration-300 disabled:opacity-50 disabled:hover:scale-100 flex items-center justify-center shadow-2xl"
             >
               {isSearching ? (
                 <div className="w-6 h-6 border-2 border-black/30 border-t-black rounded-full animate-spin" />
               ) : (
-                <ArrowRight className="w-6 h-6" />
+                <ArrowRight className="w-5 h-5" />
               )}
             </button>
           </form>
