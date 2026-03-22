@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { ArrowUpRight, Bath, BedDouble, Expand, SlidersHorizontal } from "lucide-react";
+import { useState, useEffect } from "react";
+import { ArrowUpRight, Bath, BedDouble, Expand, SlidersHorizontal, Sparkles, ArrowRight, ArrowLeft } from "lucide-react";
 import { Property } from "@/data/countries";
 
 type OperationMode = "sale" | "rent";
@@ -64,6 +64,20 @@ export function NLMarket({ properties, countryId }: { properties: Property[], co
   const [bedrooms, setBedrooms] = useState<BedroomFilter>("any");
   const [feature, setFeature] = useState("All");
   const [activeCuratorial, setActiveCuratorial] = useState<string | null>(null);
+
+  // Pagination & Search States
+  const [currentPage, setCurrentPage] = useState(1);
+  const ITEMS_PER_PAGE = 4;
+  const [query, setQuery] = useState("");
+  const [isSearching, setIsSearching] = useState(false);
+
+  const filterKey = `${operation}-${region}-${propertyType}-${budget}-${bedrooms}-${feature}-${activeCuratorial}`;
+  const [prevFilterKey, setPrevFilterKey] = useState(filterKey);
+
+  if (filterKey !== prevFilterKey) {
+    setCurrentPage(1);
+    setPrevFilterKey(filterKey);
+  }
 
   const curatorialThemes = [
     {
@@ -146,7 +160,24 @@ export function NLMarket({ properties, countryId }: { properties: Property[], co
     setActiveCuratorial(null);
   };
 
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!query) return;
+    setIsSearching(true);
+    // Simulated AI routing delay
+    setTimeout(() => {
+      setIsSearching(false);
+      setQuery("");
+    }, 1500);
+  };
+
   if (marketProperties.length === 0) return null;
+
+  const totalPages = Math.ceil(filteredProperties.length / ITEMS_PER_PAGE);
+  const paginatedProperties = filteredProperties.slice(
+    (currentPage - 1) * ITEMS_PER_PAGE,
+    currentPage * ITEMS_PER_PAGE
+  );
 
   return (
     <section className="w-full border-t border-[var(--token-text)]/10 bg-[var(--token-bg)] px-6 pt-28 pb-32 md:pt-36 md:pb-48">
@@ -405,7 +436,7 @@ export function NLMarket({ properties, countryId }: { properties: Property[], co
           </div>
         </div>
 
-        <div className="col-span-full border-b border-[var(--token-text)]/10 pb-8">
+        <div className="col-span-full border-b border-[var(--token-text)]/10 pb-8 mb-12">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div className="space-y-2">
               <span className="text-[10px] uppercase tracking-[0.34em] text-[var(--token-text)]/35">
@@ -416,8 +447,44 @@ export function NLMarket({ properties, countryId }: { properties: Property[], co
               </p>
             </div>
             <p className="max-w-[38ch] text-sm leading-[1.8] text-[var(--token-text)]/52">
-              {t_shared("market_p_2")}
+              Viewing Page {currentPage} of {totalPages || 1}
             </p>
+          </div>
+        </div>
+
+        {/* Embedded Concierge Search Moved Here */}
+        <div className="col-span-full mb-16">
+          <div className="flex flex-col gap-6 bg-[var(--token-text)]/5 border border-[var(--token-text)]/10 p-8 md:p-12 rounded-none relative">
+            <div className="flex items-center gap-3">
+              <Sparkles className="w-5 h-5 text-[var(--token-text)]" />
+              <h2 className="text-[var(--token-text)] font-sans uppercase tracking-[0.1em] text-xl md:text-2xl font-bold">
+                {t_shared("concierge_title")}
+              </h2>
+            </div>
+            <p className="text-[var(--token-text)]/80 text-sm md:text-base leading-relaxed max-w-[45ch] font-medium tracking-wide">
+              {t_shared("concierge_desc")}
+            </p>
+
+            <form onSubmit={handleSearch} className="relative w-full mt-4 group">
+              <textarea 
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder={t_shared("concierge_placeholder")}
+                rows={4}
+                className="w-full bg-transparent border-b border-[var(--token-text)]/30 focus:border-[var(--token-text)] outline-none resize-none py-4 pr-16 text-[var(--token-text)] font-sans text-xl md:text-2xl transition-colors duration-500 leading-relaxed"
+              />
+              <button 
+                type="submit"
+                disabled={isSearching || !query}
+                className="absolute right-0 bottom-4 p-5 bg-[var(--token-text)] text-[var(--token-bg)] rounded-none hover:scale-105 transition-transform duration-300 disabled:opacity-50 disabled:hover:scale-100 flex items-center justify-center shadow-2xl"
+              >
+                {isSearching ? (
+                  <div className="w-5 h-5 border-2 border-[var(--token-bg)]/30 border-t-[var(--token-bg)] rounded-full animate-spin" />
+                ) : (
+                  <ArrowRight className="w-5 h-5" />
+                )}
+              </button>
+            </form>
           </div>
         </div>
 
@@ -433,7 +500,7 @@ export function NLMarket({ properties, countryId }: { properties: Property[], co
             </div>
           ) : (
             <div className="columns-1 gap-6 md:columns-2 2xl:columns-3">
-              {filteredProperties.map((property, index) => (
+              {paginatedProperties.map((property, index) => (
                 <article
                   key={property.id}
                   className="group mb-6 break-inside-avoid border border-[var(--token-text)]/10 bg-[var(--token-bg)] transition-colors duration-500 hover:border-[var(--token-text)]/20"
@@ -534,6 +601,44 @@ export function NLMarket({ properties, countryId }: { properties: Property[], co
               ))}
             </div>
           )}
+
+          {/* Pagination Controls */}
+          <div className="mt-16 flex items-center justify-center gap-4 border-t border-[var(--token-text)]/10 pt-10">
+            <button 
+              type="button"
+              onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+              disabled={currentPage === 1 && totalPages <= 1}
+              className="group flex items-center gap-3 px-6 py-3 border border-[var(--token-text)]/20 text-[10px] uppercase tracking-widest text-[var(--token-text)] disabled:opacity-20 disabled:cursor-not-allowed hover:bg-[var(--token-text)] hover:text-[var(--token-bg)] transition-all duration-500"
+            >
+              <ArrowLeft className="w-4 h-4 transition-transform duration-500 group-hover:-translate-x-1" strokeWidth={1.5} />
+              {t_shared("prev")}
+            </button>
+            <div className="flex gap-2">
+              {Array.from({ length: Math.max(totalPages, 3) }).map((_, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  onClick={() => setCurrentPage(i + 1)}
+                  className={`w-10 h-10 flex items-center justify-center border text-[11px] transition-all duration-500 ${
+                    currentPage === i + 1 
+                      ? 'border-[var(--token-text)] bg-[var(--token-text)] text-[var(--token-bg)] font-bold' 
+                      : 'border-[var(--token-text)]/20 text-[var(--token-text)] hover:border-[var(--token-text)]/40'
+                  }`}
+                >
+                  {i + 1}
+                </button>
+              ))}
+            </div>
+            <button 
+                type="button"
+                onClick={() => setCurrentPage(p => Math.min(Math.max(totalPages, 3), p + 1))}
+                disabled={currentPage === Math.max(totalPages, 3)}
+                className="group flex items-center gap-3 px-6 py-3 border border-[var(--token-text)]/20 text-[10px] uppercase tracking-widest text-[var(--token-text)] disabled:opacity-20 disabled:cursor-not-allowed hover:bg-[var(--token-text)] hover:text-[var(--token-bg)] transition-all duration-500"
+            >
+              {t_shared("next")}
+              <ArrowRight className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-1" strokeWidth={1.5} />
+            </button>
+          </div>
         </div>
       </div>
     </section>

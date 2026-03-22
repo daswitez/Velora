@@ -114,7 +114,9 @@
     "nav_concept": "Concept",
     "nav_curation": "The Curation",
     "nav_regions": "Regions",
-    "nav_market": "Market Index"
+    "nav_market": "Market Index",
+    "prev": "Prev",
+    "next": "Next"
   },
   "nl": {
     "hero_title": "Order & Light",

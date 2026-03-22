@@ -114,7 +114,9 @@
     "nav_concept": "Concept",
     "nav_curation": "De Collectie",
     "nav_regions": "Regio's",
-    "nav_market": "Markt Index"
+    "nav_market": "Markt Index",
+    "prev": "Vorige",
+    "next": "Volgende"
   },
   "nl": {
     "hero_title": "Orde & Licht",
