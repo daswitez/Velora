@@ -63,6 +63,38 @@ export function NLMarket({ properties, countryId }: { properties: Property[], co
   const [budget, setBudget] = useState<BudgetFilter>("all");
   const [bedrooms, setBedrooms] = useState<BedroomFilter>("any");
   const [feature, setFeature] = useState("All");
+  const [activeCuratorial, setActiveCuratorial] = useState<string | null>(null);
+
+  const curatorialThemes = [
+    {
+      id: "waterfront",
+      title: "Meesters van het Water",
+      subtitle: "Waterfront Heritage",
+      image: "https://images.unsplash.com/photo-1549487442-fbbc2e2cccb8?q=80&w=1600&auto=format&fit=crop",
+      features: ["Canal View", "Dock Access", "River Outlook", "Canal Edge"]
+    },
+    {
+      id: "industrial",
+      title: "Industrieel Modernisme",
+      subtitle: "Brutalist Scale",
+      image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop",
+      features: ["Brick Warehouse", "Concrete Frame", "Double Height", "Glass Envelope"]
+    },
+    {
+      id: "sanctuary",
+      title: "Gezelligheid & Rust",
+      subtitle: "Private Sanctuaries",
+      image: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1600&auto=format&fit=crop",
+      features: ["Quiet Courtyard", "Inner Courtyard", "Private Garden", "Private Woods"]
+    },
+    {
+      id: "light",
+      title: "De Cultus van het Licht",
+      subtitle: "Sunlight Capture",
+      image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=1600&auto=format&fit=crop",
+      features: ["South Light", "Solar Envelope", "Wraparound Glass", "Roof Terrace"]
+    }
+  ];
 
   const regions = Array.from(
     new Set(marketProperties.map((property) => property.region).filter(Boolean))
@@ -81,8 +113,11 @@ export function NLMarket({ properties, countryId }: { properties: Property[], co
     const budgetMatch = matchesBudget(property, operation, budget);
     const bedroomMatch = matchesBedrooms(property, bedrooms);
     const featureMatch = feature === "All" || property.features?.includes(feature);
+    const curatorialMatch = activeCuratorial 
+      ? curatorialThemes.find(t => t.id === activeCuratorial)?.features.some(f => property.features?.includes(f))
+      : true;
 
-    return operationMatch && regionMatch && typeMatch && budgetMatch && bedroomMatch && featureMatch;
+    return operationMatch && regionMatch && typeMatch && budgetMatch && bedroomMatch && featureMatch && curatorialMatch;
   });
 
   const saleCount = marketProperties.filter((property) => property.operation === "sale").length;
@@ -108,6 +143,7 @@ export function NLMarket({ properties, countryId }: { properties: Property[], co
     setBudget("all");
     setBedrooms("any");
     setFeature("All");
+    setActiveCuratorial(null);
   };
 
   if (marketProperties.length === 0) return null;
@@ -115,20 +151,21 @@ export function NLMarket({ properties, countryId }: { properties: Property[], co
   return (
     <section className="w-full border-t border-[var(--token-text)]/10 bg-[var(--token-bg)] px-6 pt-28 pb-32 md:pt-36 md:pb-48">
       <div className="layout-grid gap-y-12">
-        <div className="col-span-full grid grid-cols-1 gap-8 border-b border-[var(--token-text)]/10 pb-10 md:grid-cols-12 md:gap-6 md:pb-14">
-          <div className="md:col-span-7">
-            <span className="inline-flex items-center gap-3 text-[10px] uppercase tracking-[0.34em] text-[var(--token-text)]/38">
-              <SlidersHorizontal className="h-3.5 w-3.5" strokeWidth={1.2} />
-              {t("market_tag")}
-            </span>
-            <h2 className="mt-5 max-w-[11ch] font-sans font-bold uppercase text-4xl leading-[0.94] tracking-tighter text-[var(--token-text)] md:text-[5rem]">
-              {t("market_title")}
-            </h2>
-          </div>
-
-          <div className="md:col-span-5 flex flex-col justify-start gap-6 pt-16 md:pt-0">
-            <div className="grid grid-cols-2 gap-px border border-[var(--token-text)]/10 bg-[var(--token-text)]/10">
-              <div className="bg-[var(--token-bg)] px-4 py-5">
+        {/* Curatorial Lifestyle Previews */}
+        <div className="col-span-full border-b border-[var(--token-text)]/10 pb-16 mb-4">
+          <div className="flex flex-col xl:flex-row justify-between items-start xl:items-end mb-12 gap-12">
+            <div>
+              <span className="inline-flex items-center gap-3 text-[10px] uppercase tracking-[0.34em] text-[var(--token-text)]/38 mb-6">
+                <SlidersHorizontal className="h-3.5 w-3.5" strokeWidth={1.2} />
+                {t("market_tag")}
+              </span>
+              <h2 className="font-sans font-bold uppercase text-4xl leading-[0.94] tracking-tighter text-[var(--token-text)] md:text-[5rem] max-w-[12ch]">
+                {t("market_title")}
+              </h2>
+            </div>
+            
+            <div className="flex gap-px border border-[var(--token-text)]/10 bg-[var(--token-text)]/10 shrink-0">
+              <div className="bg-[var(--token-bg)] px-6 py-6 min-w-[140px]">
                 <span className="text-[10px] uppercase tracking-[0.3em] text-[var(--token-text)]/35">
                   {t_shared("sale_index")}
                 </span>
@@ -136,7 +173,7 @@ export function NLMarket({ properties, countryId }: { properties: Property[], co
                   {saleCount}
                 </div>
               </div>
-              <div className="bg-[var(--token-bg)] px-4 py-5">
+              <div className="bg-[var(--token-bg)] px-6 py-6 min-w-[140px]">
                 <span className="text-[10px] uppercase tracking-[0.3em] text-[var(--token-text)]/35">
                   {t_shared("rental_index")}
                 </span>
@@ -145,6 +182,41 @@ export function NLMarket({ properties, countryId }: { properties: Property[], co
                 </div>
               </div>
             </div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {curatorialThemes.map(theme => {
+              const isActive = activeCuratorial === theme.id;
+              return (
+                <button
+                  key={theme.id}
+                  type="button"
+                  onClick={() => {
+                    setActiveCuratorial(isActive ? null : theme.id);
+                    setFeature("All"); // Reset sub-features to avoid conflicts
+                  }}
+                  className={`relative aspect-[3/4] overflow-hidden group transition-all duration-700 ${
+                    isActive
+                      ? 'border-[2px] border-[var(--token-text)] opacity-100'
+                      : 'border-[1px] border-[var(--token-text)]/10 hover:border-[var(--token-text)]/30 opacity-70 hover:opacity-100'
+                  }`}
+                >
+                  <img 
+                    src={theme.image} 
+                    alt={theme.title} 
+                    draggable={false}
+                    className={`absolute inset-0 w-full h-full object-cover transition-transform duration-[2.5s] ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                      isActive ? 'scale-100' : 'scale-[1.08] group-hover:scale-[1.02]'
+                    } mix-blend-luminosity`}
+                  />
+                  <div className={`absolute inset-0 bg-[var(--token-text)] transition-opacity duration-1000 ${isActive ? 'opacity-0' : 'opacity-[0.15] group-hover:opacity-0'}`} />
+                  <div className="absolute inset-x-0 bottom-0 p-6 md:p-8 bg-gradient-to-t from-[#050505]/90 via-[#050505]/50 to-transparent flex flex-col items-start text-left z-10 h-1/2 justify-end">
+                    <span className="text-[10px] uppercase tracking-[0.3em] text-white/50 mb-3 font-medium">{theme.subtitle}</span>
+                    <h3 className="font-sans font-bold uppercase text-2xl tracking-tighter text-white leading-[1.05]">{theme.title}</h3>
+                  </div>
+                </button>
+              );
+            })}
           </div>
         </div>
 
