@@ -28,10 +28,11 @@ export function GlobalNavbar() {
     pathname?.split("/")[1] && SUPPORTED_LOCALES.some((loc) => loc.code === pathname.split("/")[1])
       ? pathname.split("/")[1]
       : "en";
+  const homeUrl = `/${currentLocale}`;
   const navLinks = [
-    { href: "/concept", label: t("concept") },
-    { href: "/embassies", label: t("embassies") },
-    { href: "/journal", label: t("journal") },
+    { href: "#concept", label: t("concept") },
+    { href: "#embassies", label: t("embassies") },
+    { href: "#concierge", label: t("search") },
   ];
 
   useEffect(() => {
@@ -90,7 +91,7 @@ export function GlobalNavbar() {
       <div className="layout-grid items-center justify-between">
         {/* Logo */}
         <Link 
-          href="/" 
+          href={homeUrl}
           className="col-span-1 md:col-span-3 text-2xl tracking-tighter uppercase font-serif"
         >
           Velora
@@ -113,10 +114,10 @@ export function GlobalNavbar() {
 
         {/* Right Actions */}
         <div className="col-span-3 flex justify-end items-center gap-6">
-          <button className="hidden md:flex items-center gap-2 hover:opacity-70 transition-opacity">
+          <Link href="#concierge" className="hidden md:flex items-center gap-2 hover:opacity-70 transition-opacity">
             <Search className="w-4 h-4 stroke-[1.5]" />
             <span className="sr-only">{t("search")}</span>
-          </button>
+          </Link>
           
           {/* Language Switcher Dropdown */}
           <div className="relative group hidden md:flex items-center">

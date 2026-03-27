@@ -13,10 +13,18 @@ export default function Home() {
       <GlobalNavbar />
       <MainHero />
       <TrustedBy />
-      <Philosophy />
-      <GlobalCuration />
-      <EmbassySelector />
-      <ConciergeSearch />
+      <div id="embassies" className="scroll-mt-28">
+        <EmbassySelector />
+      </div>
+      <div id="concept" className="scroll-mt-28">
+        <Philosophy />
+      </div>
+      <div id="collection" className="scroll-mt-28">
+        <GlobalCuration />
+      </div>
+      <div id="concierge" className="scroll-mt-28">
+        <ConciergeSearch />
+      </div>
       <GlobalFooter />
     </main>
   );

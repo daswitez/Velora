@@ -2,6 +2,7 @@
 
 import { useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
@@ -35,24 +36,41 @@ export function EmbassySelector() {
     if (emblaApi) emblaApi.scrollNext();
   }, [emblaApi]);
 
+  const getEmbassyHref = (embassyId: string) => {
+    const embassyLocale = embassyId === "NL" ? "nl" : locale;
+    return `/${embassyLocale}/embassies/${embassyId.toLowerCase()}`;
+  };
+
   return (
-    <section className="w-full py-16 md:py-48 bg-[var(--token-bg)] overflow-hidden">
+    <section className="w-full overflow-hidden border-y border-[var(--token-text)]/10 bg-[var(--token-bg)] py-20 md:py-40">
       
-      <div className="layout-grid mb-16 md:mb-24">
+      <div className="layout-grid mb-10 md:mb-16">
         <div className="col-span-full md:col-span-12 xl:col-span-7">
-          <h2 className="font-serif text-4xl sm:text-5xl md:text-7xl tracking-tight leading-[1] text-[var(--token-text)] text-balance">
+          <h2 className="font-serif text-4xl leading-[1] tracking-tight text-[var(--token-text)] text-balance sm:text-5xl md:text-7xl">
             {t("title")}
           </h2>
         </div>
         <div className="col-span-full md:col-span-5 flex flex-col justify-end items-start md:items-end mt-8 md:mt-0 gap-8">
-          <p className="text-[var(--token-text)]/70 text-sm tracking-[0.2em] uppercase leading-relaxed font-sans max-w-[40ch] md:text-right">
+          <p className="max-w-[40ch] text-sm leading-relaxed tracking-[0.2em] text-[var(--token-text)]/70 md:text-right">
             {t("desc")}
           </p>
         </div>
       </div>
 
-      {/* Embla Carousel Viewport */}
-      {/* We use pl-6 md:pl-12 lg:pl-24 to respect the grid start on the left, but let it bleed off the right */}
+      <div className="layout-grid mb-8 md:hidden">
+        <div className="col-span-full flex flex-wrap gap-2">
+          {embassies.map((embassy) => (
+            <Link
+              key={`${embassy.id}-pill`}
+              href={getEmbassyHref(embassy.id)}
+              className="border border-[var(--token-text)]/10 px-3 py-2 text-[10px] uppercase tracking-[0.24em] text-[var(--token-text)]/66 transition-colors duration-500 hover:border-[var(--token-text)]/24 hover:text-[var(--token-text)]"
+            >
+              {embassy.name}
+            </Link>
+          ))}
+        </div>
+      </div>
+
       <div className="relative w-full group">
         <div 
           className="pl-6 md:pl-12 xl:pl-24 cursor-grab active:cursor-grabbing w-full overflow-hidden" 
@@ -62,21 +80,24 @@ export function EmbassySelector() {
             {embassies.map((embassy) => (
               <div 
                 key={embassy.id}
-                className="relative flex-[0_0_85%] md:flex-[0_0_40%] lg:flex-[0_0_28%] aspect-[3/4]"
+                className="relative aspect-[3/4] flex-[0_0_86%] md:flex-[0_0_42%] lg:flex-[0_0_28%]"
               >
                 <div className="w-full h-full relative overflow-hidden group/card bg-[#0A0A0A] select-none block">
-                  <Link href={`/${embassy.id.toLowerCase()}/embassies/${embassy.id.toLowerCase()}`} draggable={false} className="absolute inset-0 z-10" />
-                  <img 
+                  <Link href={getEmbassyHref(embassy.id)} draggable={false} className="absolute inset-0 z-10" />
+                  <Image
                     src={embassy.img} 
                     alt={embassy.name} 
+                    fill
+                    sizes="(max-width: 768px) 86vw, (max-width: 1024px) 42vw, 28vw"
                     draggable={false}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/card:scale-105 opacity-80 group-hover/card:opacity-50 pointer-events-none"
+                    className="pointer-events-none object-cover opacity-80 transition-transform duration-[1.5s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/card:scale-105 group-hover/card:opacity-50"
                   />
-                  <div className="absolute inset-x-0 bottom-0 p-8 flex flex-col gap-2 pointer-events-none">
-                    <span className="text-white/60 text-xs tracking-[0.3em] uppercase transform transition-transform duration-700 translate-y-2 group-hover/card:translate-y-0 opacity-0 group-hover/card:opacity-100">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent" />
+                  <div className="absolute inset-x-0 bottom-0 p-6 md:p-8 flex flex-col gap-2 pointer-events-none">
+                    <span className="text-white/60 text-[10px] uppercase tracking-[0.3em] md:text-xs transform transition-all duration-700 translate-y-0 opacity-100 md:translate-y-2 md:opacity-0 group-hover/card:translate-y-0 group-hover/card:opacity-100">
                       {embassy.aura}
                     </span>
-                    <span className="text-white font-serif text-3xl md:text-4xl tracking-wide transform transition-transform duration-700 translate-y-4 group-hover/card:translate-y-0">
+                    <span className="text-white font-serif text-[2rem] md:text-4xl tracking-wide transform transition-transform duration-700 translate-y-1 md:translate-y-4 group-hover/card:translate-y-0">
                       {embassy.name}
                     </span>
                   </div>

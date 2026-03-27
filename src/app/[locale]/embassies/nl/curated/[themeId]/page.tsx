@@ -1,5 +1,5 @@
 import { countryData } from "@/data/countries";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { translateProfile } from "@/data/translations";
 import { curatorialThemes } from "../../curatorialThemes";
 import IndustrialTheme from "./themes/IndustrialTheme";
@@ -15,6 +15,10 @@ export default async function CuratedThemePage({
   params: Promise<{ locale: string; themeId: string }>
 }) {
   const { locale, themeId } = await params;
+
+  if (locale !== "nl" && locale !== "en") {
+    redirect(`/nl/embassies/nl/curated/${themeId}`);
+  }
   
   const profile = countryData["nl"];
   if (!profile) notFound();

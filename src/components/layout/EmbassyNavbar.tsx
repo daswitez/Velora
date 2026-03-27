@@ -11,6 +11,7 @@ export function EmbassyNavbar({ profile }: { profile: CountryProfile }) {
   const t_shared = useTranslations("country_shared");
   const pathname = usePathname();
   const currentLocale = pathname?.split("/")[1] || "en";
+  const homeUrl = `/${currentLocale}`;
   
   const nativeLocale = profile.id;
   const alternateLocale = currentLocale === "en" ? nativeLocale : "en";
@@ -44,7 +45,7 @@ export function EmbassyNavbar({ profile }: { profile: CountryProfile }) {
       <div className="layout-grid items-center justify-between pointer-events-auto">
         {/* Left side Return (Logo) */}
         <Link 
-          href="/" 
+          href={homeUrl}
           className="col-span-1 md:col-span-3 flex items-center gap-4 hover:opacity-70 transition-opacity"
         >
           <ArrowLeft className="w-5 h-5 stroke-[1.5]" />
